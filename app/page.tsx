@@ -16,7 +16,7 @@ return () => clearTimeout(timer);
 }, []);
 
 if (loading) {
-return ( <div className="h-screen w-full bg-sky-50 flex flex-col items-center justify-center text-white"> <div className="w-24 h-24 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+return ( <div className="h-screen w-full bg-[#06152B] flex flex-col items-center justify-center text-white"> <div className="w-24 h-24 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
 
     <h1 className="mt-8 text-4xl font-bold tracking-widest text-blue-400">
       CULTURE KITE
@@ -43,15 +43,15 @@ return ( <div className="h-screen w-full bg-sky-50 flex flex-col items-center ju
 }
 
   return (
-    <div className="min-h-screen bg-sky-50 text-white font-sans overflow-hidden relative">
+    <div className="min-h-screen bg-[#06152B] text-white font-sans overflow-hidden relative">
       {/* Animated Background Glow */}
 
 <div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-300/30 rounded-full blur-[120px]"></div>
 
-<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-white/20 rounded-full blur-[120px]"></div>
+<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
 
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur-md sticky top-0 z-50 bg-sky-50/80">
+      <nav className="flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur-md sticky top-0 z-50 bg-[#06152B]/80">
         <div className="flex items-center gap-3">
           <img
 src="/logo.png"
@@ -238,7 +238,7 @@ Explore Services
               key={service}
               className="bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl shadow-black/20 p-8 rounded-3xl hover:border-blue-400/40 hover:-translate-y-2 transition-all duration-300 shadow-xl"
             >
-              <div className="w-14 h-14 rounded-2xl bg-blue-300/30 flex items-center justify-center text-blue-400 text-2xl mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-6">
                 ✦
               </div>
               <h3 className="text-2xl font-semibold">{service}</h3>

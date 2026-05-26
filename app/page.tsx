@@ -590,6 +590,23 @@ className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white w-1
 
       </footer>
       <Chatbot />
+      <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
+
+  <a
+    href="#services"
+    className="bg-blue-600 hover:bg-blue-500 transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
+  >
+    Hire Employees
+  </a>
+
+  <a
+    href="#careers"
+    className="border border-white/20 hover:bg-white/10 transition px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block text-center"
+  >
+    Apply for Jobs
+  </a>
+
+</div>
     </div>
   );
 }

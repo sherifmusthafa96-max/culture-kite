@@ -303,6 +303,46 @@ export default function CultureKiteWebsite() {
         </div>
       </section>
 
+      {/* Careers */}
+<section id="careers" className="px-8 md:px-20 py-24">
+  <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-[40px] p-12 md:p-16 text-center shadow-2xl shadow-blue-900/40">
+    
+    <h2 className="text-5xl font-bold">
+      Join Our Workforce Network
+    </h2>
+
+    <p className="mt-6 text-blue-100 max-w-3xl mx-auto text-lg leading-relaxed">
+      Looking for jobs in delivery, warehouse, housekeeping,
+      logistics, or office support?
+      Apply now and grow your career with Culture Kite.
+    </p>
+
+    <div className="mt-10 max-w-2xl mx-auto bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 space-y-5">
+
+      <input
+        type="text"
+        placeholder="Full Name"
+        className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 outline-none"
+      />
+
+      <input
+        type="tel"
+        placeholder="Phone Number"
+        className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 outline-none"
+      />
+
+      <input
+        type="file"
+        className="w-full px-5 py-4 rounded-xl bg-white/10 border border-white/10 outline-none"
+      />
+
+      <button className="w-full bg-white text-blue-700 hover:bg-gray-100 transition py-4 rounded-xl font-bold text-lg">
+        Upload Resume
+      </button>
+
+    </div>
+  </div>
+</section>
       {/* Contact */}
       <section
         id="contact"

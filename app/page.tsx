@@ -63,38 +63,23 @@ export default function CultureKiteWebsite() {
         </div>
 
         <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-          <a
-            href="#home"
-            className="hover:text-blue-400 transition"
-          >
+          <a href="#home" className="hover:text-blue-400 transition">
             Home
           </a>
 
-          <a
-            href="#about"
-            className="hover:text-blue-400 transition"
-          >
+          <a href="#about" className="hover:text-blue-400 transition">
             About
           </a>
 
-          <a
-            href="#services"
-            className="hover:text-blue-400 transition"
-          >
+          <a href="#services" className="hover:text-blue-400 transition">
             Services
           </a>
 
-          <a
-            href="#careers"
-            className="hover:text-blue-400 transition"
-          >
-            Careers
+          <a href="#jobs" className="hover:text-blue-400 transition">
+            Jobs
           </a>
 
-          <a
-            href="#contact"
-            className="hover:text-blue-400 transition"
-          >
+          <a href="#contact" className="hover:text-blue-400 transition">
             Contact
           </a>
         </div>
@@ -107,13 +92,6 @@ export default function CultureKiteWebsite() {
             className="bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
           >
             Contact on WhatsApp
-          </a>
-
-          <a
-            href="#services"
-            className="border border-white/20 hover:bg-white/10 transition px-6 py-3 rounded-xl font-semibold"
-          >
-            Explore Services
           </a>
         </div>
       </nav>
@@ -147,16 +125,6 @@ export default function CultureKiteWebsite() {
             payroll management, and workforce solutions designed to help
             businesses scale faster with confidence.
           </p>
-
-          <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
-            <button className="bg-blue-600 hover:bg-blue-500 transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30">
-              Hire Employees
-            </button>
-
-            <button className="border border-white/20 hover:bg-white/10 transition px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md">
-              Apply for Jobs
-            </button>
-          </div>
         </div>
       </section>
 
@@ -255,6 +223,86 @@ export default function CultureKiteWebsite() {
         </div>
       </section>
 
+      {/* Job Openings */}
+      <section id="jobs" className="px-8 md:px-20 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold">
+            Current <span className="text-blue-400">Job Openings</span>
+          </h2>
+
+          <p className="text-gray-400 mt-5 text-lg">
+            Explore the latest workforce opportunities available through Culture Kite.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
+          {[
+            {
+              company: "FirstCry",
+              role: "Delivery Riders",
+              location: "Chennai & Coimbatore",
+            },
+
+            {
+              company: "ABT",
+              role: "Loader & Unloader",
+              location: "All Over Tamil Nadu",
+            },
+
+            {
+              company: "Meesho",
+              role: "Warehouse Staff",
+              location: "Chennai",
+            },
+
+            {
+              company: "Flipkart",
+              role: "Warehouse & Delivery Staff",
+              location: "Coimbatore",
+            },
+          ].map((job, index) => (
+            <div
+              key={index}
+              className="bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-3xl"
+            >
+              <h3 className="text-2xl font-bold text-blue-400">
+                {job.role}
+              </h3>
+
+              <p className="mt-4 text-gray-300">
+                <strong>Company:</strong> {job.company}
+              </p>
+
+              <p className="mt-2 text-gray-400">
+                <strong>Location:</strong> {job.location}
+              </p>
+
+              <div className="mt-6">
+                <label className="block text-sm text-gray-400 mb-2">
+                  Select Preferred Location
+                </label>
+
+                <select className="w-full bg-white/10 border border-white/10 rounded-xl px-4 py-3 text-white outline-none">
+                  <option>Choose Location</option>
+                  <option>Chennai</option>
+                  <option>Coimbatore</option>
+                  <option>All Over Tamil Nadu</option>
+                </select>
+              </div>
+
+              <a
+                href="https://wa.me/919500038959"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block mt-6 bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-xl font-semibold"
+              >
+                Apply Now
+              </a>
+            </div>
+          ))}
+        </div>
+      </section>
+
       {/* Contact */}
       <section
         id="contact"
@@ -281,19 +329,19 @@ export default function CultureKiteWebsite() {
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none"
               />
 
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none"
               />
 
               <textarea
                 placeholder="Your Message"
                 rows={5}
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
+                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none"
               ></textarea>
 
               <button className="w-full bg-blue-600 hover:bg-blue-500 transition py-4 rounded-xl font-bold text-lg">

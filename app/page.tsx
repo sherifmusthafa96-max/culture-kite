@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Chatbot from "@/components/Chatbot";
 export default function CultureKiteWebsite() {
 const [loading, setLoading] = useState(true);
 
@@ -588,6 +589,7 @@ className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white w-1
 💬 </a>
 
       </footer>
+      <Chatbot />
     </div>
   );
 }

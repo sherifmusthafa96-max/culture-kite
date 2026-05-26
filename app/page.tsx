@@ -17,7 +17,6 @@ return () => clearTimeout(timer);
 if (loading) {
 return ( <div className="h-screen w-full bg-[#06152B] flex flex-col items-center justify-center text-white"> <div className="w-24 h-24 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
 
-```
     <h1 className="mt-8 text-4xl font-bold tracking-widest text-blue-400">
       CULTURE KITE
     </h1>
@@ -257,11 +256,9 @@ Explore Services
       Trusted <span className="text-blue-400">Clients</span>
     </h2>
 
-```
 <p className="text-gray-400 mt-5 text-lg">
   Companies powered by Culture Kite workforce solutions.
 </p>
-```
 
   </div>
 
@@ -416,7 +413,6 @@ Explore Services
 
   </div>
 ))}
-```
 
   </div>
 </section>

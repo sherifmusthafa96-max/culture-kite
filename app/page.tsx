@@ -18,20 +18,20 @@ return () => clearTimeout(timer);
 if (loading) {
 return ( <div className="h-screen w-full bg-[#06152B] flex flex-col items-center justify-center text-white"> <div className="w-24 h-24 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
 
-    <h1 className="mt-8 text-4xl font-bold tracking-widest text-blue-400">
+    <h1 className="mt-8 text-4xl font-bold tracking-widest text-[#5AD5D7]">
       CULTURE KITE
     </h1>
 
     <p className="mt-4 text-gray-400">
       <h1 className="text-5xl md:text-7xl font-extrabold leading-tight">
   Building the Future of
-  <span className="block text-blue-400">
+  <span className="block text-[#5AD5D7]">
     Workforce & HR Solutions
   </span>
 </h1>
 
 <p className="mt-8 text-xl text-gray-300 max-w-3xl leading-9">
-  Culture Kite delivers professional manpower, recruitment, warehouse staffing,
+  CULTURE KITE delivers professional manpower, recruitment, warehouse staffing,
   delivery workforce, industrial staffing, and HR solutions across Tamil Nadu
   with trusted client partnerships and scalable workforce operations.
 </p>
@@ -46,36 +46,39 @@ return ( <div className="h-screen w-full bg-[#06152B] flex flex-col items-center
     <div className="min-h-screen bg-[#06152B] text-white font-sans overflow-hidden relative">
       {/* Animated Background Glow */}
 
-<div className="absolute top-0 left-0 w-[500px] h-[500px] bg-blue-300/30 rounded-full blur-[120px]"></div>
+<div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#5AD5D7]/30 rounded-full blur-[120px]"></div>
 
-<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-cyan-500/10 rounded-full blur-[120px]"></div>
+<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#5AD5D7]/10 rounded-full blur-[120px]"></div>
 
       {/* Navbar */}
-      <nav className="flex items-center justify-between px-8 py-6 border-b border-white/10 backdrop-blur-md sticky top-0 z-50 bg-[#06152B]/80">
-        <div className="flex items-center gap-3">
-          <img
-src="/logo.png"
-alt="Culture Kite Logo"
-className="w-12 h-12 object-contain"
-/>
+      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#123A8D]/70 border-b border-white/10">
+        <div className="absolute inset-0 flex items-center justify-center opacity-5 pointer-events-none">
+  <img
+    src="/logo.png"
+    alt="CULTURE KITE"
+    className="w-[700px] h-auto"
+  />
 
-          <h1 className="text-2xl font-bold tracking-wide">Culture Kite</h1>
+          <h1 className="text-3xl font-extrabold tracking-widest text-white">
+  CULTURE KITE
+</h1>
+
         </div>
 
         <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
-  <a href="#home" className="hover:text-blue-400 hover:scale-110 transition-all duration-300"
+  <a href="#home" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
 >Home</a>
-  <a href="#about" className="hover:text-blue-400 hover:scale-110 transition-all duration-300"
+  <a href="#about" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
 >About</a>
-  <a href="#services" className="hover:text-blue-400 hover:scale-110 transition-all duration-300"
+  <a href="#services" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
 >Services</a>
-  <a href="#careers" className="hover:text-blue-400 hover:scale-110 transition-all duration-300"
+  <a href="#careers" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
 >Careers</a>
-  <a href="#contact" className="hover:text-blue-400 hover:scale-110 transition-all duration-300"
+  <a href="#contact" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
 >Contact</a>
 </div>
 
-<div className="md:hidden text-3xl text-white">
+<div className="text-3xl font-extrabold tracking-widest text-white">
   ☰
 </div>
 
@@ -85,7 +88,7 @@ className="w-12 h-12 object-contain"
 <a
 href="https://wa.me/919500038959"
 target="_blank"
-className="bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
+className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
 
 >
 
@@ -126,18 +129,18 @@ Explore Services
 
           <h1 className="text-5xl md:text-7xl font-extrabold leading-tight tracking-tight">
             Empowering Businesses with
-            <span className="text-blue-400"> Smart Workforce Solutions</span>
+            <span className="text-[#5AD5D7]"> Smart Workforce Solutions</span>
           </h1>
 
           <p className="mt-8 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
-            Culture Kite provides modern HR services, manpower staffing, payroll management,
+            CULTURE KITE provides modern HR services, manpower staffing, payroll management,
             and workforce solutions designed to help businesses scale faster with confidence.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
   <a
     href="#services"
-    className="bg-blue-600 hover:bg-blue-500 transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
+    className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
   >
     Hire Employees
   </a>
@@ -164,7 +167,7 @@ Explore Services
             key={label}
             className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:scale-105 hover:border-blue-400/40 hover:bg-white/10 transition-all duration-300 shadow-lg shadow-black/20"
           >
-            <h2 className="text-4xl font-bold text-blue-400">{num}</h2>
+            <h2 className="text-4xl font-bold text-[#5AD5D7]">{num}</h2>
             <p className="mt-3 text-gray-300">{label}</p>
           </div>
         ))}
@@ -175,7 +178,7 @@ Explore Services
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              About <span className="text-blue-400">Culture Kite</span>
+              About <span className="text-[#5AD5D7]">CULTURE KITE</span>
             </h2>
             <p className="text-gray-300 leading-relaxed text-lg">
               We are a premium manpower and HR solutions company helping businesses build
@@ -220,7 +223,7 @@ Explore Services
       <section id="services" className="px-8 md:px-20 py-24 bg-white/[0.03]">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold">
-            Our <span className="text-blue-400">Services</span>
+            Our <span className="text-[#5AD5D7]">Services</span>
           </h2>
           <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg">
             Advanced workforce and HR services designed to simplify hiring and operations.
@@ -245,7 +248,7 @@ Explore Services
               key={service}
               className="bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl shadow-black/20 p-8 rounded-3xl hover:border-blue-400/40 hover:-translate-y-2 transition-all duration-300 shadow-xl"
             >
-              <div className="w-14 h-14 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-6">
+              <div className="w-14 h-14 rounded-2xl bg-[#5AD5D7]/20 flex items-center justify-center text-[#5AD5D7] text-2xl mb-6">
                 ✦
               </div>
               <h3 className="text-2xl font-semibold">{service}</h3>
@@ -261,11 +264,11 @@ Explore Services
 <section className="px-8 md:px-20 py-24 bg-white/[0.02]">
   <div className="text-center mb-16">
     <h2 className="text-5xl font-bold">
-      Trusted <span className="text-blue-400">Clients</span>
+      Trusted <span className="text-[#5AD5D7]">Clients</span>
     </h2>
 
 <p className="text-gray-400 mt-5 text-lg">
-  Companies powered by Culture Kite workforce solutions.
+  Companies powered by <span className="text-[#5AD5D7]">CULTURE KITE</span> workforce solutions.
 </p>
 
   </div>
@@ -299,12 +302,12 @@ Explore Services
 <section className="px-8 md:px-20 py-24">
   <div className="text-center mb-16">
     <h2 className="text-5xl font-bold">
-      Current <span className="text-blue-400">Job Openings</span>
+      Current <span className="text-[#5AD5D7]">Job Openings</span>
     </h2>
 
 
 <p className="text-gray-400 mt-5 text-lg">
-  Explore the latest workforce opportunities available through Culture Kite.
+  Explore the latest workforce opportunities available through <span className="text-[#5AD5D7]">CULTURE KITE</span>.
 </p>
 
 
@@ -386,7 +389,7 @@ Explore Services
     className="bg-white/10 backdrop-blur-xl border border-white/20 shadow-2xl shadow-black/20 p-8 rounded-3xl hover:border-blue-400/40 transition-all duration-300"
   >
 
-    <h3 className="text-2xl font-bold text-blue-400">
+    <h3 className="text-2xl font-bold text-[#5AD5D7]">
       {job.role}
     </h3>
 
@@ -414,7 +417,7 @@ Explore Services
     <a
       href="https://wa.me/919500038959"
       target="_blank"
-      className="inline-block mt-6 bg-blue-600 hover:bg-blue-500 transition px-6 py-3 rounded-xl font-semibold"
+      className="inline-block mt-6 bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl font-semibold"
     >
       Apply Now
     </a>
@@ -431,7 +434,7 @@ Explore Services
           <h2 className="text-5xl font-bold">Join Our Workforce Network</h2>
           <p className="mt-6 text-blue-100 max-w-3xl mx-auto text-lg leading-relaxed">
             Looking for jobs in delivery, warehouse, housekeeping, logistics, or office support?
-            Apply now and grow your career with Culture Kite.
+            Apply now and grow your career with CULTURE KITE.
           </p>
 
           <div className="mt-10 max-w-2xl mx-auto bg-white/10 backdrop-blur-xl border border-white/10 rounded-3xl p-8 space-y-5">
@@ -468,11 +471,11 @@ Explore Services
           <div>
             <h2 className="text-5xl font-bold leading-tight">
               Let’s Build Your
-              <span className="text-blue-400"> Workforce Together</span>
+              <span className="text-[#5AD5D7]"> Workforce Together</span>
             </h2>
 
             <p className="mt-6 text-gray-400 text-lg leading-relaxed">
-              Contact Culture Kite today for premium HR services, manpower staffing,
+              Contact CULTURE KITE today for premium HR services, manpower staffing,
               and business workforce solutions.
             </p>
           </div>
@@ -501,25 +504,25 @@ Explore Services
     <strong>Email:</strong><br />
     <a
   href="mailto:admin@culturekite.in"
-  className="text-blue-400 hover:text-blue-300"
+  className="text-[#5AD5D7] hover:text-blue-300"
 >
   admin@culturekite.in
 </a><br />
     <a
   href="mailto:mathan@culturekite.in"
-  className="text-blue-400 hover:text-blue-300"
+  className="text-[#5AD5D7] hover:text-blue-300"
 >
   mathan@culturekite.in
 </a><br />
     <a
   href="mailto:musthafa@culturekite.in"
-  className="text-blue-400 hover:text-blue-300"
+  className="text-[#5AD5D7] hover:text-blue-300"
 >
   musthafa@culturekite.in
 </a><br />
     <a
   href="mailto:aiswarya@culturekite.in"
-  className="text-blue-400 hover:text-blue-300"
+  className="text-[#5AD5D7] hover:text-blue-300"
 >
   aiswarya@culturekite.in
 </a>
@@ -557,7 +560,7 @@ Explore Services
       {/* Footer */}
       <footer className="relative z-50 border-t border-white/10 py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
 
-        <p>© 2026 Culture Kite. All Rights Reserved.</p>
+        <p>© 2026 CULTURE KITE. All Rights Reserved.</p>
 
         <div className="flex gap-4 mt-4 md:mt-0">
 
@@ -575,7 +578,7 @@ WhatsApp
 
 <a
 href="mailto:admin@culturekite.in"
-className="bg-blue-600 hover:bg-blue-500 transition px-5 py-2 rounded-xl font-semibold text-white"
+className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-5 py-2 rounded-xl font-semibold text-white"
 
 >
 
@@ -597,6 +600,17 @@ className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white w-1
 
       </footer>
       <Chatbot />
+```
+  {/* Floating Logo */}
+
+  <div className="fixed bottom-6 left-6 z-50">
+    <img
+      src="/logo.png"
+      alt="CULTURE KITE"
+      className="w-14 h-14 rounded-full shadow-2xl"
+    />
+  </div>
+
 </div>
   );
 }

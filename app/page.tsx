@@ -116,7 +116,7 @@ export default function CultureKiteWebsite() {
 
         {/* WATERMARK PASTE HERE */}
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-[0.18] pointer-events-none animate-watermark">
+        <div className="fixed inset-0 flex flex-col items-center justify-center pointer-events-none z-0 opacity-[0.15] animate-watermark">
 
           {/* Premium Kite Logo */}
           <div className="relative w-12 h-12 md:w-16 md:h-16 mb-5">

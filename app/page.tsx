@@ -13,41 +13,23 @@ export default function CultureKiteWebsite() {
 
   if (loading) {
     return (
-      <div className="h-screen w-full bg-whiteflex-col items-center justify-center text-white">
-        <div className="w-24 h-24 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+      <div className="h-screen w-full bg-white flex flex-col items-center justify-center">
 
-        <h1 className="mt-8 text-4xl font-bold tracking-widest text-[#5AD5D7]">
+        <div className="w-20 h-20 border-4 border-[#123A8D] border-t-transparent rounded-full animate-spin"></div>
+
+        <h1 className="mt-8 text-5xl font-black tracking-[0.1em] text-[#123A8D]">
           CULTURE KITE
         </h1>
 
-        <p className="mt-4 text-gray-500">
-          Building the Future of
+        <p className="mt-4 text-gray-500 text-lg">
+          Building the Future of Workforce & HR Solutions
         </p>
 
-        <p className="text-[#5AD5D7]">
-          Workforce & HR Solutions
-        </p>
-
-        <p className="mt-8 text-xl text-gray-600 max-w-3xl leading-9 text-center px-4">
-          CULTURE KITE delivers professional manpower, recruitment,
-          warehouse staffing, delivery workforce, industrial staffing,
-          and HR solutions across Tamil Nadu.
-        </p>
       </div>
     );
   }
-
   return (
     <div className="min-h-screen bg-white text-gray-900 font-sans overflow-hidden relative">
-
-      {/* Floating Brand */}
-      <div className="fixed bottom-8 left-8 z-50">
-        <div className="bg-white px-5 py-3 rounded-full border border-gray-200 shadow-lg">
-          <span className="text-[#5AD5D7] font-extrabold tracking-widest">
-            CULTURE KITE
-          </span>
-        </div>
-      </div>
 
       {/* Animated Background Glow */}
 
@@ -105,23 +87,27 @@ export default function CultureKiteWebsite() {
 
 
 
-      <div className="flex gap-4">
+      <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        CULTURE KITE provides modern HR services, manpower staffing,
+        payroll management, and workforce solutions designed to help
+        businesses scale faster with confidence.
+      </p>
 
+      <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
         <a
           href="https://wa.me/919500038959"
           target="_blank"
-          className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
+          className="bg-[#123A8D] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1F84D7]"
         >
           Talk To Our Team
         </a>
 
         <a
           href="#services"
-          className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-6 py-3 rounded-xl font-semibold"
+          className="border border-gray-300 px-8 py-4 rounded-full font-bold hover:bg-gray-100"
         >
           Workforce Solutions
         </a>
-
       </div>
 
       <section

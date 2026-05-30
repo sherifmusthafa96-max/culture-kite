@@ -17,7 +17,7 @@ export default function CultureKiteWebsite() {
 
         <div className="w-20 h-20 border-4 border-[#123A8D] border-t-transparent rounded-full animate-spin"></div>
 
-        <h1 className="mt-8 text-5xl font-black tracking-[0.1em] text-[#123A8D]">
+        <h1 className="mt-8 text-5xl font-black tracking-[0.2em] text-[#123A8D]">
           CULTURE KITE
         </h1>
 
@@ -87,34 +87,30 @@ export default function CultureKiteWebsite() {
 
 
 
-      <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        CULTURE KITE provides modern HR services, manpower staffing,
-        payroll management, and workforce solutions designed to help
-        businesses scale faster with confidence.
-      </p>
+      <div className="flex gap-4">
 
-      <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
         <a
           href="https://wa.me/919500038959"
           target="_blank"
-          className="bg-[#123A8D] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1F84D7]"
+          className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
         >
           Talk To Our Team
         </a>
 
         <a
           href="#services"
-          className="border border-gray-300 px-8 py-4 rounded-full font-bold hover:bg-gray-100"
+          className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-6 py-3 rounded-xl font-semibold"
         >
           Workforce Solutions
         </a>
+
       </div>
 
       <section
         id="home"
         className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
       >
-        <div className="absolute inset-0 z-0 flex flex-col items-center justify-center opacity-[0.12] pointer-events-none">
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
           <div className="flex flex-col items-center">
 
             <div className="relative w-16 h-16">
@@ -134,7 +130,7 @@ export default function CultureKiteWebsite() {
             <p className="text-sm text-gray-600">Trusted Workforce Partner Since 2025</p>
           </div>
 
-          <h1 className="text-[80px] md:text-[140px] font-black tracking-[0.15em] text-[#123A8D]/40">
+          <h1 className="text-6xl md:text-8xl font-black tracking-[0.15em] text-gray-900">
             CULTURE KITE
           </h1>
 
@@ -484,7 +480,7 @@ export default function CultureKiteWebsite() {
 
         </div>
       </section>
-      {/* Glow Removed for Test */}
+
       {/* Contact */}
       <section id="contact" className="px-8 md:px-20 py-24 bg-white/[0.03]">
         <div className="grid md:grid-cols-2 gap-16 items-center">

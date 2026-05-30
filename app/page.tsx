@@ -252,7 +252,7 @@ export default function CultureKiteWebsite() {
             { name: "logistics", link: "/services/logistics" },
             { name: "manufacturing", link: "/services/manufacturing" },
             { name: "e-commerce", link: "/services/e-commerce" },
-            { name: "fm teams", link: "/services/fm teams" },
+            { name: "fm teams", link: "/services/fm-teams" },
           ].map((service) => (
 
             <a

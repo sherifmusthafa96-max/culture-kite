@@ -114,7 +114,7 @@ export default function CultureKiteWebsite() {
         id="home"
         className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
       >
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+        <div className="absolute inset-0 z-0 flex flex-col items-center justify-center opacity-[0.12] pointer-events-none">
           <div className="flex flex-col items-center">
 
             <div className="relative w-16 h-16">
@@ -134,7 +134,7 @@ export default function CultureKiteWebsite() {
             <p className="text-sm text-gray-600">Trusted Workforce Partner Since 2025</p>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black tracking-[0.15em] text-gray-900">
+          <h1 className="text-[80px] md:text-[140px] font-black tracking-[0.15em] text-[#123A8D]/40">
             CULTURE KITE
           </h1>
 
@@ -484,7 +484,7 @@ export default function CultureKiteWebsite() {
 
         </div>
       </section>
-
+      {/* Glow Removed for Test */}
       {/* Contact */}
       <section id="contact" className="px-8 md:px-20 py-24 bg-white/[0.03]">
         <div className="grid md:grid-cols-2 gap-16 items-center">

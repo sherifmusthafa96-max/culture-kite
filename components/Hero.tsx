@@ -1,14 +1,21 @@
 <section
   id="home"
-  className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
+  className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
 >
-  {/* Background Logo */}
-  <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none">
-    <h1 className="text-[120px] md:text-[220px] font-black tracking-[0.25em] text-gray-200">
-      <div className="w-4 h-4 bg-[#5AD5D7] rotate-45"></div>
+
+  {/* Watermark */}
+  <div className="absolute inset-0 z-0 flex flex-col items-center justify-center opacity-[0.12] pointer-events-none">
+    <h1 className="text-[80px] md:text-[140px] font-black tracking-[0.15em] text-[#123A8D]/40">
       CULTURE KITE
     </h1>
   </div>
+
+  {/* Actual Content */}
+  <div className="relative z-10 max-w-5xl">
+
+  </div>
+
+
 
   <div className="relative z-10 text-center px-6">
     <img

@@ -57,10 +57,14 @@ export default function CultureKiteWebsite() {
 
         <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
 
-          <div className="text-2xl font-black tracking-widest text-[#5AD5D7]">
-            CULTURE KITE
-          </div>
+          <div className="flex items-center gap-3">
+            <div className="w-5 h-5 bg-[#5AD5D7] rotate-45"></div>
 
+            <div className="text-2xl font-black tracking-widest text-[#5AD5D7]">
+              <div className="w-4 h-4 bg-[#5AD5D7] rotate-45"></div>
+              CULTURE KITE
+            </div>
+          </div>
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -578,7 +582,7 @@ export default function CultureKiteWebsite() {
 
       {/* Footer */}
       <footer className="relative z-50 border-t border-gray-200 bg-white py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-
+        <div className="w-4 h-4 bg-[#5AD5D7] rotate-45"></div>
         <p>© 2026 CULTURE KITE. All Rights Reserved.</p>
 
         <div className="flex gap-4 mt-4 md:mt-0">

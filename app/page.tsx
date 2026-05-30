@@ -87,43 +87,49 @@ export default function CultureKiteWebsite() {
 
 
 
-      <div className="flex gap-4">
+      <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+        CULTURE KITE provides modern HR services, manpower staffing,
+        payroll management, and workforce solutions designed to help
+        businesses scale faster with confidence.
+      </p>
 
+      <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
         <a
           href="https://wa.me/919500038959"
           target="_blank"
-          className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
+          className="bg-[#123A8D] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1F84D7]"
         >
           Talk To Our Team
         </a>
 
         <a
           href="#services"
-          className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-6 py-3 rounded-xl font-semibold"
+          className="border border-gray-300 px-8 py-4 rounded-full font-bold hover:bg-gray-100"
         >
           Workforce Solutions
         </a>
-
       </div>
-
       <section
         id="home"
         className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
       >
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
-          <div className="flex flex-col items-center">
 
-            <div className="relative w-16 h-16">
-              <div className="absolute inset-0 border-4 border-[#123A8D]/30 rotate-45 rounded-md"></div>
-              <div className="absolute inset-3 border-4 border-[#5AD5D7]/30 rotate-45 rounded-md"></div>
-            </div>
+        {/* WATERMARK PASTE HERE */}
 
-            <h1 className="mt-8 text-[60px] md:text-[110px] font-black tracking-[0.18em] text-[#123A8D]/20">
-              CULTURE KITE
-            </h1>
+        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-[0.08] pointer-events-none">
 
+          {/* Premium Kite Logo */}
+          <div className="relative w-12 h-12 md:w-16 md:h-16 mb-5">
+            <div className="absolute inset-0 border-[3px] border-[#123A8D] rotate-45 rounded-sm"></div>
+            <div className="absolute inset-2 border-[3px] border-[#5AD5D7] rotate-45 rounded-sm"></div>
           </div>
+
+          <h1 className="text-[55px] md:text-[90px] font-black tracking-[0.18em] text-[#123A8D]">
+            CULTURE KITE
+          </h1>
+
         </div>
+
         <div className="relative z-10 max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-white/5 mb-8 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>

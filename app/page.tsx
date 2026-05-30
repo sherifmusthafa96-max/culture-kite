@@ -128,12 +128,20 @@ export default function CultureKiteWebsite() {
         id="home"
         className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
       >
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] pointer-events-none">
-          <h1 className="text-[120px] md:text-[220px] font-black tracking-[0.25em] text-gray-300">
-            CULTURE KITE
-          </h1>
-        </div>
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+          <div className="flex flex-col items-center">
 
+            <div className="relative w-16 h-16">
+              <div className="absolute inset-0 border-4 border-[#123A8D]/30 rotate-45 rounded-md"></div>
+              <div className="absolute inset-3 border-4 border-[#5AD5D7]/30 rotate-45 rounded-md"></div>
+            </div>
+
+            <h1 className="mt-8 text-[60px] md:text-[110px] font-black tracking-[0.18em] text-[#123A8D]/20">
+              CULTURE KITE
+            </h1>
+
+          </div>
+        </div>
         <div className="relative z-10 max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-white/5 mb-8 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>

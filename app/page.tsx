@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import Chatbot from "@/components/Chatbot";
+import Image from "next/image";
 export default function CultureKiteWebsite() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {

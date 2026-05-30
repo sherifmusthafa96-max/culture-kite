@@ -18,10 +18,15 @@
       className="mx-auto w-48 mb-8"
     />
 
-    <h1 className="text-7xl font-extrabold text-[#123A8D]">
-      CULTURE KITE
-    </h1>
+    <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.12] animate-watermark z-0">
 
+      <img
+        src="/culture-kite-logo.png"
+        alt="Culture Kite Logo"
+        className="w-[450px] md:w-[700px]"
+      />
+
+    </div>
     <p className="text-2xl mt-4 text-sky-500 font-semibold">
       HR Solutions Private Limited
     </p>

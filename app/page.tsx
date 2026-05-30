@@ -249,10 +249,10 @@ export default function CultureKiteWebsite() {
         <div className="grid md:grid-cols-4 gap-8">
 
           {[
-            { name: "logistics", link: "/services/logistics" },
-            { name: "manufacturing", link: "/services/manufacturing" },
-            { name: "e-commerce", link: "/services/e-commerce" },
-            { name: "fm teams", link: "/services/fm-teams" },
+            { name: "logistics", link: "/Services/logistics" },
+            { name: "manufacturing", link: "/Services/manufacturing" },
+            { name: "e-commerce", link: "/Services/e-commerce" },
+            { name: "fm-teams", link: "/Services/fm-teams" },
           ].map((service) => (
 
             <a

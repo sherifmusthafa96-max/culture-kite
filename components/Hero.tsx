@@ -2,14 +2,6 @@
   id="home"
   className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
 >
-  {/* Background Logo */}
-  <div className="absolute inset-0 flex items-center justify-center opacity-[0.03]">
-    <img
-      src="/logo.png"
-      alt="Culture Kite"
-      className="w-[800px]"
-    />
-  </div>
 
   <div className="relative z-10 text-center px-6">
     <img
@@ -18,12 +10,12 @@
       className="mx-auto w-48 mb-8"
     />
 
-    <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.12] animate-watermark z-0">
+    <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.18] animate-watermark z-0">
 
       <img
         src="/culture-kite-logo.png"
         alt="Culture Kite Logo"
-        className="w-[450px] md:w-[700px]"
+        className="w-[550px] md:w-[850px] h-auto"
       />
 
     </div>

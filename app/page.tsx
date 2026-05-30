@@ -13,14 +13,14 @@ useEffect(() => {
 
 if (loading) {
   return (
-    <div className="h-screen w-full bg-[#06152B] flex flex-col items-center justify-center text-white">
+    <div className="h-screen w-full bg-whiteflex-col items-center justify-center text-white">
       <div className="w-24 h-24 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
 
       <h1 className="mt-8 text-4xl font-bold tracking-widest text-[#5AD5D7]">
         CULTURE KITE
       </h1>
 
-      <p className="mt-4 text-gray-400">
+      <p className="mt-4 text-gray-500">
         Building the Future of
       </p>
 
@@ -28,7 +28,7 @@ if (loading) {
         Workforce & HR Solutions
       </p>
 
-      <p className="mt-8 text-xl text-gray-300 max-w-3xl leading-9 text-center px-4">
+      <p className="mt-8 text-xl text-gray-600 max-w-3xl leading-9 text-center px-4">
         CULTURE KITE delivers professional manpower, recruitment,
         warehouse staffing, delivery workforce, industrial staffing,
         and HR solutions across Tamil Nadu.
@@ -38,11 +38,11 @@ if (loading) {
 }
 
 return (
-  <div className="min-h-screen bg-[#06152B] text-white font-sans overflow-hidden relative">
+  <div className="min-h-screen bg-white text-gray-900 font-sans overflow-hidden relative">
 
     {/* Floating Brand */}
     <div className="fixed bottom-8 left-8 z-50">
-      <div className="bg-[#123A8D]/90 backdrop-blur-xl px-5 py-3 rounded-full border border-[#5AD5D7]/40 shadow-2xl">
+      <div className="bg-white px-5 py-3 rounded-full border border-gray-200 shadow-lg">
         <span className="text-[#5AD5D7] font-extrabold tracking-widest">
           CULTURE KITE
         </span>
@@ -50,14 +50,10 @@ return (
     </div>
 
     {/* Animated Background Glow */}
-   
-<div className="absolute top-0 left-0 w-[500px] h-[500px] bg-[#5AD5D7]/30 rounded-full blur-[120px]"></div>
-
-<div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#5AD5D7]/10 rounded-full blur-[120px]"></div>
 
       {/* Navbar */}
 
-      <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#123A8D]/70 border-b border-white/10">
+      <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
      
       <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
 
@@ -65,7 +61,7 @@ return (
       CULTURE KITE
     </div>
 
-    <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+    <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#services">Services</a>
@@ -84,7 +80,7 @@ return (
   </div>
 </nav>
 
-        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
+        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
   <a href="#home" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
 >Home</a>
   <a href="#about" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
@@ -97,7 +93,7 @@ return (
 >Contact</a>
 </div>
 
-<div className="text-3xl font-extrabold tracking-widest text-white">
+<div className="text-3xl font-extrabold tracking-widest text-gray-900/10">
   ☰
 </div>
 
@@ -134,10 +130,10 @@ return (
         <div className="relative z-10 max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-white/5 mb-8 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-            <p className="text-sm text-gray-300">Trusted Workforce Partner Since 2025</p>
+            <p className="text-sm text-gray-600">Trusted Workforce Partner Since 2025</p>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black tracking-[0.15em] text-white">
+          <h1 className="text-6xl md:text-8xl font-black tracking-[0.15em] text-gray-900">
   CULTURE KITE
 </h1>
 
@@ -145,11 +141,11 @@ return (
   HR Solutions • Workforce Management • Recruitment
 </p>
 
-<p className="mt-4 text-lg text-gray-400">
+<p className="mt-4 text-lg text-gray-500">
   Trusted Workforce Partner Across Tamil Nadu
 </p>
 
-          <p className="mt-8 text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             CULTURE KITE provides modern HR services, manpower staffing, payroll management,
             and workforce solutions designed to help businesses scale faster with confidence.
           </p>
@@ -185,7 +181,7 @@ return (
             className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:scale-105 hover:border-blue-400/40 hover:bg-[#123A8D]/20 transition-all duration-300 shadow-lg shadow-black/20"
           >
             <h2 className="text-4xl font-bold text-[#5AD5D7]">{num}</h2>
-            <p className="mt-3 text-gray-300">{label}</p>
+            <p className="mt-3 text-gray-600">{label}</p>
           </div>
         ))}
       </section>
@@ -197,37 +193,37 @@ return (
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
               About <span className="text-[#5AD5D7]">CULTURE KITE</span>
             </h2>
-            <p className="text-gray-300 leading-relaxed text-lg">
+            <p className="text-gray-600 leading-relaxed text-lg">
               We are a premium manpower and HR solutions company helping businesses build
               reliable teams through modern staffing strategies, recruitment solutions,
               and workforce management.
             </p>
 
-            <p className="mt-6 text-gray-400 leading-relaxed">
+            <p className="mt-6 text-gray-500 leading-relaxed">
               Our mission is to connect the right talent with the right opportunity while
               delivering seamless workforce solutions for businesses across industries.
             </p>
           </div>
 
-          <div className="bg-gradient-to-br from-blue-500/20 to-blue-900/10 border border-white/10 rounded-[32px] p-10 backdrop-blur-xl shadow-2xl shadow-blue-500/10">
+          <div className="bg-white border border-gray-200 rounded-[32px] p-10 shadow-xl">
             <div className="space-y-6">
-              <div className="bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div className="bg-gray-50 p-5 rounded-2xl border border-gray-200">
                 <h3 className="text-xl font-semibold">Smart Recruitment</h3>
-                <p className="text-gray-400 mt-2">
+                <p className="text-gray-500 mt-2">
                   Fast and reliable staffing solutions for modern businesses.
                 </p>
               </div>
 
-              <div className="bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div className="bg-gray-50 p-5 rounded-2xl border border-gray-200">
                 <h3 className="text-xl font-semibold">Corporate HR Services</h3>
-                <p className="text-gray-400 mt-2">
+                <p className="text-gray-500 mt-2">
                   Professional HR operations, payroll, and employee support.
                 </p>
               </div>
 
-              <div className="bg-white/5 p-5 rounded-2xl border border-white/10">
+              <div className="bg-gray-50 p-5 rounded-2xl border border-gray-200">
                 <h3 className="text-xl font-semibold">Scalable Workforce</h3>
-                <p className="text-gray-400 mt-2">
+                <p className="text-gray-500 mt-2">
                   Build flexible teams for growth-oriented companies.
                 </p>
               </div>
@@ -242,7 +238,7 @@ return (
           <h2 className="text-5xl font-bold">
             Our <span className="text-[#5AD5D7]">Services</span>
           </h2>
-          <p className="text-gray-400 mt-5 max-w-2xl mx-auto text-lg">
+          <p className="text-gray-500 mt-5 max-w-2xl mx-auto text-lg">
             Advanced workforce and HR services designed to simplify hiring and operations.
           </p>
         </div>
@@ -263,13 +259,13 @@ return (
           ].map((service) => (
             <div
               key={service}
-              className="bg-[#123A8D]/20 backdrop-blur-xl border border-[#5AD5D7]/20 shadow-2xl shadow-black/20 p-8 rounded-3xl hover:border-blue-400/40 hover:-translate-y-2 transition-all duration-300 shadow-xl"
+              className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
             >
               <div className="w-14 h-14 rounded-2xl bg-[#5AD5D7]/20 flex items-center justify-center text-[#5AD5D7] text-2xl mb-6">
                 ✦
               </div>
               <h3 className="text-2xl font-semibold">{service}</h3>
-              <p className="mt-4 text-gray-400 leading-relaxed">
+              <p className="mt-4 text-gray-500 leading-relaxed">
                 Premium workforce solutions tailored for growing businesses and enterprises.
               </p>
             </div>
@@ -284,7 +280,7 @@ return (
       Trusted <span className="text-[#5AD5D7]">Clients</span>
     </h2>
 
-<p className="text-gray-400 mt-5 text-lg">
+<p className="text-gray-500 mt-5 text-lg">
   Companies powered by <span className="text-[#5AD5D7]">CULTURE KITE</span> workforce solutions.
 </p>
 
@@ -329,7 +325,7 @@ return (
     </h2>
 
 
-<p className="text-gray-400 mt-5 text-lg">
+<p className="text-gray-500 mt-5 text-lg">
   Explore the latest workforce opportunities available through <span className="text-[#5AD5D7]">CULTURE KITE</span>.
 </p>
 
@@ -409,27 +405,27 @@ return (
 ].map((job, index) => (
   <div
     key={index}
-    className="bg-[#123A8D]/20 backdrop-blur-xl border border-[#5AD5D7]/20 shadow-2xl shadow-black/20 p-8 rounded-3xl hover:border-blue-400/40 transition-all duration-300"
+    className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
   >
 
     <h3 className="text-2xl font-bold text-[#5AD5D7]">
       {job.role}
     </h3>
 
-    <p className="mt-4 text-gray-300">
+    <p className="mt-4 text-gray-500">
       <strong>Company:</strong> {job.company}
     </p>
 
-    <p className="mt-2 text-gray-400">
+    <p className="mt-2 text-gray-500">
       <strong>Location:</strong> {job.location}
     </p>
 
     <div className="mt-6">
-      <label className="block text-sm text-gray-400 mb-2">
+      <label className="block text-sm text-gray-600 mb-2">
         Select Preferred Location
       </label>
 
-      <select className="w-full bg-[#123A8D]/20 border border-white/10 rounded-xl px-4 py-3 text-white outline-none">
+      <select className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none">
         <option>Choose Location</option>
         <option>Chennai</option>
         <option>Coimbatore</option>
@@ -460,23 +456,23 @@ return (
             Apply now and grow your career with CULTURE KITE.
           </p>
 
-          <div className="mt-10 max-w-2xl mx-auto bg-[#123A8D]/20 backdrop-blur-xl border border-white/10 rounded-3xl p-8 space-y-5">
+          <div className="mt-10 max-w-2xl mx-auto bg-white border border-gray-200 shadow-lg rounded-3xl p-8 space-y-5"> 
 
 <input
  type="text"
  placeholder="Full Name"
- className="w-full px-5 py-4 rounded-xl bg-[#123A8D]/20 border border-white/10 outline-none"
+ className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
 />
 
 <input
  type="tel"
  placeholder="Phone Number"
- className="w-full px-5 py-4 rounded-xl bg-[#123A8D]/20 border border-white/10 outline-none"
+ className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
 />
 
 <input
  type="file"
- className="w-full px-5 py-4 rounded-xl bg-[#123A8D]/20 border border-white/10 outline-none"
+ className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
 />
 
   <button className="w-full bg-[#123A8D] text-white hover:bg-[#1F84D7] transition py-4 rounded-xl font-bold text-lg">
@@ -497,27 +493,27 @@ return (
               <span className="text-[#5AD5D7]"> Workforce Together</span>
             </h2>
 
-            <p className="mt-6 text-gray-400 text-lg leading-relaxed">
+            <p className="mt-6 text-gray-500 text-lg leading-relaxed">
               Contact CULTURE KITE today for premium HR services, manpower staffing,
               and business workforce solutions.
             </p>
           </div>
 
-          <div className="bg-[#123A8D]/20 backdrop-blur-xl border border-[#5AD5D7]/20 shadow-2xl shadow-black/20 p-10 rounded-[32px]">
+          <div className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="space-y-5">
               <input
                 type="text"
                 placeholder="Your Name"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
+                className="w-full bg-white border border-gray-300 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
               />
 
               <input
                 type="email"
                 placeholder="Email Address"
-                className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
+                className="w-full bg-white/5 border border-gray-300 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
               />
 
-              <div className="space-y-5 text-gray-300 text-lg">
+              <div className="space-y-5 text-gray-600 text-lg">
   <p>
     <strong>WhatsApp:</strong><br />
     9500038959 / 9500038944 / 9500038909
@@ -581,7 +577,7 @@ return (
       </section>
 
       {/* Footer */}
-      <footer className="relative z-50 border-t border-white/10 py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-400 text-sm">
+      <footer className="relative z-50 border-t border-gray-200 bg-white py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
 
         <p>© 2026 CULTURE KITE. All Rights Reserved.</p>
 

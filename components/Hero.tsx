@@ -3,13 +3,11 @@
   className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
 >
   {/* Background Logo */}
-  <div className="absolute inset-0 flex items-center justify-center opacity-5">
-    <img
-      src="/logo.png"
-      alt="Culture Kite"
-      className="w-[800px]"
-    />
-  </div>
+  <div className="absolute inset-0 flex items-center justify-center opacity-[0.04] pointer-events-none">
+  <h1 className="text-[120px] md:text-[220px] font-black tracking-[0.25em] text-gray-200">
+    CULTURE KITE
+  </h1>
+</div>
 
   <div className="relative z-10 text-center px-6">
     <img

@@ -2,130 +2,130 @@
 import { useEffect, useState } from "react";
 import Chatbot from "@/components/Chatbot";
 export default function CultureKiteWebsite() {
-const [loading, setLoading] = useState(true);
-useEffect(() => {
-  const timer = setTimeout(() => {
-    setLoading(false);
-  }, 2500);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 2500);
 
-  return () => clearTimeout(timer);
-}, []);
+    return () => clearTimeout(timer);
+  }, []);
 
-if (loading) {
-  return (
-    <div className="h-screen w-full bg-whiteflex-col items-center justify-center text-white">
-      <div className="w-24 h-24 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
+  if (loading) {
+    return (
+      <div className="h-screen w-full bg-whiteflex-col items-center justify-center text-white">
+        <div className="w-24 h-24 border-4 border-blue-400 border-t-transparent rounded-full animate-spin"></div>
 
-      <h1 className="mt-8 text-4xl font-bold tracking-widest text-[#5AD5D7]">
-        CULTURE KITE
-      </h1>
-
-      <p className="mt-4 text-gray-500">
-        Building the Future of
-      </p>
-
-      <p className="text-[#5AD5D7]">
-        Workforce & HR Solutions
-      </p>
-
-      <p className="mt-8 text-xl text-gray-600 max-w-3xl leading-9 text-center px-4">
-        CULTURE KITE delivers professional manpower, recruitment,
-        warehouse staffing, delivery workforce, industrial staffing,
-        and HR solutions across Tamil Nadu.
-      </p>
-    </div>
-  );
-}
-
-return (
-  <div className="min-h-screen bg-white text-gray-900 font-sans overflow-hidden relative">
-
-    {/* Floating Brand */}
-    <div className="fixed bottom-8 left-8 z-50">
-      <div className="bg-white px-5 py-3 rounded-full border border-gray-200 shadow-lg">
-        <span className="text-[#5AD5D7] font-extrabold tracking-widest">
+        <h1 className="mt-8 text-4xl font-bold tracking-widest text-[#5AD5D7]">
           CULTURE KITE
-        </span>
-      </div>
-    </div>
+        </h1>
 
-    {/* Animated Background Glow */}
+        <p className="mt-4 text-gray-500">
+          Building the Future of
+        </p>
+
+        <p className="text-[#5AD5D7]">
+          Workforce & HR Solutions
+        </p>
+
+        <p className="mt-8 text-xl text-gray-600 max-w-3xl leading-9 text-center px-4">
+          CULTURE KITE delivers professional manpower, recruitment,
+          warehouse staffing, delivery workforce, industrial staffing,
+          and HR solutions across Tamil Nadu.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-hidden relative">
+
+      {/* Floating Brand */}
+      <div className="fixed bottom-8 left-8 z-50">
+        <div className="bg-white px-5 py-3 rounded-full border border-gray-200 shadow-lg">
+          <span className="text-[#5AD5D7] font-extrabold tracking-widest">
+            CULTURE KITE
+          </span>
+        </div>
+      </div>
+
+      {/* Animated Background Glow */}
 
       {/* Navbar */}
 
       <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200 shadow-sm">
-     
-      <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
 
-    <div className="text-2xl font-black tracking-widest text-[#5AD5D7]">
-      CULTURE KITE
-    </div>
+        <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
 
-    <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-      <a href="#home">Home</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#careers">Careers</a>
-      <a href="#contact">Contact</a>
-    </div>
+          <div className="text-2xl font-black tracking-widest text-[#5AD5D7]">
+            CULTURE KITE
+          </div>
 
-    <a
-      href="https://wa.me/919500038959"
-      target="_blank"
-      className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-5 py-2 rounded-xl font-semibold"
-    >
-      Contact Us
-    </a>
+          <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#careers">Careers</a>
+            <a href="#contact">Contact</a>
+          </div>
 
-  </div>
-</nav>
+          <a
+            href="https://wa.me/919500038959"
+            target="_blank"
+            className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-5 py-2 rounded-xl font-semibold"
+          >
+            Contact Us
+          </a>
 
-        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-  <a href="#home" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
->Home</a>
-  <a href="#about" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
->About</a>
-  <a href="#services" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
->Services</a>
-  <a href="#careers" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
->Careers</a>
-  <a href="#contact" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
->Contact</a>
-</div>
+        </div>
+      </nav>
 
-<div className="text-3xl font-extrabold tracking-widest text-gray-900/10">
-  ☰
-</div>
+      <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+        <a href="#home" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
+        >Home</a>
+        <a href="#about" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
+        >About</a>
+        <a href="#services" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
+        >Services</a>
+        <a href="#careers" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
+        >Careers</a>
+        <a href="#contact" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
+        >Contact</a>
+      </div>
+
+      <div className="text-3xl font-extrabold tracking-widest text-gray-900/10">
+        ☰
+      </div>
 
 
-<div className="flex gap-4">
+      <div className="flex gap-4">
 
-  <a
-    href="https://wa.me/919500038959"
-    target="_blank"
-    className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
-  >
-    Talk To Our Team
-  </a>
+        <a
+          href="https://wa.me/919500038959"
+          target="_blank"
+          className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
+        >
+          Talk To Our Team
+        </a>
 
-  <a
-    href="#services"
-    className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-6 py-3 rounded-xl font-semibold"
-  >
-    Workforce Solutions
-  </a>
+        <a
+          href="#services"
+          className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-6 py-3 rounded-xl font-semibold"
+        >
+          Workforce Solutions
+        </a>
 
-</div>
+      </div>
 
-<section
-  id="home"
-  className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
->
-        <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none">
-  <h1 className="text-[120px] md:text-[220px] font-black tracking-[0.25em] text-white">
-    CULTURE KITE
-  </h1>
-</div>
+      <section
+        id="home"
+        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
+      >
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.08] pointer-events-none">
+          <h1 className="text-[120px] md:text-[220px] font-black tracking-[0.25em] text-gray-300">
+            CULTURE KITE
+          </h1>
+        </div>
 
         <div className="relative z-10 max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-white/5 mb-8 backdrop-blur-md">
@@ -134,16 +134,16 @@ return (
           </div>
 
           <h1 className="text-6xl md:text-8xl font-black tracking-[0.15em] text-gray-900">
-  CULTURE KITE
-</h1>
+            CULTURE KITE
+          </h1>
 
-<p className="mt-6 text-2xl text-[#5AD5D7] font-semibold">
-  HR Solutions • Workforce Management • Recruitment
-</p>
+          <p className="mt-6 text-2xl text-[#5AD5D7] font-semibold">
+            HR Solutions • Workforce Management • Recruitment
+          </p>
 
-<p className="mt-4 text-lg text-gray-500">
-  Trusted Workforce Partner Across Tamil Nadu
-</p>
+          <p className="mt-4 text-lg text-gray-500">
+            Trusted Workforce Partner Across Tamil Nadu
+          </p>
 
           <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             CULTURE KITE provides modern HR services, manpower staffing, payroll management,
@@ -151,20 +151,20 @@ return (
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
-  <a
-    href="#services"
-    className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
-  >
-    Hire Employees
-  </a>
+            <a
+              href="#services"
+              className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
+            >
+              Hire Employees
+            </a>
 
-  <a
-    href="#careers"
-    className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block text-center"
-  >
-    Apply for Jobs
-  </a>
-</div>
+            <a
+              href="#careers"
+              className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block text-center"
+            >
+              Apply for Jobs
+            </a>
+          </div>
         </div>
       </section>
 
@@ -172,9 +172,9 @@ return (
       <section className="grid grid-cols-2 md:grid-cols-4 gap-6 px-8 md:px-20 py-12">
         {[
           ["0 → 5000+", "Candidates Placed"],
-["0 → 120+", "Business Clients"],
-["24/7", "HR Support"],
-["PAN India", "Operations"],
+          ["0 → 120+", "Business Clients"],
+          ["24/7", "HR Support"],
+          ["PAN India", "Operations"],
         ].map(([num, label]) => (
           <div
             key={label}
@@ -272,180 +272,180 @@ return (
           ))}
         </div>
       </section>
-{/* Clients Section */}
+      {/* Clients Section */}
 
-<section className="px-8 md:px-20 py-24 bg-white/[0.02]">
-  <div className="text-center mb-16">
-    <h2 className="text-5xl font-bold">
-      Trusted <span className="text-[#5AD5D7]">Clients</span>
-    </h2>
+      <section className="px-8 md:px-20 py-24 bg-white/[0.02]">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold">
+            Trusted <span className="text-[#5AD5D7]">Clients</span>
+          </h2>
 
-<p className="text-gray-500 mt-5 text-lg">
-  Companies powered by <span className="text-[#5AD5D7]">CULTURE KITE</span> workforce solutions.
-</p>
+          <p className="text-gray-500 mt-5 text-lg">
+            Companies powered by <span className="text-[#5AD5D7]">CULTURE KITE</span> workforce solutions.
+          </p>
 
-  </div>
+        </div>
 
-  <div className="overflow-hidden relative">
-  <div className="flex gap-10 whitespace-nowrap animate-marquee text-3xl font-bold text-[#5AD5D7]">
+        <div className="overflow-hidden relative">
+          <div className="flex gap-10 whitespace-nowrap animate-marquee text-3xl font-bold text-[#5AD5D7]">
 
-    <span>FIRSTCRY</span>
-    <span>ABT</span>
-    <span>FLIPKART</span>
-    <span>MEESHO</span>
-    <span>EMERALD</span>
-    <span>INDOSHELL</span>
-    <span>PURPLE</span>
-    <span>UNIQUE SHELL</span>
+            <span>FIRSTCRY</span>
+            <span>ABT</span>
+            <span>FLIPKART</span>
+            <span>MEESHO</span>
+            <span>EMERALD</span>
+            <span>INDOSHELL</span>
+            <span>PURPLE</span>
+            <span>UNIQUE SHELL</span>
 
-    {/* Duplicate for smooth loop */}
+            {/* Duplicate for smooth loop */}
 
-    <span>FIRSTCRY</span>
-    <span>ABT</span>
-    <span>FLIPKART</span>
-    <span>MEESHO</span>
-    <span>EMERALD</span>
-    <span>INDOSHELL</span>
-    <span>PURPLE</span>
-    <span>UNIQUE SHELL</span>
+            <span>FIRSTCRY</span>
+            <span>ABT</span>
+            <span>FLIPKART</span>
+            <span>MEESHO</span>
+            <span>EMERALD</span>
+            <span>INDOSHELL</span>
+            <span>PURPLE</span>
+            <span>UNIQUE SHELL</span>
 
-  </div>
-</div>
+          </div>
+        </div>
 
-</section>
+      </section>
 
       {/* Job Openings Section */}
 
-{/* Job Openings Section */}
+      {/* Job Openings Section */}
 
-<section className="px-8 md:px-20 py-24">
-  <div className="text-center mb-16">
-    <h2 className="text-5xl font-bold">
-      Current <span className="text-[#5AD5D7]">Job Openings</span>
-    </h2>
-
-
-<p className="text-gray-500 mt-5 text-lg">
-  Explore the latest workforce opportunities available through <span className="text-[#5AD5D7]">CULTURE KITE</span>.
-</p>
+      <section className="px-8 md:px-20 py-24">
+        <div className="text-center mb-16">
+          <h2 className="text-5xl font-bold">
+            Current <span className="text-[#5AD5D7]">Job Openings</span>
+          </h2>
 
 
-  </div>
+          <p className="text-gray-500 mt-5 text-lg">
+            Explore the latest workforce opportunities available through <span className="text-[#5AD5D7]">CULTURE KITE</span>.
+          </p>
 
-  <div className="grid md:grid-cols-2 gap-8">
+
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8">
 
 
-{[
-  {
-    company: "FirstCry",
-    role: "Delivery Riders",
-    location: "Chennai & Coimbatore",
-  },
+          {[
+            {
+              company: "FirstCry",
+              role: "Delivery Riders",
+              location: "Chennai & Coimbatore",
+            },
 
-  {
-    company: "FirstCry",
-    role: "Picking, Packing, Loading & Unloading",
-    location: "Chennai & Coimbatore",
-  },
+            {
+              company: "FirstCry",
+              role: "Picking, Packing, Loading & Unloading",
+              location: "Chennai & Coimbatore",
+            },
 
-  {
-    company: "FirstCry",
-    role: "Supervisors",
-    location: "Chennai & Coimbatore",
-  },
+            {
+              company: "FirstCry",
+              role: "Supervisors",
+              location: "Chennai & Coimbatore",
+            },
 
-  {
-    company: "Shree Maruthi",
-    role: "Delivery Riders",
-    location: "Chennai",
-  },
+            {
+              company: "Shree Maruthi",
+              role: "Delivery Riders",
+              location: "Chennai",
+            },
 
-  {
-    company: "ABT",
-    role: "Loader & Unloader",
-    location: "All Over Tamil Nadu",
-  },
+            {
+              company: "ABT",
+              role: "Loader & Unloader",
+              location: "All Over Tamil Nadu",
+            },
 
-  {
-    company: "Meesho",
-    role: "Warehouse Staff",
-    location: "Chennai",
-  },
+            {
+              company: "Meesho",
+              role: "Warehouse Staff",
+              location: "Chennai",
+            },
 
-  {
-    company: "Purple",
-    role: "Warehouse Associates",
-    location: "Coimbatore",
-  },
+            {
+              company: "Purple",
+              role: "Warehouse Associates",
+              location: "Coimbatore",
+            },
 
-  {
-    company: "Unique Shell",
-    role: "Quality Inspection & Packing",
-    location: "Coimbatore",
-  },
+            {
+              company: "Unique Shell",
+              role: "Quality Inspection & Packing",
+              location: "Coimbatore",
+            },
 
-  {
-    company: "Emerald",
-    role: "House Keeping",
-    location: "Coimbatore",
-  },
+            {
+              company: "Emerald",
+              role: "House Keeping",
+              location: "Coimbatore",
+            },
 
-  {
-    company: "Flipkart",
-    role: "Warehouse & Delivery Staff",
-    location: "Coimbatore",
-  },
+            {
+              company: "Flipkart",
+              role: "Warehouse & Delivery Staff",
+              location: "Coimbatore",
+            },
 
-  {
-    company: "Indoshell",
-    role: "CNC Operator",
-    location: "Coimbatore",
-  },
+            {
+              company: "Indoshell",
+              role: "CNC Operator",
+              location: "Coimbatore",
+            },
 
-].map((job, index) => (
-  <div
-    key={index}
-    className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-  >
+          ].map((job, index) => (
+            <div
+              key={index}
+              className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+            >
 
-    <h3 className="text-2xl font-bold text-[#5AD5D7]">
-      {job.role}
-    </h3>
+              <h3 className="text-2xl font-bold text-[#5AD5D7]">
+                {job.role}
+              </h3>
 
-    <p className="mt-4 text-gray-500">
-      <strong>Company:</strong> {job.company}
-    </p>
+              <p className="mt-4 text-gray-500">
+                <strong>Company:</strong> {job.company}
+              </p>
 
-    <p className="mt-2 text-gray-500">
-      <strong>Location:</strong> {job.location}
-    </p>
+              <p className="mt-2 text-gray-500">
+                <strong>Location:</strong> {job.location}
+              </p>
 
-    <div className="mt-6">
-      <label className="block text-sm text-gray-600 mb-2">
-        Select Preferred Location
-      </label>
+              <div className="mt-6">
+                <label className="block text-sm text-gray-600 mb-2">
+                  Select Preferred Location
+                </label>
 
-      <select className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none">
-        <option>Choose Location</option>
-        <option>Chennai</option>
-        <option>Coimbatore</option>
-        <option>All Over Tamil Nadu</option>
-      </select>
-    </div>
+                <select className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none">
+                  <option>Choose Location</option>
+                  <option>Chennai</option>
+                  <option>Coimbatore</option>
+                  <option>All Over Tamil Nadu</option>
+                </select>
+              </div>
 
-    <a
-      href="https://wa.me/919500038959"
-      target="_blank"
-      className="inline-block mt-6 bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl font-semibold"
-    >
-      Apply Now
-    </a>
+              <a
+                href="https://wa.me/919500038959"
+                target="_blank"
+                className="inline-block mt-6 bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl font-semibold"
+              >
+                Apply Now
+              </a>
 
-  </div>
-))}
+            </div>
+          ))}
 
-  </div>
-</section>
+        </div>
+      </section>
 
       {/* Careers */}
       <section id="careers" className="px-8 md:px-20 py-24">
@@ -456,30 +456,30 @@ return (
             Apply now and grow your career with CULTURE KITE.
           </p>
 
-          <div className="mt-10 max-w-2xl mx-auto bg-white border border-gray-200 shadow-lg rounded-3xl p-8 space-y-5"> 
+          <div className="mt-10 max-w-2xl mx-auto bg-white border border-gray-200 shadow-lg rounded-3xl p-8 space-y-5">
 
-<input
- type="text"
- placeholder="Full Name"
- className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
-/>
+            <input
+              type="text"
+              placeholder="Full Name"
+              className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
+            />
 
-<input
- type="tel"
- placeholder="Phone Number"
- className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
-/>
+            <input
+              type="tel"
+              placeholder="Phone Number"
+              className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
+            />
 
-<input
- type="file"
- className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
-/>
+            <input
+              type="file"
+              className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
+            />
 
-  <button className="w-full bg-[#123A8D] text-white hover:bg-[#1F84D7] transition py-4 rounded-xl font-bold text-lg">
-    Upload Resume
-  </button>
+            <button className="w-full bg-[#123A8D] text-white hover:bg-[#1F84D7] transition py-4 rounded-xl font-bold text-lg">
+              Upload Resume
+            </button>
 
-</div>
+          </div>
 
         </div>
       </section>
@@ -514,61 +514,61 @@ return (
               />
 
               <div className="space-y-5 text-gray-600 text-lg">
-  <p>
-    <strong>WhatsApp:</strong><br />
-    9500038959 / 9500038944 / 9500038909
-  </p>
+                <p>
+                  <strong>WhatsApp:</strong><br />
+                  9500038959 / 9500038944 / 9500038909
+                </p>
 
-  <p>
-    <strong>Email:</strong><br />
-    <a
-  href="mailto:admin@culturekite.in"
-  className="text-[#5AD5D7] hover:text-blue-300"
->
-  admin@culturekite.in
-</a><br />
-    <a
-  href="mailto:mathan@culturekite.in"
-  className="text-[#5AD5D7] hover:text-blue-300"
->
-  mathan@culturekite.in
-</a><br />
-    <a
-  href="mailto:musthafa@culturekite.in"
-  className="text-[#5AD5D7] hover:text-blue-300"
->
-  musthafa@culturekite.in
-</a><br />
-    <a
-  href="mailto:aiswarya@culturekite.in"
-  className="text-[#5AD5D7] hover:text-blue-300"
->
-  aiswarya@culturekite.in
-</a>
-  </p>
+                <p>
+                  <strong>Email:</strong><br />
+                  <a
+                    href="mailto:admin@culturekite.in"
+                    className="text-[#5AD5D7] hover:text-blue-300"
+                  >
+                    admin@culturekite.in
+                  </a><br />
+                  <a
+                    href="mailto:mathan@culturekite.in"
+                    className="text-[#5AD5D7] hover:text-blue-300"
+                  >
+                    mathan@culturekite.in
+                  </a><br />
+                  <a
+                    href="mailto:musthafa@culturekite.in"
+                    className="text-[#5AD5D7] hover:text-blue-300"
+                  >
+                    musthafa@culturekite.in
+                  </a><br />
+                  <a
+                    href="mailto:aiswarya@culturekite.in"
+                    className="text-[#5AD5D7] hover:text-blue-300"
+                  >
+                    aiswarya@culturekite.in
+                  </a>
+                </p>
 
-  <p>
-    <strong>Registered Office:</strong><br />
-    No. 30F-A, Peon Colony,<br />
-    Eachanari, Coimbatore – 641021
-  </p>
+                <p>
+                  <strong>Registered Office:</strong><br />
+                  No. 30F-A, Peon Colony,<br />
+                  Eachanari, Coimbatore – 641021
+                </p>
 
-  <p>
-    <strong>Corporate Office:</strong><br />
-    No. 54, Chinnaiyan Chettiyar Street,<br />
-    Chettipalayam, Coimbatore – 641201
-  </p>
-</div>
-<div className="mt-8 rounded-3xl overflow-hidden border border-white/10">
-  <iframe
-  src="https://www.google.com/maps?q=Chettipalayam,Coimbatore&t=&z=13&ie=UTF8&iwloc=&output=embed"
-  width="100%"
-  height="300"
-  style={{ border: 0 }}
-  allowFullScreen={true}
-  loading="lazy"
-></iframe>
-</div>
+                <p>
+                  <strong>Corporate Office:</strong><br />
+                  No. 54, Chinnaiyan Chettiyar Street,<br />
+                  Chettipalayam, Coimbatore – 641201
+                </p>
+              </div>
+              <div className="mt-8 rounded-3xl overflow-hidden border border-white/10">
+                <iframe
+                  src="https://www.google.com/maps?q=Chettipalayam,Coimbatore&t=&z=13&ie=UTF8&iwloc=&output=embed"
+                  width="100%"
+                  height="300"
+                  style={{ border: 0 }}
+                  allowFullScreen={true}
+                  loading="lazy"
+                ></iframe>
+              </div>
 
 
             </div>
@@ -583,45 +583,45 @@ return (
 
         <div className="flex gap-4 mt-4 md:mt-0">
 
-<a
-href="https://wa.me/919500038901"
-target="_blank"
-rel="noopener noreferrer"
-className="bg-green-500 hover:bg-green-400 transition px-5 py-2 rounded-xl font-semibold text-white"
+          <a
+            href="https://wa.me/919500038901"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-green-500 hover:bg-green-400 transition px-5 py-2 rounded-xl font-semibold text-white"
 
->
+          >
 
-WhatsApp
+            WhatsApp
 
-  </a>
+          </a>
 
-<a
-href="mailto:admin@culturekite.in"
-className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-5 py-2 rounded-xl font-semibold text-white"
+          <a
+            href="mailto:admin@culturekite.in"
+            className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-5 py-2 rounded-xl font-semibold text-white"
 
->
+          >
 
-Email
+            Email
 
-  </a>
+          </a>
 
-</div>
+        </div>
 
 
         <a
-href="https://wa.me/919500038959"
-target="_blank"
-className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-40 transition animate-bounce"
+          href="https://wa.me/919500038959"
+          target="_blank"
+          className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl z-40 transition animate-bounce"
 
->
+        >
 
-💬 </a>
+          💬 </a>
 
- </footer>
+      </footer>
 
-<Chatbot />
+      <Chatbot />
 
-<style jsx global>{`
+      <style jsx global>{`
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -637,6 +637,6 @@ className="fixed bottom-6 right-6 bg-green-500 hover:bg-green-400 text-white w-1
 }
 `}</style>
 
-</div>
-);
+    </div>
+  );
 }

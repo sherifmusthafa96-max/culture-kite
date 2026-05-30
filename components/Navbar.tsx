@@ -1,4 +1,7 @@
-<div className="text-2xl font-black tracking-widest text-[#5AD5D7]">
-  <div className="w-4 h-4 bg-[#5AD5D7] rotate-45"></div>
-  CULTURE KITE
+<div className="flex items-center">
+  <img
+    src="/culture-kite-logo.png"
+    alt="Culture Kite"
+    className="h-14 md:h-16 w-auto"
+  />
 </div>

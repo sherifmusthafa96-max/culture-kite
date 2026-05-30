@@ -39,13 +39,12 @@ export default function CultureKiteWebsite() {
 
         <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
 
-          <div className="flex items-center gap-3">
-            <div className="w-5 h-5 bg-[#5AD5D7] rotate-45"></div>
-
-            <div className="text-2xl font-black tracking-widest text-[#5AD5D7]">
-              <div className="w-4 h-4 bg-[#5AD5D7] rotate-45"></div>
-              CULTURE KITE
-            </div>
+          <div className="flex items-center">
+            <img
+              src="/culture-kite-logo.png"
+              alt="Culture Kite"
+              className="h-14 md:h-16 w-auto"
+            />
           </div>
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
             <a href="#home">Home</a>
@@ -117,30 +116,26 @@ export default function CultureKiteWebsite() {
 
         {/* WATERMARK PASTE HERE */}
 
-        <div className="fixed inset-0 flex flex-col items-center justify-center pointer-events-none z-0 opacity-[0.15] animate-watermark">
+        <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.08] animate-watermark">
 
-          {/* Premium Kite Logo */}
-          <div className="relative w-12 h-12 md:w-16 md:h-16 mb-5">
-            <div className="absolute inset-0 border-[3px] border-[#123A8D] rotate-45 rounded-sm"></div>
-            <div className="absolute inset-2 border-[3px] border-[#5AD5D7] rotate-45 rounded-sm"></div>
-          </div>
-
-          <h1 className="text-[55px] md:text-[90px] font-black tracking-[0.18em] text-[#123A8D]">
-            CULTURE KITE
-          </h1>
+          <img
+            src="/culture-kite-logo.png"
+            alt="Culture Kite Watermark"
+            className="w-[700px] md:w-[1100px] h-auto"
+          />
 
         </div>
-
         <div className="relative z-10 max-w-5xl">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-white/5 mb-8 backdrop-blur-md">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
             <p className="text-sm text-gray-600">Trusted Workforce Partner Since 2025</p>
           </div>
 
-          <h1 className="text-6xl md:text-8xl font-black tracking-[0.15em] text-gray-900">
-            CULTURE KITE
-          </h1>
-
+          <img
+            src="/culture-kite-logo.png"
+            alt="Culture Kite"
+            className="mx-auto w-[400px] md:w-[650px] h-auto"
+          />
           <p className="mt-6 text-2xl text-[#5AD5D7] font-semibold">
             HR Solutions • Workforce Management • Recruitment
           </p>
@@ -191,6 +186,13 @@ export default function CultureKiteWebsite() {
       </section>
 
       {/* About */}
+      <div className="flex items-center gap-4 mb-6">
+        <img
+          src="/culture-kite-logo.png"
+          alt="Culture Kite"
+          className="h-14 w-auto"
+        />
+      </div>
       <section id="about" className="px-8 md:px-20 py-24">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
@@ -262,7 +264,11 @@ export default function CultureKiteWebsite() {
             >
 
               <div className="w-14 h-14 rounded-2xl bg-[#5AD5D7]/20 flex items-center justify-center text-[#5AD5D7] text-2xl mb-6">
-                ✦
+                <img
+                  src="/culture-kite-logo.png"
+                  alt="Culture Kite"
+                  className="w-10 h-10 object-contain"
+                />
               </div>
 
               <h3 className="text-2xl font-bold text-[#123A8D]">
@@ -321,140 +327,6 @@ export default function CultureKiteWebsite() {
         </div>
 
       </section>
-
-      {/* Job Openings Section */}
-
-      {/* Job Openings Section */}
-
-      <section className="px-8 md:px-20 py-24">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold">
-            Current <span className="text-[#5AD5D7]">Job Openings</span>
-          </h2>
-
-
-          <p className="text-gray-500 mt-5 text-lg">
-            Explore the latest workforce opportunities available through <span className="text-[#5AD5D7]">CULTURE KITE</span>.
-          </p>
-
-
-        </div>
-
-        <div className="grid md:grid-cols-2 gap-8">
-
-
-          {[
-            {
-              company: "FirstCry",
-              role: "Delivery Riders",
-              location: "Chennai & Coimbatore",
-            },
-
-            {
-              company: "FirstCry",
-              role: "Picking, Packing, Loading & Unloading",
-              location: "Chennai & Coimbatore",
-            },
-
-            {
-              company: "FirstCry",
-              role: "Supervisors",
-              location: "Chennai & Coimbatore",
-            },
-
-            {
-              company: "Shree Maruthi",
-              role: "Delivery Riders",
-              location: "Chennai",
-            },
-
-            {
-              company: "ABT",
-              role: "Loader & Unloader",
-              location: "All Over Tamil Nadu",
-            },
-
-            {
-              company: "Meesho",
-              role: "Warehouse Staff",
-              location: "Chennai",
-            },
-
-            {
-              company: "Purple",
-              role: "Warehouse Associates",
-              location: "Coimbatore",
-            },
-
-            {
-              company: "Unique Shell",
-              role: "Quality Inspection & Packing",
-              location: "Coimbatore",
-            },
-
-            {
-              company: "Emerald",
-              role: "House Keeping",
-              location: "Coimbatore",
-            },
-
-            {
-              company: "Flipkart",
-              role: "Warehouse & Delivery Staff",
-              location: "Coimbatore",
-            },
-
-            {
-              company: "Indoshell",
-              role: "CNC Operator",
-              location: "Coimbatore",
-            },
-
-          ].map((job, index) => (
-            <div
-              key={index}
-              className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
-            >
-
-              <h3 className="text-2xl font-bold text-[#5AD5D7]">
-                {job.role}
-              </h3>
-
-              <p className="mt-4 text-gray-500">
-                <strong>Company:</strong> {job.company}
-              </p>
-
-              <p className="mt-2 text-gray-500">
-                <strong>Location:</strong> {job.location}
-              </p>
-
-              <div className="mt-6">
-                <label className="block text-sm text-gray-600 mb-2">
-                  Select Preferred Location
-                </label>
-
-                <select className="w-full bg-white border border-gray-300 rounded-xl px-4 py-3 text-gray-900 outline-none">
-                  <option>Choose Location</option>
-                  <option>Chennai</option>
-                  <option>Coimbatore</option>
-                  <option>All Over Tamil Nadu</option>
-                </select>
-              </div>
-
-              <a
-                href="https://wa.me/919500038959"
-                target="_blank"
-                className="inline-block mt-6 bg-[#123A8D] text-white hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl font-semibold"
-              >
-                Apply Now
-              </a>
-
-            </div>
-          ))}
-
-        </div>
-      </section>
-
       {/* Careers */}
       <section id="careers" className="px-8 md:px-20 py-24">
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-[40px] p-12 md:p-16 text-center shadow-2xl shadow-blue-900/40">
@@ -586,7 +458,11 @@ export default function CultureKiteWebsite() {
 
       {/* Footer */}
       <footer className="relative z-50 border-t border-gray-200 bg-white py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
-        <div className="w-4 h-4 bg-[#5AD5D7] rotate-45"></div>
+        <img
+          src="/culture-kite-logo.png"
+          alt="Culture Kite"
+          className="h-12 w-auto"
+        />
         <p>© 2026 CULTURE KITE. All Rights Reserved.</p>
 
         <div className="flex gap-4 mt-4 md:mt-0">

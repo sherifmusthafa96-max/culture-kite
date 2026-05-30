@@ -56,6 +56,7 @@ return (
 <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#5AD5D7]/10 rounded-full blur-[120px]"></div>
 
       {/* Navbar */}
+
       <nav className="fixed top-0 left-0 right-0 z-50 backdrop-blur-xl bg-[#123A8D]/70 border-b border-white/10">
      
       <div className="max-w-7xl mx-auto px-8 py-5 flex items-center justify-between">
@@ -82,6 +83,7 @@ return (
 
   </div>
 </nav>
+
         <div className="hidden md:flex gap-8 text-sm font-medium text-gray-300">
   <a href="#home" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
 >Home</a>
@@ -100,40 +102,29 @@ return (
 </div>
 
 
-        <div className="flex gap-4">
+<div className="flex gap-4">
 
-<a
-href="https://wa.me/919500038959"
-target="_blank"
-className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
-
->
-
-
-Talk To Our Team
-
-
+  <a
+    href="https://wa.me/919500038959"
+    target="_blank"
+    className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl shadow-lg shadow-blue-600/30 font-semibold"
+  >
+    Talk To Our Team
   </a>
 
-<a
-href="#services"
-className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-6 py-3 rounded-xl font-semibold"
-
->
-
-
-Workforce Solutions
-
-
+  <a
+    href="#services"
+    className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-6 py-3 rounded-xl font-semibold"
+  >
+    Workforce Solutions
   </a>
 
 </div>
 
-      {/* Hero Section */}
-      <section
-        id="home"
-        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6"
-      >
+<section
+  id="home"
+  className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
+>
         <div className="absolute inset-0 flex items-center justify-center opacity-[0.02] pointer-events-none">
   <h1 className="text-[120px] md:text-[220px] font-black tracking-[0.25em] text-white">
     CULTURE KITE

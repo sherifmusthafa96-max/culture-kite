@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import Chatbot from "@/components/Chatbot";
-import Image from "next/image";
 export default function CultureKiteWebsite() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -111,45 +110,67 @@ export default function CultureKiteWebsite() {
         </a>
       </div>
 
-      <div className="relative z-10 max-w-5xl">
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-white/5 mb-8 backdrop-blur-md">
-          <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
-          <p className="text-sm text-gray-600">Trusted Workforce Partner Since 2025</p>
+      <section
+        id="home"
+        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
+      >
+
+        {/* WATERMARK PASTE HERE */}
+
+        <div className="fixed inset-0 flex flex-col items-center justify-center pointer-events-none z-0 opacity-[0.15] animate-watermark">
+
+          {/* Premium Kite Logo */}
+          <div className="relative w-12 h-12 md:w-16 md:h-16 mb-5">
+            <div className="absolute inset-0 border-[3px] border-[#123A8D] rotate-45 rounded-sm"></div>
+            <div className="absolute inset-2 border-[3px] border-[#5AD5D7] rotate-45 rounded-sm"></div>
+          </div>
+
+          <h1 className="text-[55px] md:text-[90px] font-black tracking-[0.18em] text-[#123A8D]">
+            CULTURE KITE
+          </h1>
+
         </div>
 
-        <h1 className="text-6xl md:text-8xl font-black tracking-[0.15em] text-gray-900">
-          CULTURE KITE
-        </h1>
+        <div className="relative z-10 max-w-5xl">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-blue-400/30 bg-white/5 mb-8 backdrop-blur-md">
+            <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            <p className="text-sm text-gray-600">Trusted Workforce Partner Since 2025</p>
+          </div>
 
-        <p className="mt-6 text-2xl text-[#5AD5D7] font-semibold">
-          HR Solutions • Workforce Management • Recruitment
-        </p>
+          <h1 className="text-6xl md:text-8xl font-black tracking-[0.15em] text-gray-900">
+            CULTURE KITE
+          </h1>
 
-        <p className="mt-4 text-lg text-gray-500">
-          Trusted Workforce Partner Across Tamil Nadu
-        </p>
+          <p className="mt-6 text-2xl text-[#5AD5D7] font-semibold">
+            HR Solutions • Workforce Management • Recruitment
+          </p>
 
-        <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          CULTURE KITE provides modern HR services, manpower staffing, payroll management,
-          and workforce solutions designed to help businesses scale faster with confidence.
-        </p>
+          <p className="mt-4 text-lg text-gray-500">
+            Trusted Workforce Partner Across Tamil Nadu
+          </p>
 
-        <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
-          <a
-            href="#services"
-            className="bg-white hover:bg-[#1F84D7] transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
-          >
-            Hire Employees
-          </a>
+          <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            CULTURE KITE provides modern HR services, manpower staffing, payroll management,
+            and workforce solutions designed to help businesses scale faster with confidence.
+          </p>
 
-          <a
-            href="#careers"
-            className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block text-center"
-          >
-            Apply for Jobs
-          </a>
+          <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
+            <a
+              href="#services"
+              className="bg-white hover:bg-[#1F84D7] transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
+            >
+              Hire Employees
+            </a>
+
+            <a
+              href="#careers"
+              className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block text-center"
+            >
+              Apply for Jobs
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
 
       {/* Stats */}
       <section className="grid grid-cols-2 md:grid-cols-4 gap-6 px-8 md:px-20 py-12">
@@ -225,29 +246,39 @@ export default function CultureKiteWebsite() {
             Advanced workforce and HR services designed to simplify hiring and operations.
           </p>
         </div>
+        <div className="grid md:grid-cols-4 gap-8">
 
-        <div className="grid md:grid-cols-3 gap-8">
           {[
-            "Logistics",
-            "Manufacturing",
-            "E-commerce",
-            "FM Teams",
-
+            { name: "Logistics", link: "/services/logistics" },
+            { name: "Manufacturing", link: "/services/manufacturing" },
+            { name: "E-Commerce", link: "/services/ecommerce" },
+            { name: "FM Teams", link: "/services/fm-teams" },
           ].map((service) => (
-            <div
-              key={service}
-              className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300"
+
+            <a
+              key={service.name}
+              href={service.link}
+              className="bg-[#123A8D]/10 border border-[#5AD5D7]/20 rounded-3xl p-8 hover:-translate-y-2 hover:border-[#5AD5D7] transition-all duration-300 block"
             >
+
               <div className="w-14 h-14 rounded-2xl bg-[#5AD5D7]/20 flex items-center justify-center text-[#5AD5D7] text-2xl mb-6">
                 ✦
               </div>
-              <h3 className="text-2xl font-semibold">{service}</h3>
-              <p className="mt-4 text-gray-500 leading-relaxed">
-                Premium workforce solutions tailored for growing businesses and enterprises.
+
+              <h3 className="text-2xl font-bold text-[#123A8D]">
+                {service.name}
+              </h3>
+
+              <p className="mt-4 text-gray-600">
+                Click to view jobs, companies and locations.
               </p>
-            </div>
+
+            </a>
+
           ))}
+
         </div>
+
       </section>
       {/* Clients Section */}
 
@@ -413,7 +444,7 @@ export default function CultureKiteWebsite() {
               <a
                 href="https://wa.me/919500038959"
                 target="_blank"
-                className="inline-block mt-6 bg-whitehover:bg-[#1F84D7] transition px-6 py-3 rounded-xl font-semibold"
+                className="inline-block mt-6 bg-[#123A8D] text-white hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl font-semibold"
               >
                 Apply Now
               </a>

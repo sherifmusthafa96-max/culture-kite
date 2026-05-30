@@ -116,7 +116,7 @@ export default function CultureKiteWebsite() {
 
         {/* WATERMARK PASTE HERE */}
 
-        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-[0.08] pointer-events-none">
+        <div className="absolute inset-0 flex flex-col items-center justify-center opacity-[0.18] pointer-events-none animate-watermark">
 
           {/* Premium Kite Logo */}
           <div className="relative w-12 h-12 md:w-16 md:h-16 mb-5">
@@ -637,6 +637,23 @@ export default function CultureKiteWebsite() {
 
 .animate-marquee {
   animation: marquee 18s linear infinite;
+}
+  @keyframes watermarkFloat {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-watermark {
+  animation: watermarkFloat 8s ease-in-out infinite;
 }
 `}</style>
 

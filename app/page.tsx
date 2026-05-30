@@ -58,7 +58,7 @@ export default function CultureKiteWebsite() {
           <a
             href="https://wa.me/919500038959"
             target="_blank"
-            className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-5 py-2 rounded-xl font-semibold"
+            className="bg-white hover:bg-[#1F84D7] transition px-5 py-2 rounded-xl font-semibold"
           >
             Contact Us
           </a>
@@ -156,7 +156,7 @@ export default function CultureKiteWebsite() {
           <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
             <a
               href="#services"
-              className="bg-[#123A8D] hover:bg-[#1F84D7] transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
+              className="bg-white hover:bg-[#1F84D7] transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
             >
               Hire Employees
             </a>
@@ -439,7 +439,7 @@ export default function CultureKiteWebsite() {
               <a
                 href="https://wa.me/919500038959"
                 target="_blank"
-                className="inline-block mt-6 bg-[#123A8D] hover:bg-[#1F84D7] transition px-6 py-3 rounded-xl font-semibold"
+                className="inline-block mt-6 bg-whitehover:bg-[#1F84D7] transition px-6 py-3 rounded-xl font-semibold"
               >
                 Apply Now
               </a>

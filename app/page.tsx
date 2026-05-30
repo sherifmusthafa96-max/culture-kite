@@ -251,9 +251,10 @@ export default function CultureKiteWebsite() {
           {[
             { name: "Logistics", link: "/services/logistics" },
             { name: "Manufacturing", link: "/services/manufacturing" },
-            { name: "E-Commerce", link: "/services/ecommerce" },
-            { name: "FM Teams", link: "/services/fm-teams" },
+            { name: "ECommerce", link: "/services/ECommerce" },
+            { name: "FM Teams", link: "/services/FM Teams" },
           ].map((service) => (
+
             <a
               key={service.name}
               href={service.link}

@@ -1,7 +1,7 @@
 export default function EcommercePage() {
     return (
         <div className="min-h-screen p-10">
-            <h1 className="text-5xl font-bold">E-Commerce Jobs</h1>
+            <h1 className="text-5xl font-bold">ECommerce Jobs</h1>
 
             <h2 className="mt-8 text-2xl font-bold">Available Roles</h2>
             <ul className="mt-4 space-y-2">

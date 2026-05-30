@@ -254,7 +254,6 @@ export default function CultureKiteWebsite() {
             { name: "E-Commerce", link: "/services/ecommerce" },
             { name: "FM Teams", link: "/services/fm-teams" },
           ].map((service) => (
-
             <a
               key={service.name}
               href={service.link}

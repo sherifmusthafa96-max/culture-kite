@@ -92,6 +92,27 @@ export default function CultureKiteWebsite() {
         >Contact</a>
       </div>
 
+      <div className="text-3xl font-extrabold tracking-widest text-gray-900/10">
+        ☰
+      </div>
+
+      <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
+        <a
+          href="https://wa.me/919500038959"
+          target="_blank"
+          className="bg-[#123A8D] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1F84D7]"
+        >
+          Talk To Our Team
+        </a>
+
+        <a
+          href="#services"
+          className="border border-gray-300 px-8 py-4 rounded-full font-bold hover:bg-gray-100"
+        >
+          Workforce Solutions
+        </a>
+      </div>
+
       <section
         id="home"
         className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"

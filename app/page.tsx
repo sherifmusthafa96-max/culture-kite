@@ -17,10 +17,14 @@ export default function CultureKiteWebsite() {
 
         <div className="w-20 h-20 border-4 border-[#123A8D] border-t-transparent rounded-full animate-spin"></div>
 
-        <h1 className="mt-8 text-5xl font-black tracking-[0.2em] text-[#123A8D]">
+        <h1
+          className="mt-8 text-5xl font-black tracking-[0.2em] text-[#123A8D]"
+          style={{
+            textShadow: "0 0 15px rgba(18,58,141,0.3)"
+          }}
+        >
           CULTURE KITE
         </h1>
-
         <p className="mt-4 text-gray-500 text-lg">
           Building the Future of Workforce & HR Solutions
         </p>
@@ -29,7 +33,7 @@ export default function CultureKiteWebsite() {
     );
   }
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-sans overflow-hidden relative">
+    <div className="min-h-screen bg-gradient-to-b from-white via-[#f8fbff] to-[#eef5ff] text-gray-900">
 
       {/* Animated Background Glow */}
 
@@ -95,7 +99,7 @@ export default function CultureKiteWebsite() {
       <div className="text-3xl font-extrabold tracking-widest text-gray-900/10">
         ☰
       </div>
-
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(90,213,215,0.12),transparent_70%)]"></div>
 
       <section
         id="home"
@@ -104,40 +108,40 @@ export default function CultureKiteWebsite() {
 
         {/* WATERMARK PASTE HERE */}
 
-        <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.03] animate-watermark">
+        <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.05] animate-watermark">
 
           <img
             src="/logo.png"
             alt="Culture Kite Watermark"
-            className="w-[700px] md:w-[1100px] h-auto"
+            className="w-[900px] md:w-[1400px] h-auto"
           />
-
+          {/* Split Logo Animation */}
         </div>
-        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+        <div className="absolute -top-0 left-1/2 -translate-x-1/2 z-0">
 
-          <div className="relative w-60 h-60">
+          <div className="relative w-[350px] h-[350px]">
 
             <img
-              src="/logo.png"
-              className="absolute w-32 top-0 left-0 animate-topLeft"
+              src="/logo-top-left.png"
+              className="absolute top-0 left-0 w-44 h-44 opacity-25 animate-topLeft"
               alt=""
             />
 
             <img
-              src="/logo.png"
-              className="absolute w-32 top-0 right-0 animate-topRight"
+              src="/logo-top-right.png"
+              className="absolute top-0 right-0 w-44 h-44 opacity-25 animate-topRight"
               alt=""
             />
 
             <img
-              src="/logo.png"
-              className="absolute w-32 bottom-0 left-0 animate-bottomLeft"
+              src="/logo-bottom-left.png"
+              className="absolute bottom-0 left-0 w-44 h-44 opacity-25 animate-bottomLeft"
               alt=""
             />
 
             <img
-              src="/logo.png"
-              className="absolute w-32 bottom-0 right-0 animate-bottomRight"
+              src="/logo-bottom-right.png"
+              className="absolute bottom-0 right-0 w-44 h-44 opacity-25 animate-bottomRight"
               alt=""
             />
 
@@ -153,7 +157,7 @@ export default function CultureKiteWebsite() {
           <img
             src="/logo.png"
             alt="Culture Kite"
-            className="mx-auto w-[400px] md:w-[650px] h-auto"
+            className="mx-auto w-[400px] md:w-[650px] h-auto opacity-50"
           />
           <p className="mt-6 text-2xl text-[#5AD5D7] font-semibold">
             HR Solutions • Workforce Management • Recruitment
@@ -574,39 +578,21 @@ export default function CultureKiteWebsite() {
       <Chatbot />
 
       <style jsx global>{`
-
-@keyframes marquee {
-  0% {
-    transform: translateX(0%);
-  }
-
-  100% {
-    transform: translateX(-50%);
-  }
-}
-
-.animate-marquee {
-  animation: marquee 18s linear infinite;
-}
-
-/* Split Logo Animations */
-
-@keyframes topLeft {
+      @keyframes topLeft {
   0%,100% {
-    transform: translate(-120px,-120px);
-    opacity: 0;
+    transform: translate(-300px,-300px);
+    opacity: 0.5;
   }
 
-  40%,60% {
-    transform: translate(0,0);
-    opacity: 1;
-  }
+  45%,55% {
+ transform: translate(0,0);
+ opacity: 0.4;
 }
 
 @keyframes topRight {
   0%,100% {
-    transform: translate(120px,-120px);
-    opacity: 0;
+    transform: translate(300px,-300px);
+    opacity: 0.5;
   }
 
   40%,60% {
@@ -617,8 +603,8 @@ export default function CultureKiteWebsite() {
 
 @keyframes bottomLeft {
   0%,100% {
-    transform: translate(-120px,120px);
-    opacity: 0;
+    transform: translate(-300px,300px);
+    opacity: 0.5;
   }
 
   40%,60% {
@@ -629,8 +615,8 @@ export default function CultureKiteWebsite() {
 
 @keyframes bottomRight {
   0%,100% {
-    transform: translate(120px,120px);
-    opacity: 0;
+    transform: translate(300px,300px);
+    opacity: 0.5;
   }
 
   40%,60% {
@@ -640,22 +626,25 @@ export default function CultureKiteWebsite() {
 }
 
 .animate-topLeft {
-  animation: topLeft 6s infinite ease-in-out;
+  animation: topLeft 8s infinite ease-in-out;
 }
 
 .animate-topRight {
-  animation: topRight 6s infinite ease-in-out;
+  animation: topRight 8s infinite ease-in-out;
 }
 
 .animate-bottomLeft {
-  animation: bottomLeft 6s infinite ease-in-out;
+  animation: bottomLeft 8s infinite ease-in-out;
 }
 
 .animate-bottomRight {
-  animation: bottomRight 6s infinite ease-in-out;
+  animation: bottomRight 8s infinite ease-in-out;
 }
 
-@keyframes watermarkFloat {
+.animate-logoGlow {
+  animation: logoGlow 3s infinite ease-in-out;
+}
+  @keyframes watermarkFloat {
   0% {
     transform: translateY(0px);
   }
@@ -672,8 +661,8 @@ export default function CultureKiteWebsite() {
 .animate-watermark {
   animation: watermarkFloat 8s ease-in-out infinite;
 }
-
 `}</style>
+
     </div >
   );
-} 
+}

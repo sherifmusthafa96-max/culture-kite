@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+
 export default function LogisticsPage() {
     const [selectedLocation, setSelectedLocation] =
         useState<Record<number, string>>({});
@@ -9,26 +10,31 @@ export default function LogisticsPage() {
         {
             role: "Warehouse Associates",
             company: "FirstCry",
+            logo: "/client-logos/firstcry.png",
             locations: ["Chennai", "Coimbatore"],
         },
         {
             role: "Loading & Unloading",
             company: "ABT Parcel",
+            logo: "/client-logos/abt.png",
             locations: ["Chennai", "Coimbatore", "All Over Tamil Nadu"],
         },
         {
             role: "Warehouse Associates",
             company: "Meesho",
+            logo: "/client-logos/meesho.png",
             locations: ["Chennai"],
         },
         {
             role: "Warehouse Associates",
             company: "Purple",
+            logo: "/client-logos/purple.png",
             locations: ["Coimbatore"],
         },
         {
             role: "Warehouse Associates",
             company: "Flipkart",
+            logo: "/client-logos/flipkart.png",
             locations: ["Coimbatore"],
         },
     ];
@@ -44,6 +50,7 @@ export default function LogisticsPage() {
             </div>
 
             <div className="min-h-screen px-8 md:px-20 py-24">
+
                 <h1 className="text-5xl font-bold text-center">
                     Logistics <span className="text-[#5AD5D7]">Jobs</span>
                 </h1>
@@ -53,20 +60,34 @@ export default function LogisticsPage() {
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-8">
+
                     {jobs.map((job, i) => (
                         <div
                             key={i}
-                            className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:-translate-y-2 transition"
+                            className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:-translate-y-2 hover:shadow-2xl transition-all duration-300"
                         >
-                            <h2 className="text-2xl font-bold text-[#5AD5D7]">
+
+                            {/* Company Logo */}
+                            <div className="flex justify-center mb-6">
+                                <img
+                                    src={job.logo}
+                                    alt={job.company}
+                                    className="h-24 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+                                />
+                            </div>
+
+                            {/* Job Role */}
+                            <h2 className="text-2xl font-bold text-[#5AD5D7] text-center">
                                 {job.role}
                             </h2>
 
-                            <p className="mt-4 text-gray-600">
+                            {/* Company Name */}
+                            <p className="mt-4 text-gray-600 text-center">
                                 <strong>Company:</strong> {job.company}
                             </p>
 
-                            <div className="mt-4">
+                            {/* Location Dropdown */}
+                            <div className="mt-6">
                                 <label className="block text-gray-600 mb-2">
                                     <strong>Select Location:</strong>
                                 </label>
@@ -91,6 +112,7 @@ export default function LogisticsPage() {
                                 </select>
                             </div>
 
+                            {/* Apply Button */}
                             <button
                                 disabled={!selectedLocation[i]}
                                 onClick={() => {
@@ -109,15 +131,17 @@ Thank you.`
                                         "_blank"
                                     );
                                 }}
-                                className={`mt-6 px-6 py-3 rounded-xl text-white font-semibold ${selectedLocation[i]
-                                    ? "bg-[#123A8D] hover:bg-[#1F84D7]"
-                                    : "bg-gray-400 cursor-not-allowed"
+                                className={`w-full mt-6 px-6 py-3 rounded-xl text-white font-semibold ${selectedLocation[i]
+                                        ? "bg-[#123A8D] hover:bg-[#1F84D7]"
+                                        : "bg-gray-400 cursor-not-allowed"
                                     }`}
                             >
                                 Apply for {job.company}
                             </button>
+
                         </div>
                     ))}
+
                 </div>
             </div>
         </>

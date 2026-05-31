@@ -1,23 +1,29 @@
 "use client";
 
 import { useState } from "react";
+
 export default function FMTeamsPage() {
     const [selectedLocation, setSelectedLocation] =
         useState<Record<number, string>>({});
+
     const jobs = [
         {
             role: "Housekeeping",
             company: "Emerald Groups",
+            logo: "/client-logos/emerald.png",
             locations: ["Coimbatore"],
         },
         {
             role: "Security Guard",
             company: "Royal Enfield Units",
+            logo: "/client-logos/royal-enfield.png",
             locations: ["Coimbatore"],
         },
     ];
+
     return (
         <>
+            {/* Watermark */}
             <div className="fixed bottom-6 left-6 opacity-10 pointer-events-none">
                 <img
                     src="/logo.png"
@@ -25,25 +31,43 @@ export default function FMTeamsPage() {
                     className="w-40 h-auto"
                 />
             </div>
-            <div className="min-h-screen px-8 md:px-20 py-24">
+
+            <div className="min-h-screen px-8 md:px-20 py-24 bg-white">
+
                 <h1 className="text-5xl font-bold text-center">
                     FM Teams <span className="text-[#5AD5D7]">Jobs</span>
                 </h1>
 
-                <div className="grid md:grid-cols-2 gap-8 mt-12">
+                <p className="text-center text-gray-500 mt-4 mb-12">
+                    Housekeeping & Security Workforce Opportunities
+                </p>
+
+                <div className="grid md:grid-cols-2 gap-8">
+
                     {jobs.map((job, i) => (
                         <div
                             key={i}
-                            className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl"
+                            className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:-translate-y-2 hover:shadow-xl transition-all duration-300"
                         >
+
+                            {/* Company Logo */}
+                            <img
+                                src={job.logo}
+                                alt={job.company}
+                                className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg mb-6"
+                            />
+
+                            {/* Job Role */}
                             <h2 className="text-2xl font-bold text-[#5AD5D7]">
                                 {job.role}
                             </h2>
 
+                            {/* Company */}
                             <p className="mt-4 text-gray-600">
                                 <strong>Company:</strong> {job.company}
                             </p>
 
+                            {/* Location */}
                             <div className="mt-4">
                                 <label className="block text-gray-600 mb-2">
                                     <strong>Select Location:</strong>
@@ -69,6 +93,7 @@ export default function FMTeamsPage() {
                                 </select>
                             </div>
 
+                            {/* Apply Button */}
                             <button
                                 disabled={!selectedLocation[i]}
                                 onClick={() => {
@@ -88,14 +113,16 @@ Thank you.`
                                     );
                                 }}
                                 className={`mt-6 px-6 py-3 rounded-xl text-white font-semibold ${selectedLocation[i]
-                                    ? "bg-[#123A8D] hover:bg-[#1F84D7]"
-                                    : "bg-gray-400 cursor-not-allowed"
+                                        ? "bg-[#123A8D] hover:bg-[#1F84D7]"
+                                        : "bg-gray-400 cursor-not-allowed"
                                     }`}
                             >
                                 Apply for {job.company}
                             </button>
+
                         </div>
                     ))}
+
                 </div>
             </div>
         </>

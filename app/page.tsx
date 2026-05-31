@@ -115,7 +115,7 @@ export default function CultureKiteWebsite() {
 
       <section
         id="home"
-        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-48"
+        className="relative min-h-screen flex flex-col items-center justify-center text-center px-6 pt-64"
       >
 
         {/* WATERMARK PASTE HERE */}

@@ -47,6 +47,14 @@ export default function CultureKiteWebsite() {
             />
           </div>
 
+          <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#careers">Careers</a>
+            <a href="#contact">Contact</a>
+          </div>
+
           <a
             href="https://wa.me/919500038959"
             target="_blank"

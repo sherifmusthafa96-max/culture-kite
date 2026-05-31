@@ -304,35 +304,73 @@ export default function CultureKiteWebsite() {
 
         </div>
 
-        <div className="overflow-hidden relative">
-          <div className="flex gap-10 whitespace-nowrap animate-marquee text-3xl font-bold text-[#5AD5D7]">
+        <div className="overflow-hidden relative py-6">
+          <div className="flex gap-16 items-center animate-marquee">
 
-            <span>FIRSTCRY</span>
-            <span>ABT</span>
-            <span>FLIPKART</span>
-            <span>MEESHO</span>
-            <span>EMERALD</span>
-            <span>INDOSHELL</span>
-            <span>PURPLE</span>
-            <span>UNIQUE SHELL</span>
+            <img
+              src="/client-logos/firstcry.png"
+              alt="FirstCry"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
 
-            {/* Duplicate for smooth loop */}
+            <img
+              src="/client-logos/abt.png"
+              alt="ABT Parcel Services"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
 
-            <span>FIRSTCRY</span>
-            <span>ABT</span>
-            <span>FLIPKART</span>
-            <span>MEESHO</span>
-            <span>EMERALD</span>
-            <span>INDOSHELL</span>
-            <span>PURPLE</span>
-            <span>UNIQUE SHELL</span>
+            <img
+              src="/client-logos/flipkart.png"
+              alt="Flipkart"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
+
+            <img
+              src="/client-logos/meesho.png"
+              alt="Meesho"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
+
+            <img
+              src="/client-logos/emerald.png"
+              alt="Emerald Jewellers"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
+
+            <img
+              src="/client-logos/indoshell.png"
+              alt="Indoshell Cast"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
+
+            <img
+              src="/client-logos/purple.png"
+              alt="Purple"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
+
+            <img
+              src="/client-logos/unique-shell.png"
+              alt="Unique Shell Mould"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
+
+            {/* Duplicate for smooth infinite loop */}
+
+            <img src="/client-logos/firstcry.png" alt="FirstCry" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/abt.png" alt="ABT Parcel Services" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/flipkart.png" alt="Flipkart" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/meesho.png" alt="Meesho" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/emerald.png" alt="Emerald Jewellers" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/indoshell.png" alt="Indoshell Cast" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/purple.png" alt="Purple" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/unique-shell.png" alt="Unique Shell Mould" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
 
           </div>
         </div>
-
-      </section>
+      </section >
       {/* Careers */}
-      <section id="careers" className="px-8 md:px-20 py-24">
+      < section id="careers" className="px-8 md:px-20 py-24" >
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-[40px] p-12 md:p-16 text-center shadow-2xl shadow-blue-900/40">
           <h2 className="text-5xl font-bold text-white">
             Join Our Workforce Network
@@ -368,10 +406,10 @@ export default function CultureKiteWebsite() {
           </div>
 
         </div>
-      </section>
+      </section >
 
       {/* Contact */}
-      <section id="contact" className="px-8 md:px-20 py-24 bg-white/[0.03]">
+      < section id="contact" className="px-8 md:px-20 py-24 bg-white/[0.03]" >
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <h2 className="text-5xl font-bold leading-tight">
@@ -460,10 +498,10 @@ export default function CultureKiteWebsite() {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* Footer */}
-      <footer className="relative z-50 border-t border-gray-200 bg-white py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
+      < footer className="relative z-50 border-t border-gray-200 bg-white py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm" >
         <img
           src="/logo.png"
           alt="Culture Kite"
@@ -507,7 +545,7 @@ export default function CultureKiteWebsite() {
 
           💬 </a>
 
-      </footer>
+      </footer >
 
       <Chatbot />
 
@@ -544,6 +582,6 @@ export default function CultureKiteWebsite() {
 }
 `}</style>
 
-    </div>
+    </div >
   );
 }

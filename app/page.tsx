@@ -341,7 +341,7 @@ export default function CultureKiteWebsite() {
               className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
             />
             <img
-              src="/client-logos/shree-maruthi.png"
+              src="/client-logos/shree-maruti.png"
               alt="Shree Maruthi"
               className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
             />
@@ -578,15 +578,16 @@ export default function CultureKiteWebsite() {
       <Chatbot />
 
       <style jsx global>{`
-      @keyframes topLeft {
+@keyframes topLeft {
   0%,100% {
     transform: translate(-300px,-300px);
     opacity: 0.5;
   }
 
   45%,55% {
- transform: translate(0,0);
- opacity: 0.4;
+    transform: translate(0,0);
+    opacity: 0.18;
+  }
 }
 
 @keyframes topRight {
@@ -597,7 +598,7 @@ export default function CultureKiteWebsite() {
 
   40%,60% {
     transform: translate(0,0);
-    opacity: 1;
+    opacity: 0.18;
   }
 }
 
@@ -609,7 +610,7 @@ export default function CultureKiteWebsite() {
 
   40%,60% {
     transform: translate(0,0);
-    opacity: 1;
+    opacity: 0.18;
   }
 }
 
@@ -621,7 +622,7 @@ export default function CultureKiteWebsite() {
 
   40%,60% {
     transform: translate(0,0);
-    opacity: 1;
+    opacity: 0.18;
   }
 }
 

@@ -47,14 +47,6 @@ export default function CultureKiteWebsite() {
             />
           </div>
 
-          <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#services">Services</a>
-            <a href="#careers">Careers</a>
-            <a href="#contact">Contact</a>
-          </div>
-
           <a
             href="https://wa.me/919500038959"
             target="_blank"
@@ -90,37 +82,6 @@ export default function CultureKiteWebsite() {
         >Careers</a>
         <a href="#contact" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"
         >Contact</a>
-      </div>
-
-      <div className="text-3xl font-extrabold tracking-widest text-gray-900/10">
-        ☰
-      </div>
-
-
-
-
-
-      <p className="mt-8 text-lg md:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-        CULTURE KITE provides modern HR services, manpower staffing,
-        payroll management, and workforce solutions designed to help
-        businesses scale faster with confidence.
-      </p>
-
-      <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
-        <a
-          href="https://wa.me/919500038959"
-          target="_blank"
-          className="bg-[#123A8D] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1F84D7]"
-        >
-          Talk To Our Team
-        </a>
-
-        <a
-          href="#services"
-          className="border border-gray-300 px-8 py-4 rounded-full font-bold hover:bg-gray-100"
-        >
-          Workforce Solutions
-        </a>
       </div>
 
       <section

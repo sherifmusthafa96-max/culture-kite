@@ -1,3 +1,11 @@
+<div className="flex justify-center mb-6">
+    <img
+        src="/logo.png"
+        alt="Culture Kite"
+        className="h-24 w-auto"
+    />
+</div>
+
 export default function LogisticsPage() {
     const jobs = [
         {
@@ -66,5 +74,6 @@ export default function LogisticsPage() {
                 ))}
             </div>
         </div>
+
     );
 }

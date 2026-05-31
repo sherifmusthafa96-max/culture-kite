@@ -16,8 +16,8 @@ export default function EcommercePage() {
         },
         {
             role: "Delivery Executive",
-            company: "Shree Maruthi",
-            logo: "/client-logos/shree-maruthi.png",
+            company: "Shree Maruti",
+            logo: "/client-logos/shree-maruti.png",
             locations: ["Chennai", "Coimbatore"],
             whatsapp: "919500038959",
         },
@@ -115,8 +115,8 @@ Thank you.`
                                     );
                                 }}
                                 className={`mt-6 px-6 py-3 rounded-xl text-white font-semibold ${selectedLocation[i]
-                                        ? "bg-[#123A8D] hover:bg-[#1F84D7]"
-                                        : "bg-gray-400 cursor-not-allowed"
+                                    ? "bg-[#123A8D] hover:bg-[#1F84D7]"
+                                    : "bg-gray-400 cursor-not-allowed"
                                     }`}
                             >
                                 Apply for {job.company}

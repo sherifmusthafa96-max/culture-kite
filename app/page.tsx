@@ -318,6 +318,11 @@ export default function CultureKiteWebsite() {
               alt="ABT Parcel Services"
               className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
             />
+            <img
+              src="/client-logos/shree-maruthi.png"
+              alt="Shree Maruthi"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
 
             <img
               src="/client-logos/flipkart.png"
@@ -359,6 +364,7 @@ export default function CultureKiteWebsite() {
 
             <img src="/client-logos/firstcry.png" alt="FirstCry" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/abt.png" alt="ABT Parcel Services" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/shree-maruthi.png" alt="Shree Maruthi" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/flipkart.png" alt="Flipkart" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/meesho.png" alt="Meesho" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/emerald.png" alt="Emerald Jewellers" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />

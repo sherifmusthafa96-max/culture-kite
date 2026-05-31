@@ -46,6 +46,7 @@ export default function CultureKiteWebsite() {
               className="h-14 md:h-16 w-auto"
             />
           </div>
+
           <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
             <a href="#home">Home</a>
             <a href="#about">About</a>
@@ -63,7 +64,20 @@ export default function CultureKiteWebsite() {
           </a>
 
         </div>
+
       </nav>
+
+      {/* Fixed Bottom Left Logo */}
+      <div className="fixed bottom-6 left-6 z-10 opacity-10 pointer-events-none">
+        <img
+          src="/logo.png"
+          alt="Culture Kite Watermark"
+          className="w-32 md:w-40 h-auto"
+        />
+      </div>
+      <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
+
+      </div>
 
       <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
         <a href="#home" className="hover:text-[#5AD5D7] hover:scale-110 transition-all duration-300"

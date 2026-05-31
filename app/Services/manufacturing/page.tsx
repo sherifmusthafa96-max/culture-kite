@@ -1,18 +1,41 @@
-<div className="flex justify-center mb-6">
-    <img
-        src="/logo.png"
-        alt="Culture Kite"
-        className="h-24 w-auto"
-    />
-</div>
+"use client";
+
+import { useState } from "react";
 export default function ManufacturingPage() {
+    const [selectedLocation, setSelectedLocation] =
+        useState<Record<number, string>>({});
+
     const jobs = [
-        { role: "CNC Operator", company: "Indo Shell Cast", location: "Coimbatore" },
-        { role: "VMC Operator", company: "Indo Shell Cast", location: "Coimbatore" },
-        { role: "HMC Operator", company: "Indo Shell Cast", location: "Coimbatore" },
-        { role: "Shell Moulding", company: "Unique Shell Mould", location: "Coimbatore" },
-        { role: "Core Shooter", company: "Unique Shell Mould", location: "Coimbatore" },
-        { role: "Deburring / Fettling", company: "Unique Shell Mould", location: "Coimbatore" },
+        {
+            role: "CNC Operator",
+            company: "Indo Shell Cast",
+            locations: ["Coimbatore"],
+        },
+        {
+            role: "VMC Operator",
+            company: "Indo Shell Cast",
+            locations: ["Coimbatore"],
+        },
+        {
+            role: "HMC Operator",
+            company: "Indo Shell Cast",
+            locations: ["Coimbatore"],
+        },
+        {
+            role: "Shell Moulding",
+            company: "Unique Shell Mould",
+            locations: ["Coimbatore"],
+        },
+        {
+            role: "Core Shooter",
+            company: "Unique Shell Mould",
+            locations: ["Coimbatore"],
+        },
+        {
+            role: "Deburring / Fettling",
+            company: "Unique Shell Mould",
+            locations: ["Coimbatore"],
+        },
     ];
 
     return (
@@ -47,18 +70,56 @@ export default function ManufacturingPage() {
                                 <strong>Company:</strong> {job.company}
                             </p>
 
-                            <p className="mt-2 text-gray-600">
-                                <strong>Location:</strong> {job.location}
-                            </p>
+                            <div className="mt-4">
+                                <label className="block text-gray-600 mb-2">
+                                    <strong>Select Location:</strong>
+                                </label>
 
-                            <a
-                                href="https://wa.me/919500038959"
-                                target="_blank"
-                                className="inline-block mt-6 bg-[#123A8D] text-white px-6 py-3 rounded-xl"
+                                <select
+                                    className="w-full border border-gray-300 rounded-xl px-4 py-3"
+                                    value={selectedLocation[i] || ""}
+                                    onChange={(e) =>
+                                        setSelectedLocation({
+                                            ...selectedLocation,
+                                            [i]: e.target.value,
+                                        })
+                                    }
+                                >
+                                    <option value="">Choose Location</option>
+
+                                    {job.locations.map((location) => (
+                                        <option key={location} value={location}>
+                                            {location}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <button
+                                disabled={!selectedLocation[i]}
+                                onClick={() => {
+                                    window.open(
+                                        `https://wa.me/919500038959?text=${encodeURIComponent(
+                                            `Hello Culture Kite Team,
+
+I would like to apply for the following position:
+
+Company: ${job.company}
+Role: ${job.role}
+Preferred Location: ${selectedLocation[i]}
+
+Thank you.`
+                                        )}`,
+                                        "_blank"
+                                    );
+                                }}
+                                className={`mt-6 px-6 py-3 rounded-xl text-white font-semibold ${selectedLocation[i]
+                                    ? "bg-[#123A8D] hover:bg-[#1F84D7]"
+                                    : "bg-gray-400 cursor-not-allowed"
+                                    }`}
                             >
-                                Apply Now
-                            </a>
-                        </div>
+                                Apply for {job.company}
+                            </button>                       </div>
                     ))}
                 </div>
             </div>

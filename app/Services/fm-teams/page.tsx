@@ -1,16 +1,21 @@
-<div className="flex justify-center mb-6">
-    <img
-        src="/logo.png"
-        alt="Culture Kite"
-        className="h-24 w-auto"
-    />
-</div>
-export default function FMTeamsPage() {
-    const jobs = [
-        { role: "Housekeeping", company: "Emerald Groups", location: "Coimbatore" },
-        { role: "Security Guard", company: "Royal Enfield Units", location: "Coimbatore" },
-    ];
+"use client";
 
+import { useState } from "react";
+export default function FMTeamsPage() {
+    const [selectedLocation, setSelectedLocation] =
+        useState<Record<number, string>>({});
+    const jobs = [
+        {
+            role: "Housekeeping",
+            company: "Emerald Groups",
+            locations: ["Coimbatore"],
+        },
+        {
+            role: "Security Guard",
+            company: "Royal Enfield Units",
+            locations: ["Coimbatore"],
+        },
+    ];
     return (
         <>
             <div className="fixed bottom-6 left-6 opacity-10 pointer-events-none">
@@ -39,17 +44,56 @@ export default function FMTeamsPage() {
                                 <strong>Company:</strong> {job.company}
                             </p>
 
-                            <p className="mt-2 text-gray-600">
-                                <strong>Location:</strong> {job.location}
-                            </p>
+                            <div className="mt-4">
+                                <label className="block text-gray-600 mb-2">
+                                    <strong>Select Location:</strong>
+                                </label>
 
-                            <a
-                                href="https://wa.me/919500038959"
-                                target="_blank"
-                                className="inline-block mt-6 bg-[#123A8D] text-white px-6 py-3 rounded-xl"
+                                <select
+                                    className="w-full border border-gray-300 rounded-xl px-4 py-3"
+                                    value={selectedLocation[i] || ""}
+                                    onChange={(e) =>
+                                        setSelectedLocation({
+                                            ...selectedLocation,
+                                            [i]: e.target.value,
+                                        })
+                                    }
+                                >
+                                    <option value="">Choose Location</option>
+
+                                    {job.locations.map((location) => (
+                                        <option key={location} value={location}>
+                                            {location}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <button
+                                disabled={!selectedLocation[i]}
+                                onClick={() => {
+                                    window.open(
+                                        `https://wa.me/919500038959?text=${encodeURIComponent(
+                                            `Hello Culture Kite Team,
+
+I would like to apply for the following position:
+
+Company: ${job.company}
+Role: ${job.role}
+Preferred Location: ${selectedLocation[i]}
+
+Thank you.`
+                                        )}`,
+                                        "_blank"
+                                    );
+                                }}
+                                className={`mt-6 px-6 py-3 rounded-xl text-white font-semibold ${selectedLocation[i]
+                                    ? "bg-[#123A8D] hover:bg-[#1F84D7]"
+                                    : "bg-gray-400 cursor-not-allowed"
+                                    }`}
                             >
-                                Apply Now
-                            </a>
+                                Apply for {job.company}
+                            </button>
                         </div>
                     ))}
                 </div>

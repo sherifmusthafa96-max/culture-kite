@@ -1,16 +1,23 @@
-<div className="flex justify-center mb-6">
-    <img
-        src="/logo.png"
-        alt="Culture Kite"
-        className="h-24 w-auto"
-    />
-</div>
+"use client";
+
+import { useState } from "react";
+
 export default function EcommercePage() {
+    const [selectedLocation, setSelectedLocation] =
+        useState<Record<number, string>>({});
+
     const jobs = [
         {
             role: "Delivery Executive",
-            company: "FirstCry / Shree Maruthi",
-            location: "Chennai & Coimbatore",
+            company: "FirstCry",
+            locations: ["Chennai", "Coimbatore"],
+            whatsapp: "919500038959",
+        },
+        {
+            role: "Delivery Executive",
+            company: "Shree Maruthi",
+            locations: ["Chennai", "Coimbatore"],
+            whatsapp: "919500038959",
         },
     ];
 
@@ -23,6 +30,7 @@ export default function EcommercePage() {
                     className="w-40 h-auto"
                 />
             </div>
+
             <div className="min-h-screen px-8 md:px-20 py-24">
                 <h1 className="text-5xl font-bold text-center">
                     E-Commerce <span className="text-[#5AD5D7]">Jobs</span>
@@ -42,16 +50,42 @@ export default function EcommercePage() {
                                 <strong>Company:</strong> {job.company}
                             </p>
 
-                            <p className="mt-2 text-gray-600">
-                                <strong>Location:</strong> {job.location}
-                            </p>
+                            <select
+                                className="mt-4 w-full border border-gray-300 rounded-xl px-4 py-3"
+                                value={selectedLocation[i] || ""}
+                                onChange={(e) =>
+                                    setSelectedLocation({
+                                        ...selectedLocation,
+                                        [i]: e.target.value,
+                                    })
+                                }
+                            >
+                                <option value="">Select Location</option>
+
+                                {job.locations.map((location) => (
+                                    <option key={location} value={location}>
+                                        {location}
+                                    </option>
+                                ))}
+                            </select>
 
                             <a
-                                href="https://wa.me/919500038959"
+                                href={`https://wa.me/${job.whatsapp}?text=${encodeURIComponent(
+                                    `Hello Culture Kite Team,
+
+I would like to apply for the following position:
+
+Company: ${job.company}
+Role: ${job.role}
+Preferred Location: ${selectedLocation[i] || "Not Selected"}
+
+Thank you.`
+                                )}`}
                                 target="_blank"
-                                className="inline-block mt-6 bg-[#123A8D] text-white px-6 py-3 rounded-xl"
+                                rel="noopener noreferrer"
+                                className="inline-block mt-6 bg-[#123A8D] text-white px-6 py-3 rounded-xl hover:bg-[#1F84D7]"
                             >
-                                Apply Now
+                                Apply for {job.company}
                             </a>
                         </div>
                     ))}

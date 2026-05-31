@@ -1,29 +1,35 @@
+"use client";
+
+import { useState } from "react";
 export default function LogisticsPage() {
+    const [selectedLocation, setSelectedLocation] =
+        useState<Record<number, string>>({});
+
     const jobs = [
         {
             role: "Warehouse Associates",
             company: "FirstCry",
-            location: "Chennai & Coimbatore",
+            locations: ["Chennai", "Coimbatore"],
         },
         {
             role: "Loading & Unloading",
             company: "ABT Parcel",
-            location: "All Over Tamil Nadu",
+            locations: ["Chennai", "Coimbatore", "All Over Tamil Nadu"],
         },
         {
             role: "Warehouse Associates",
             company: "Meesho",
-            location: "Chennai",
+            locations: ["Chennai"],
         },
         {
             role: "Warehouse Associates",
             company: "Purple",
-            location: "Coimbatore",
+            locations: ["Coimbatore"],
         },
         {
             role: "Warehouse Associates",
             company: "Flipkart",
-            location: "Coimbatore",
+            locations: ["Coimbatore"],
         },
     ];
 
@@ -60,17 +66,56 @@ export default function LogisticsPage() {
                                 <strong>Company:</strong> {job.company}
                             </p>
 
-                            <p className="text-gray-600 mt-2">
-                                <strong>Location:</strong> {job.location}
-                            </p>
+                            <div className="mt-4">
+                                <label className="block text-gray-600 mb-2">
+                                    <strong>Select Location:</strong>
+                                </label>
 
-                            <a
-                                href="https://wa.me/919500038959"
-                                target="_blank"
-                                className="inline-block mt-6 bg-[#123A8D] text-white px-6 py-3 rounded-xl hover:bg-[#1F84D7]"
+                                <select
+                                    className="w-full border border-gray-300 rounded-xl px-4 py-3"
+                                    value={selectedLocation[i] || ""}
+                                    onChange={(e) =>
+                                        setSelectedLocation({
+                                            ...selectedLocation,
+                                            [i]: e.target.value,
+                                        })
+                                    }
+                                >
+                                    <option value="">Choose Location</option>
+
+                                    {job.locations.map((location) => (
+                                        <option key={location} value={location}>
+                                            {location}
+                                        </option>
+                                    ))}
+                                </select>
+                            </div>
+
+                            <button
+                                disabled={!selectedLocation[i]}
+                                onClick={() => {
+                                    window.open(
+                                        `https://wa.me/919500038959?text=${encodeURIComponent(
+                                            `Hello Culture Kite Team,
+
+I would like to apply for the following position:
+
+Company: ${job.company}
+Role: ${job.role}
+Preferred Location: ${selectedLocation[i]}
+
+Thank you.`
+                                        )}`,
+                                        "_blank"
+                                    );
+                                }}
+                                className={`mt-6 px-6 py-3 rounded-xl text-white font-semibold ${selectedLocation[i]
+                                    ? "bg-[#123A8D] hover:bg-[#1F84D7]"
+                                    : "bg-gray-400 cursor-not-allowed"
+                                    }`}
                             >
-                                Apply Now
-                            </a>
+                                Apply for {job.company}
+                            </button>
                         </div>
                     ))}
                 </div>

@@ -96,22 +96,6 @@ export default function CultureKiteWebsite() {
         ☰
       </div>
 
-      <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
-        <a
-          href="https://wa.me/919500038959"
-          target="_blank"
-          className="bg-[#123A8D] text-white px-8 py-4 rounded-full font-bold hover:bg-[#1F84D7]"
-        >
-          Talk To Our Team
-        </a>
-
-        <a
-          href="#services"
-          className="border border-gray-300 px-8 py-4 rounded-full font-bold hover:bg-gray-100"
-        >
-          Workforce Solutions
-        </a>
-      </div>
 
       <section
         id="home"
@@ -154,19 +138,22 @@ export default function CultureKiteWebsite() {
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row gap-5 justify-center">
+
             <a
-              href="#services"
-              className="bg-white hover:bg-[#1F84D7] transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-2xl shadow-blue-500/30 inline-block text-center"
+              href="https://wa.me/919500038959"
+              target="_blank"
+              className="bg-[#123A8D] hover:bg-[#1F84D7] text-white transition px-8 py-4 rounded-2xl text-lg font-semibold shadow-xl inline-block text-center"
             >
-              Hire Employees
+              Talk To Our Team
             </a>
 
             <a
-              href="#careers"
-              className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/20 transition px-8 py-4 rounded-2xl text-lg font-semibold backdrop-blur-md inline-block text-center"
+              href="#services"
+              className="border border-[#5AD5D7]/20 hover:bg-[#123A8D]/10 transition px-8 py-4 rounded-2xl text-lg font-semibold inline-block text-center"
             >
-              Apply for Jobs
+              Workforce Solutions
             </a>
+
           </div>
         </div>
       </section>

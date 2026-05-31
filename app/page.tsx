@@ -68,11 +68,11 @@ export default function CultureKiteWebsite() {
       </nav>
 
       {/* Fixed Bottom Left Logo */}
-      <div className="fixed bottom-6 left-6 z-10 opacity-10 pointer-events-none">
+      <div className="fixed bottom-6 left-6 z-10 opacity-20 pointer-events-none">
         <img
           src="/logo.png"
           alt="Culture Kite Watermark"
-          className="w-32 md:w-40 h-auto"
+          className="w-52 md:w-72 h-auto"
         />
       </div>
       <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">

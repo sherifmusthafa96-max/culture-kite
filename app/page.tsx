@@ -662,6 +662,25 @@ export default function CultureKiteWebsite() {
 .animate-watermark {
   animation: watermarkFloat 8s ease-in-out infinite;
 }
+  @keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
 `}</style>
 
     </div >

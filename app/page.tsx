@@ -104,13 +104,44 @@ export default function CultureKiteWebsite() {
 
         {/* WATERMARK PASTE HERE */}
 
-        <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.08] animate-watermark">
+        <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.03] animate-watermark">
 
           <img
             src="/logo.png"
             alt="Culture Kite Watermark"
             className="w-[700px] md:w-[1100px] h-auto"
           />
+
+        </div>
+        <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
+
+          <div className="relative w-60 h-60">
+
+            <img
+              src="/logo.png"
+              className="absolute w-32 top-0 left-0 animate-topLeft"
+              alt=""
+            />
+
+            <img
+              src="/logo.png"
+              className="absolute w-32 top-0 right-0 animate-topRight"
+              alt=""
+            />
+
+            <img
+              src="/logo.png"
+              className="absolute w-32 bottom-0 left-0 animate-bottomLeft"
+              alt=""
+            />
+
+            <img
+              src="/logo.png"
+              className="absolute w-32 bottom-0 right-0 animate-bottomRight"
+              alt=""
+            />
+
+          </div>
 
         </div>
         <div className="relative z-10 max-w-5xl">
@@ -543,6 +574,7 @@ export default function CultureKiteWebsite() {
       <Chatbot />
 
       <style jsx global>{`
+
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -556,7 +588,74 @@ export default function CultureKiteWebsite() {
 .animate-marquee {
   animation: marquee 18s linear infinite;
 }
-  @keyframes watermarkFloat {
+
+/* Split Logo Animations */
+
+@keyframes topLeft {
+  0%,100% {
+    transform: translate(-120px,-120px);
+    opacity: 0;
+  }
+
+  40%,60% {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes topRight {
+  0%,100% {
+    transform: translate(120px,-120px);
+    opacity: 0;
+  }
+
+  40%,60% {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes bottomLeft {
+  0%,100% {
+    transform: translate(-120px,120px);
+    opacity: 0;
+  }
+
+  40%,60% {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+@keyframes bottomRight {
+  0%,100% {
+    transform: translate(120px,120px);
+    opacity: 0;
+  }
+
+  40%,60% {
+    transform: translate(0,0);
+    opacity: 1;
+  }
+}
+
+.animate-topLeft {
+  animation: topLeft 6s infinite ease-in-out;
+}
+
+.animate-topRight {
+  animation: topRight 6s infinite ease-in-out;
+}
+
+.animate-bottomLeft {
+  animation: bottomLeft 6s infinite ease-in-out;
+}
+
+.animate-bottomRight {
+  animation: bottomRight 6s infinite ease-in-out;
+}
+
+@keyframes watermarkFloat {
   0% {
     transform: translateY(0px);
   }
@@ -573,8 +672,8 @@ export default function CultureKiteWebsite() {
 .animate-watermark {
   animation: watermarkFloat 8s ease-in-out infinite;
 }
-`}</style>
 
+`}</style>
     </div >
   );
-}
+} 

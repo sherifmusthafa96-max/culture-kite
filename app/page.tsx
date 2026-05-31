@@ -334,7 +334,9 @@ export default function CultureKiteWebsite() {
       {/* Careers */}
       <section id="careers" className="px-8 md:px-20 py-24">
         <div className="bg-gradient-to-r from-blue-600 to-blue-800 rounded-[40px] p-12 md:p-16 text-center shadow-2xl shadow-blue-900/40">
-          <h2 className="text-5xl font-bold">Join Our Workforce Network</h2>
+          <h2 className="text-5xl font-bold text-white">
+            Join Our Workforce Network
+          </h2>
           <p className="mt-6 text-blue-100 max-w-3xl mx-auto text-lg leading-relaxed">
             Looking for jobs in delivery, warehouse, housekeeping, logistics, or office support?
             Apply now and grow your career with CULTURE KITE.

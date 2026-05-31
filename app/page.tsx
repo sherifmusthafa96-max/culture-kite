@@ -342,7 +342,7 @@ export default function CultureKiteWebsite() {
             />
             <img
               src="/client-logos/shree-maruti.png"
-              alt="Shree Maruthi"
+              alt="Shree Maruti"
               className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
             />
 
@@ -382,17 +382,24 @@ export default function CultureKiteWebsite() {
               className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
             />
 
+            <img
+              src="/client-logos/royal-enfield.png"
+              alt="Royal Enfield"
+              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+            />
+
             {/* Duplicate for smooth infinite loop */}
 
             <img src="/client-logos/firstcry.png" alt="FirstCry" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/abt.png" alt="ABT Parcel Services" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/shree-maruthi.png" alt="Shree Maruthi" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/shree-maruti.png" alt="Shree Maruti" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/flipkart.png" alt="Flipkart" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/meesho.png" alt="Meesho" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/emerald.png" alt="Emerald Jewellers" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/indoshell.png" alt="Indoshell Cast" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/purple.png" alt="Purple" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
             <img src="/client-logos/unique-shell.png" alt="Unique Shell Mould" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            <img src="/client-logos/royal-enfield.png" alt="Royal Enfield" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
 
           </div>
         </div>

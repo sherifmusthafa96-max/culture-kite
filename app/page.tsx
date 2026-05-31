@@ -41,7 +41,7 @@ export default function CultureKiteWebsite() {
 
           <div className="flex items-center">
             <img
-              src="/culture-kite-logo.png"
+              src="/logo.png"
               alt="Culture Kite"
               className="h-14 md:h-16 w-auto"
             />
@@ -119,7 +119,7 @@ export default function CultureKiteWebsite() {
         <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.08] animate-watermark">
 
           <img
-            src="/culture-kite-logo.png"
+            src="/logo.png"
             alt="Culture Kite Watermark"
             className="w-[700px] md:w-[1100px] h-auto"
           />
@@ -132,7 +132,7 @@ export default function CultureKiteWebsite() {
           </div>
 
           <img
-            src="/culture-kite-logo.png"
+            src="/logo.png"
             alt="Culture Kite"
             className="mx-auto w-[400px] md:w-[650px] h-auto"
           />
@@ -188,7 +188,7 @@ export default function CultureKiteWebsite() {
       {/* About */}
       <div className="flex items-center gap-4 mb-6">
         <img
-          src="/culture-kite-logo.png"
+          src="/logo.png"
           alt="Culture Kite"
           className="h-14 w-auto"
         />
@@ -265,7 +265,7 @@ export default function CultureKiteWebsite() {
 
               <div className="w-14 h-14 rounded-2xl bg-[#5AD5D7]/20 flex items-center justify-center text-[#5AD5D7] text-2xl mb-6">
                 <img
-                  src="/culture-kite-logo.png"
+                  src="/logo.png"
                   alt="Culture Kite"
                   className="w-10 h-10 object-contain"
                 />
@@ -459,7 +459,7 @@ export default function CultureKiteWebsite() {
       {/* Footer */}
       <footer className="relative z-50 border-t border-gray-200 bg-white py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
         <img
-          src="/culture-kite-logo.png"
+          src="/logo.png"
           alt="Culture Kite"
           className="h-12 w-auto"
         />

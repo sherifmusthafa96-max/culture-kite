@@ -65,7 +65,20 @@ export default function ApplyPage() {
                     role,
                 },
             ]);
-
+            await fetch("/api/apply", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    name,
+                    email,
+                    phone,
+                    company,
+                    role,
+                    location: selectedLocation,
+                }),
+            });
             if (error) throw error;
 
             router.push("/success");

@@ -482,31 +482,12 @@ export default function CultureKiteWebsite() {
                 <p>
                   <strong>Email:</strong><br />
                   <a
-                    href="mailto:admin@culturekite.in"
+                    href="mailto:info@culturekite.in"
                     className="text-[#5AD5D7] hover:text-blue-300"
                   >
-                    admin@culturekite.in
+                    info@culturekite.in
                   </a><br />
-                  <a
-                    href="mailto:mathan@culturekite.in"
-                    className="text-[#5AD5D7] hover:text-blue-300"
-                  >
-                    mathan@culturekite.in
-                  </a><br />
-                  <a
-                    href="mailto:musthafa@culturekite.in"
-                    className="text-[#5AD5D7] hover:text-blue-300"
-                  >
-                    musthafa@culturekite.in
-                  </a><br />
-                  <a
-                    href="mailto:aiswarya@culturekite.in"
-                    className="text-[#5AD5D7] hover:text-blue-300"
-                  >
-                    aiswarya@culturekite.in
-                  </a>
                 </p>
-
                 <p>
                   <strong>Registered Office:</strong><br />
                   No. 30F-A, Peon Colony,<br />

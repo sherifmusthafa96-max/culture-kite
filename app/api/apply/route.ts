@@ -12,6 +12,7 @@ export async function POST(req: Request) {
             company,
             role,
             location,
+            resumeUrl,
         } = body;
 
         const transporter = nodemailer.createTransport({
@@ -42,6 +43,18 @@ export async function POST(req: Request) {
             ],
             subject: "New Job Application Received",
             html: `
+            <p>
+<b>Resume:</b>
+<a href="${resumeUrl}">
+Download Resume
+</a>
+</p>
+<p>
+<b>Resume:</b>
+<a href="${resumeUrl}">
+Download Resume
+</a>
+</p>
 <div style="font-family: Arial, sans-serif; color:#333;">
 
   <img src="https://culturekite.in/logo.png" alt="Culture Kite" style="height:80px; margin-bottom:20px;" />
@@ -55,7 +68,7 @@ export async function POST(req: Request) {
     <tr><td><b>Company</b></td><td>${company}</td></tr>
     <tr><td><b>Role</b></td><td>${role}</td></tr>
     <tr><td><b>Location</b></td><td>${location}</td></tr>
-  </table>
+    <tr><td><b>Resume</b></td><td><a href="${resumeUrl}" target="_blank">View Resume</a></td></tr>
 
   <br>
 
@@ -68,6 +81,7 @@ export async function POST(req: Request) {
 
 </div>
 `,
+
         });
 
         console.log("ADMIN MAIL:", adminResult);

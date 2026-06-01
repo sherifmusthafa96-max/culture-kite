@@ -93,6 +93,7 @@ export default function AdminPage() {
                             <th className="p-3">Company</th>
                             <th className="p-3">Role</th>
                             <th className="p-3">Location</th>
+                            <th className="p-3">Resume</th>
                         </tr>
                     </thead>
 
@@ -105,6 +106,20 @@ export default function AdminPage() {
                                 <td className="p-3">{item.company}</td>
                                 <td className="p-3">{item.role}</td>
                                 <td className="p-3">{item.location}</td>
+                                <td className="p-3">
+                                    {item.resume_url ? (
+                                        <a
+                                            href={item.resume_url}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="bg-green-500 text-white px-3 py-1 rounded"
+                                        >
+                                            Download
+                                        </a>
+                                    ) : (
+                                        "No Resume"
+                                    )}
+                                </td>
                             </tr>
                         ))}
                     </tbody>

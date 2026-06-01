@@ -77,6 +77,7 @@ export default function ApplyPage() {
                     company,
                     role,
                     location: selectedLocation,
+                    resumeUrl,
                 }),
             });
 
@@ -87,7 +88,7 @@ export default function ApplyPage() {
             router.push("/success");
 
         } catch (err) {
-            console.log("ERROR:", err);
+            console.error("FULL ERROR:", err);
             alert("Submission Failed ❌");
         } finally {
             setLoading(false);

@@ -33,12 +33,21 @@ export default function AdminPage() {
         id: number,
         status: string
     ) => {
-        const { error } = await supabase
+        const { data: checkData } = await supabase
             .from("applications")
-            .update({ status })
+            .select("*")
             .eq("id", id);
 
-        console.log("STATUS UPDATE ERROR:", error);
+        console.log("FOUND RECORD:", checkData);
+
+        const { data, error } = await supabase
+            .from("applications")
+            .update({ status })
+            .eq("id", id)
+            .select();
+
+        console.log("UPDATED DATA:", data);
+        console.log("UPDATE ERROR:", error);
 
         if (error) {
             console.error(error);
@@ -315,6 +324,7 @@ export default function AdminPage() {
                                                     e.target.value
                                                 )
                                             }
+
                                             className="border rounded px-2 py-1"
                                         >
                                             <option value="Submitted">Submitted</option>

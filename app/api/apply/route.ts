@@ -64,6 +64,15 @@ export async function POST(req: Request) {
       Download Resume
     </a>
   </td>
+  <td>
+  <a
+    href={app.resume_url}
+    target="_blank"
+    className="text-blue-600"
+  >
+    View Resume
+  </a>
+</td>
 </tr>
 
 <tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>

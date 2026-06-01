@@ -29,8 +29,8 @@ export async function POST(req: Request) {
             from: "Culture Kite <no-reply@culturekite.in>",
             to: [
                 "admin@culturekite.in",
-                "Musthafa@culturekite.in",
-                "Mathan@culturekite.in"
+                "musthafa@culturekite.in",
+                "mathan@culturekite.in"
             ],
             subject: "New Job Application Received",
             html: `

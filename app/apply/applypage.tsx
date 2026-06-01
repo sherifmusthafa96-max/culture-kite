@@ -5,14 +5,14 @@ import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 
 export default function ApplyPage() {
-
-
     const searchParams = useSearchParams();
     const router = useRouter();
 
     const company = searchParams.get("company") || "";
     const role = searchParams.get("role") || "";
 
+    // form states
+    const [selectedLocation, setSelectedLocation] = useState("");
     const [name, setName] = useState("");
     const [dob, setDob] = useState("");
     const [phone, setPhone] = useState("");
@@ -21,11 +21,9 @@ export default function ApplyPage() {
     const [qualification, setQualification] = useState("");
     const [experienceType, setExperienceType] = useState("");
     const [experienceYears, setExperienceYears] = useState("");
-    const [loading, setLoading] = useState(false);
-    const [selectedLocation, setSelectedLocation] =
-        useState<Record<number, string>>({});
     const [hasResume, setHasResume] = useState("");
     const [resume, setResume] = useState<File | null>(null);
+    const [loading, setLoading] = useState(false);
 
     const handleSubmit = async () => {
         try {
@@ -33,7 +31,7 @@ export default function ApplyPage() {
 
             let resumeUrl = "";
 
-            // 1. Upload resume FIRST (if exists)
+            // upload resume if exists
             if (hasResume === "yes" && resume) {
                 const fileName = `${Date.now()}-${resume.name}`;
 
@@ -49,18 +47,8 @@ export default function ApplyPage() {
 
                 resumeUrl = data.publicUrl;
             }
-            console.log({
-                name,
-                dob,
-                phone,
-                email,
-                address,
-                qualification,
-                experienceType,
-                experienceYears,
-            });
 
-            // 2. THEN insert into DB
+            // insert into DB
             const { error } = await supabase.from("applications").insert([
                 {
                     name: name || null,
@@ -71,9 +59,11 @@ export default function ApplyPage() {
                     qualification: qualification || null,
                     experience_type: experienceType || null,
                     experience_years: experienceYears ? Number(experienceYears) : null,
+                    location: selectedLocation || null,
+                    resume_url: resumeUrl || null,
                     company,
                     role,
-                }
+                },
             ]);
 
             if (error) throw error;
@@ -81,16 +71,22 @@ export default function ApplyPage() {
             router.push("/success");
 
         } catch (err) {
-            console.log("RAW ERROR:", err);
+            console.log("ERROR:", err);
             alert("Submission Failed ❌");
         } finally {
             setLoading(false);
         }
     };
+
     return (
-        <div className="min-h-screen flex items-center justify-center p-10 bg-gray-50">
+        <div className="min-h-screen flex items-center justify-center p-6 bg-gray-50">
 
             <div className="w-full max-w-xl space-y-4 border bg-white p-6 rounded-xl shadow-lg">
+
+                {/* LOGO SPACE */}
+                <div className="flex justify-center">
+                    <img src="/logo.png" className="h-14" />
+                </div>
 
                 <h1 className="text-2xl font-bold text-center">
                     Apply for {company}
@@ -102,55 +98,65 @@ export default function ApplyPage() {
 
                     <input
                         placeholder="Name"
-                        className="w-full border rounded-lg px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                        className="border rounded-lg px-4 py-3"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                     />
 
+                    <label className="font-medium">DOB (Date of Birth)</label>
                     <input
                         type="date"
-                        className="w-full border rounded-lg px-4 py-3"
+                        className="border rounded-lg px-4 py-3"
                         value={dob}
                         onChange={(e) => setDob(e.target.value)}
                     />
 
                     <input
                         placeholder="Phone"
-                        className="w-full border rounded-lg px-4 py-3"
+                        className="border rounded-lg px-4 py-3"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                     />
 
                     <input
                         placeholder="Email"
-                        className="w-full border rounded-lg px-4 py-3"
+                        className="border rounded-lg px-4 py-3"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
 
                     <textarea
                         placeholder="Address"
-                        className="w-full border rounded-lg px-4 py-3"
+                        className="border rounded-lg px-4 py-3"
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                     />
 
                     <input
                         placeholder="Qualification"
-                        className="w-full border rounded-lg px-4 py-3"
+                        className="border rounded-lg px-4 py-3"
                         value={qualification}
                         onChange={(e) => setQualification(e.target.value)}
                     />
 
+                    {/* LOCATION */}
                     <select
-                        className="w-full border rounded-lg px-4 py-3"
+                        className="border rounded-lg px-4 py-3"
+                        value={selectedLocation}
+                        onChange={(e) => setSelectedLocation(e.target.value)}
+                    >
+                        <option value="">Select Location</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Coimbatore">Coimbatore</option>
+                    </select>
+
+                    {/* EXPERIENCE TYPE */}
+                    <select
+                        className="border rounded-lg px-4 py-3"
                         value={experienceType}
                         onChange={(e) => {
-                            const value = e.target.value;
-                            setExperienceType(value);
-
-                            // 👉 IMPORTANT FIX HERE
-                            if (value === "Fresher") {
+                            setExperienceType(e.target.value);
+                            if (e.target.value === "Fresher") {
                                 setExperienceYears("");
                             }
                         }}
@@ -160,26 +166,28 @@ export default function ApplyPage() {
                         <option value="Experienced">Experienced</option>
                     </select>
 
+                    {/* YEARS */}
                     <select
-                        className="w-full border rounded-lg px-4 py-3"
+                        className="border rounded-lg px-4 py-3"
                         value={experienceYears}
                         onChange={(e) => setExperienceYears(e.target.value)}
                         disabled={experienceType !== "Experienced"}
                     >
                         <option value="">Years of Experience</option>
-
-                        {[0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((year) => (
-                            <option key={year} value={year}>
-                                {year} Year
+                        {[0.5, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((y) => (
+                            <option key={y} value={y}>
+                                {y} Year
                             </option>
                         ))}
                     </select>
+
+                    {/* RESUME */}
                     <select
-                        className="w-full border rounded-lg px-4 py-3"
+                        className="border rounded-lg px-4 py-3"
                         value={hasResume}
                         onChange={(e) => setHasResume(e.target.value)}
                     >
-                        <option value="">Do you have a resume?</option>
+                        <option value="">Do you have resume?</option>
                         <option value="yes">Yes</option>
                         <option value="no">No</option>
                     </select>
@@ -187,7 +195,7 @@ export default function ApplyPage() {
                     {hasResume === "yes" && (
                         <input
                             type="file"
-                            className="w-full border rounded-lg px-4 py-3"
+                            className="border rounded-lg px-4 py-3"
                             accept=".pdf,.doc,.docx"
                             onChange={(e) => {
                                 if (e.target.files?.[0]) {
@@ -196,16 +204,18 @@ export default function ApplyPage() {
                             }}
                         />
                     )}
+
+                    {/* SUBMIT BUTTON */}
                     <button
                         onClick={handleSubmit}
-                        disabled={loading}
-                        className="w-full bg-[#123A8D] text-white py-3 rounded-lg font-semibold hover:bg-blue-700 transition"
+                        disabled={loading || !selectedLocation}
+                        className="w-full bg-[#123A8D] text-white py-3 rounded-lg font-semibold"
                     >
                         {loading ? "Submitting..." : "Submit Application"}
                     </button>
 
                 </div>
             </div>
-        </div >
+        </div>
     );
 }

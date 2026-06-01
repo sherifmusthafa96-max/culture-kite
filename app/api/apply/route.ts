@@ -40,7 +40,18 @@ export async function POST(req: Request) {
                 "mathan@culturekite.in"
             ],
             subject: "New Job Application Received",
-            html: `...`
+            html: `
+<h2>New Job Application Received</h2>
+
+<table border="1" cellpadding="8" cellspacing="0">
+<tr><td><b>Name</b></td><td>${name}</td></tr>
+<tr><td><b>Email</b></td><td>${email}</td></tr>
+<tr><td><b>Phone</b></td><td>${phone}</td></tr>
+<tr><td><b>Company</b></td><td>${company}</td></tr>
+<tr><td><b>Role</b></td><td>${role}</td></tr>
+<tr><td><b>Location</b></td><td>${location}</td></tr>
+</table>
+`,
         });
 
         console.log("ADMIN MAIL:", adminResult);
@@ -50,7 +61,34 @@ export async function POST(req: Request) {
             from: "Culture Kite <musthafa@culturekite.in>",
             to: email,
             subject: "Application Received - Culture Kite",
-            html: `...`
+            html: `
+<h2>Thank You for Applying!</h2>
+
+<p>Hi ${name},</p>
+
+<p>
+Your application for
+<b>${role}</b>
+at
+<b>${company}</b>
+has been successfully received.
+</p>
+
+<p>
+Our recruitment team will review your profile and contact you shortly.
+</p>
+
+<p>
+Thank you for choosing Culture Kite.
+</p>
+
+<br>
+
+<p>
+Regards,<br>
+Culture Kite Recruitment Team
+</p>
+`,
         });
 
         console.log("CANDIDATE MAIL:", candidateResult);

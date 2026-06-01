@@ -2,25 +2,48 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 
-const supabase = createClient(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.SUPABASE_SERVICE_ROLE_KEY!
-);
-
 export async function POST(req: Request) {
     try {
-
         const { id, status } = await req.json();
 
-        const { data: application } = await supabase
-            .from("applications")
-            .select("*")
-            .eq("id", id)
-            .single();
+        const supabaseUrl =
+            process.env.NEXT_PUBLIC_SUPABASE_URL;
 
-        if (!application) {
+        const serviceRoleKey =
+            process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+        if (!supabaseUrl || !serviceRoleKey) {
+            console.error("Supabase ENV Missing");
+
             return NextResponse.json(
-                { success: false },
+                {
+                    success: false,
+                    error: "Supabase ENV Missing",
+                },
+                { status: 500 }
+            );
+        }
+
+        const supabase = createClient(
+            supabaseUrl,
+            serviceRoleKey
+        );
+
+        const { data: application, error } =
+            await supabase
+                .from("applications")
+                .select("*")
+                .eq("id", id)
+                .single();
+
+        if (error || !application) {
+            console.error(error);
+
+            return NextResponse.json(
+                {
+                    success: false,
+                    error: "Application not found",
+                },
                 { status: 404 }
             );
         }
@@ -35,79 +58,69 @@ export async function POST(req: Request) {
             },
         });
 
+        await transporter.verify();
+
         let message = "";
 
         switch (status) {
-
-            case "Under Review":
-                message =
-                    "Your application is currently under review by our recruitment team.";
-                break;
-
-            case "Shortlisted":
-                message =
-                    "Congratulations! Your profile has been shortlisted.";
-                break;
 
             case "Interview Scheduled":
                 message =
                     "Your interview has been scheduled. Our team will contact you shortly.";
                 break;
 
-            case "Selected":
+            case "Shortlisted":
                 message =
-                    "Congratulations! You have been selected.";
+                    "Congratulations! Your profile has been shortlisted.";
                 break;
-
-            case "Rejected":
-                message =
-                    "Thank you for your interest. At this time we will not be moving forward.";
-                break;
-
-            default:
-                message =
-                    "Your application status has been updated.";
         }
 
-        await transporter.sendMail({
-            from: "Culture Kite <musthafa@culturekite.in>",
-            to: application.email,
-            subject: `Application Status Updated - ${status}`,
-            html: `
-                <h2>Hello ${application.name}</h2>
+        const mailResult =
+            await transporter.sendMail({
+                from: "Culture Kite <musthafa@culturekite.in>",
+                to: application.email,
+                subject: `Application Status Updated - ${status}`,
+                html: `
+                    <div style="font-family:Arial,sans-serif">
 
-                <p>
-                    Your application for
-                    <b>${application.role}</b>
-                    at
-                    <b>${application.company}</b>
-                    has been updated.
-                </p>
+                        <h2>Hello ${application.name}</h2>
 
-                <h3>Status: ${status}</h3>
+                        <p>
+                            Your application for
+                            <strong>${application.role}</strong>
+                            at
+                            <strong>${application.company}</strong>
+                            has been updated.
+                        </p>
 
-                <p>${message}</p>
+                        <h3>Status: ${status}</h3>
 
-                <br/>
+                        <p>${message}</p>
 
-                <p>
-                    Regards,<br/>
-                    Culture Kite Recruitment Team
-                </p>
-            `,
-        });
+                        <br/>
+
+                        <p>
+                            Regards,<br/>
+                            <strong>Culture Kite Recruitment Team</strong>
+                        </p>
+
+                    </div>
+                `,
+            });
+
+        console.log("STATUS MAIL:", mailResult);
 
         return NextResponse.json({
             success: true,
         });
 
     } catch (err) {
-
-        console.error(err);
+        console.error("STATUS UPDATE ERROR:", err);
 
         return NextResponse.json(
             {
                 success: false,
+                error: String(err),
             },
             {
                 status: 500,

@@ -12,13 +12,17 @@ export default function AdminPage() {
     const fetchApplications = async () => {
         setLoading(true);
 
-        const { data, error } = await supabase
+        const { data, error, count } = await supabase
             .from("applications")
-            .select("*")
+            .select("*", { count: "exact" })
             .order("id", { ascending: false });
 
         console.log("DATA:", data);
+        console.log("COUNT:", count);
         console.log("ERROR:", error);
+
+        setApplications(data || []);
+        setLoading(false);
 
         if (error) {
             console.error(error);

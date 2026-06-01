@@ -16,11 +16,20 @@ export default function Navbar() {
       </Link>
 
       {/* NAV LINKS */}
-      <div className="flex gap-6 font-medium">
+      <div className="flex gap-6 font-medium items-center">
+
         <Link href="/logistics">Logistics</Link>
         <Link href="/manufacturing">Manufacturing</Link>
         <Link href="/ecommerce">E-Commerce</Link>
         <Link href="/fm-teams">FM-Teams</Link>
+
+        <Link
+          href="/admin"
+          className="hidden"
+        >
+          Applications
+        </Link>
+
       </div>
 
     </div>

@@ -57,6 +57,7 @@ export default function CultureKiteWebsite() {
             <a href="#services">Services</a>
             <a href="#careers">Careers</a>
             <a href="#contact">Contact</a>
+            <a href="/admin">Applications</a>
           </div>
 
           <a

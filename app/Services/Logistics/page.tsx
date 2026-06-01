@@ -1,8 +1,10 @@
 "use client";
-
+import { useRouter } from "next/navigation";
 import { useState } from "react";
+import { supabase } from "@/lib/supabase";
 
 export default function LogisticsPage() {
+    const router = useRouter();
     const [selectedLocation, setSelectedLocation] =
         useState<Record<number, string>>({});
 
@@ -111,34 +113,18 @@ export default function LogisticsPage() {
                                     ))}
                                 </select>
                             </div>
-
                             {/* Apply Button */}
+
                             <button
-                                disabled={!selectedLocation[i]}
-                                onClick={() => {
-                                    window.open(
-                                        `https://wa.me/919500038959?text=${encodeURIComponent(
-                                            `Hello Culture Kite Team,
-
-I would like to apply for the following position:
-
-Company: ${job.company}
-Role: ${job.role}
-Preferred Location: ${selectedLocation[i]}
-
-Thank you.`
-                                        )}`,
-                                        "_blank"
-                                    );
-                                }}
-                                className={`w-full mt-6 px-6 py-3 rounded-xl text-white font-semibold ${selectedLocation[i]
-                                        ? "bg-[#123A8D] hover:bg-[#1F84D7]"
-                                        : "bg-gray-400 cursor-not-allowed"
-                                    }`}
+                                onClick={() =>
+                                    router.push(
+                                        `/apply?company=${job.company}&role=${job.role}`
+                                    )
+                                }
+                                className="w-full mt-6 px-6 py-3 rounded-xl bg-[#123A8D] text-white font-semibold shadow-md hover:bg-[#1F84D7] hover:shadow-xl transition-all duration-300 active:scale-95"
                             >
-                                Apply for {job.company}
+                                Apply
                             </button>
-
                         </div>
                     ))}
 

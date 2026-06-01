@@ -104,9 +104,13 @@ export default function ApplyPage() {
                     />
 
                     <label className="font-medium">DOB (Date of Birth)</label>
+                    <label className="font-medium text-gray-700">
+                        Date of Birth
+                    </label>
+
                     <input
                         type="date"
-                        className="border rounded-lg px-4 py-3"
+                        className="w-full border rounded-lg px-4 py-3"
                         value={dob}
                         onChange={(e) => setDob(e.target.value)}
                     />

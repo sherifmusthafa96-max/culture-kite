@@ -55,8 +55,9 @@ export async function POST(req: Request) {
     <tr><td><b>Email</b></td><td>${email}</td></tr>
     <tr><td><b>Phone</b></td><td>${phone}</td></tr>
     <tr><td><b>Company</b></td><td>${company}</td></tr>
-    <tr><td><b>Role</b></td><td>${role}</td></tr>
-    <tr><td><b>Job Location</b></td><td>${jobLocation}</td></tr>
+<tr><td><b>Role</b></td><td>${role}</td></tr>
+<tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
+<tr><td><b>Job Location</b></td><td>${jobLocation}</td></tr>
     <tr>
   <td><b>Resume</b></td>
   <td>
@@ -76,7 +77,7 @@ export async function POST(req: Request) {
 </tr>
 
 <tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
-<tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
+<tr><td><b>Job Location</b></td><td>${jobLocation}</td></tr>
 
 </table>
 
@@ -104,24 +105,56 @@ export async function POST(req: Request) {
             html: `
 <div style="font-family: Arial, sans-serif; color:#333;">
 
-  <img src="https://culturekite.in/logo.png"
-       alt="Culture Kite"
-       style="height:80px; margin-bottom:20px;" />
+  <img
+    src="https://culturekite.in/logo.png"
+    alt="Culture Kite"
+    style="height:80px; margin-bottom:20px;"
+  />
 
   <h2 style="color:#123A8D;">
     New Job Application Received
   </h2>
 
-  <table border="1" cellpadding="10" cellspacing="0"
-         style="border-collapse:collapse;">
+  <table
+    border="1"
+    cellpadding="10"
+    cellspacing="0"
+    style="border-collapse:collapse;"
+  >
+    <tr>
+      <td><b>Name</b></td>
+      <td>${name}</td>
+    </tr>
 
-    <tr><td><b>Name</b></td><td>${name}</td></tr>
-    <tr><td><b>Email</b></td><td>${email}</td></tr>
-    <tr><td><b>Phone</b></td><td>${phone}</td></tr>
-    <tr><td><b>Company</b></td><td>${company}</td></tr>
-    <tr><td><b>Role</b></td><td>${role}</td></tr>
-    <tr><td><b>Job Location</b></td><td>${jobLocation}</td></tr>
-    <tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
+    <tr>
+      <td><b>Email</b></td>
+      <td>${email}</td>
+    </tr>
+
+    <tr>
+      <td><b>Phone</b></td>
+      <td>${phone}</td>
+    </tr>
+
+    <tr>
+      <td><b>Company</b></td>
+      <td>${company}</td>
+    </tr>
+
+    <tr>
+      <td><b>Role</b></td>
+      <td>${role}</td>
+    </tr>
+
+    <tr>
+      <td><b>Current Location</b></td>
+      <td>${currentLocation}</td>
+    </tr>
+
+    <tr>
+      <td><b>Job Location</b></td>
+      <td>${jobLocation}</td>
+    </tr>
 
     <tr>
       <td><b>Resume</b></td>

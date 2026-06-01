@@ -119,11 +119,6 @@ export default function AdminPage() {
             (a) => a.status === "Shortlisted"
         ).length;
 
-    const selected =
-        applications.filter(
-            (a) => a.status === "Selected"
-        ).length;
-
     const rejected =
         applications.filter(
             (a) => a.status === "Rejected"
@@ -178,13 +173,6 @@ export default function AdminPage() {
                     <p>Shortlisted</p>
                     <h2 className="text-3xl font-bold">
                         {shortlisted}
-                    </h2>
-                </div>
-
-                <div className="bg-white shadow rounded-lg p-4 text-center">
-                    <p>Selected</p>
-                    <h2 className="text-3xl font-bold">
-                        {selected}
                     </h2>
                 </div>
 
@@ -246,7 +234,6 @@ export default function AdminPage() {
                     <option value="Under Review">Under Review</option>
                     <option value="Shortlisted">Shortlisted</option>
                     <option value="Interview Scheduled">Interview Scheduled</option>
-                    <option value="Selected">Selected</option>
                     <option value="Rejected">Rejected</option>
                 </select>
 
@@ -331,7 +318,6 @@ export default function AdminPage() {
                                             <option value="Under Review">Under Review</option>
                                             <option value="Shortlisted">Shortlisted</option>
                                             <option value="Interview Scheduled">Interview Scheduled</option>
-                                            <option value="Selected">Selected</option>
                                             <option value="Rejected">Rejected</option>
                                         </select>
                                     </td>

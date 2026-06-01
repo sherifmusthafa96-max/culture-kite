@@ -83,31 +83,41 @@ export async function POST(req: Request) {
                 to: application.email,
                 subject: `Application Status Updated - ${status}`,
                 html: `
-                    <div style="font-family:Arial,sans-serif">
+<div style="font-family:Arial,sans-serif;max-width:600px;margin:auto">
 
-                        <h2>Hello ${application.name}</h2>
+    <div style="text-align:center;margin-bottom:20px;">
+        <img
+            src="https://culturekite.in/logo.png"
+            alt="Culture Kite"
+            width="120"
+        />
+    </div>
 
-                        <p>
-                            Your application for
-                            <strong>${application.role}</strong>
-                            at
-                            <strong>${application.company}</strong>
-                            has been updated.
-                        </p>
+    <h2>Hello ${application.name},</h2>
 
-                        <h3>Status: ${status}</h3>
+    <p>
+        Your application for
+        <strong>${application.role}</strong>
+        at
+        <strong>${application.company}</strong>
+        has been updated.
+    </p>
 
-                        <p>${message}</p>
+    <h3>Status: ${status}</h3>
 
-                        <br/>
+    <p>${message}</p>
 
-                        <p>
-                            Regards,<br/>
-                            <strong>Culture Kite Recruitment Team</strong>
-                        </p>
+    <br/>
 
-                    </div>
-                `,
+    <p>
+        Regards,<br/>
+        <strong>Culture Kite Recruitment Team</strong><br/>
+        📧 info@culturekite.in<br/>
+        📞 +91 9500038959
+    </p>
+
+</div>
+`,
             });
         console.log("MAIL SENT SUCCESSFULLY");
         console.log("STATUS MAIL:", mailResult);

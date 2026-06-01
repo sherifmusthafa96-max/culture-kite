@@ -12,14 +12,14 @@ export default function ApplyPage() {
     const role = searchParams.get("role") || "";
 
     // form states
-    const [jobLocation, setJobLocation] = useState("");
-    const [currentLocation, setCurrentLocation] = useState("");
     const [name, setName] = useState("");
     const [dob, setDob] = useState("");
     const [phone, setPhone] = useState("");
     const [email, setEmail] = useState("");
     const [address, setAddress] = useState("");
     const [qualification, setQualification] = useState("");
+    const [jobLocation, setJobLocation] = useState("");
+    const [currentLocation, setCurrentLocation] = useState("");
     const [experienceType, setExperienceType] = useState("");
     const [experienceYears, setExperienceYears] = useState("");
     const [hasResume, setHasResume] = useState("");

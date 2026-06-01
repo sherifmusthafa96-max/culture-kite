@@ -11,7 +11,8 @@ export async function POST(req: Request) {
             phone,
             company,
             role,
-            location,
+            jobLocation,
+            currentLocation,
             resumeUrl,
         } = body;
 
@@ -43,18 +44,6 @@ export async function POST(req: Request) {
             ],
             subject: "New Job Application Received",
             html: `
-            <p>
-<b>Resume:</b>
-<a href="${resumeUrl}">
-Download Resume
-</a>
-</p>
-<p>
-<b>Resume:</b>
-<a href="${resumeUrl}">
-Download Resume
-</a>
-</p>
 <div style="font-family: Arial, sans-serif; color:#333;">
 
   <img src="https://culturekite.in/logo.png" alt="Culture Kite" style="height:80px; margin-bottom:20px;" />
@@ -67,17 +56,29 @@ Download Resume
     <tr><td><b>Phone</b></td><td>${phone}</td></tr>
     <tr><td><b>Company</b></td><td>${company}</td></tr>
     <tr><td><b>Role</b></td><td>${role}</td></tr>
-    <tr><td><b>Location</b></td><td>${location}</td></tr>
-    <tr><td><b>Resume</b></td><td><a href="${resumeUrl}" target="_blank">View Resume</a></td></tr>
+    <tr><td><b>Job Location</b></td><td>${jobLocation}</td></tr>
+    <tr>
+  <td><b>Resume</b></td>
+  <td>
+    <a href="${resumeUrl}" target="_blank">
+      Download Resume
+    </a>
+  </td>
+</tr>
 
-  <br>
+<tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
+<tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
 
-  <p>
-    Regards,<br>
-    <strong>Culture Kite Recruitment Team</strong><br>
-    📧 info@culturekite.in<br>
-    📞 +91 9500038959
-  </p>
+</table>
+
+<br>
+
+<p>
+  Regards,<br>
+  <strong>Culture Kite Recruitment Team</strong><br>
+  📧 info@culturekite.in<br>
+  📞 +91 9500038959
+</p>
 
 </div>
 `,
@@ -94,24 +95,35 @@ Download Resume
             html: `
 <div style="font-family: Arial, sans-serif; color:#333;">
 
-  <img src="https://culturekite.in/logo.png" alt="Culture Kite" style="height:80px; margin-bottom:20px;" />
+  <img src="https://culturekite.in/logo.png"
+       alt="Culture Kite"
+       style="height:80px; margin-bottom:20px;" />
 
-  <h2 style="color:#123A8D;">Thank You for Applying!</h2>
+  <h2 style="color:#123A8D;">
+    New Job Application Received
+  </h2>
 
-  <p>Hi ${name},</p>
+  <table border="1" cellpadding="10" cellspacing="0"
+         style="border-collapse:collapse;">
 
-  <p>
-    Your application for <strong>${role}</strong> at
-    <strong>${company}</strong> has been successfully received.
-  </p>
+    <tr><td><b>Name</b></td><td>${name}</td></tr>
+    <tr><td><b>Email</b></td><td>${email}</td></tr>
+    <tr><td><b>Phone</b></td><td>${phone}</td></tr>
+    <tr><td><b>Company</b></td><td>${company}</td></tr>
+    <tr><td><b>Role</b></td><td>${role}</td></tr>
+    <tr><td><b>Job Location</b></td><td>${jobLocation}</td></tr>
+    <tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
 
-  <p>
-    Our recruitment team will review your profile and contact you shortly.
-  </p>
+    <tr>
+      <td><b>Resume</b></td>
+      <td>
+        <a href="${resumeUrl}" target="_blank">
+          Download Resume
+        </a>
+      </td>
+    </tr>
 
-  <p>
-    Thank you for choosing Culture Kite.
-  </p>
+  </table>
 
   <br>
 

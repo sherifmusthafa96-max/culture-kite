@@ -12,7 +12,8 @@ export default function ApplyPage() {
     const role = searchParams.get("role") || "";
 
     // form states
-    const [selectedLocation, setSelectedLocation] = useState("");
+    const [jobLocation, setJobLocation] = useState("");
+    const [currentLocation, setCurrentLocation] = useState("");
     const [name, setName] = useState("");
     const [dob, setDob] = useState("");
     const [phone, setPhone] = useState("");
@@ -59,7 +60,8 @@ export default function ApplyPage() {
                     qualification: qualification || null,
                     experience_type: experienceType || null,
                     experience_years: experienceYears ? Number(experienceYears) : null,
-                    location: selectedLocation || null,
+                    job_location: jobLocation || null,
+                    current_location: currentLocation || null,
                     resume_url: resumeUrl || null,
                     company,
                     role,
@@ -76,7 +78,8 @@ export default function ApplyPage() {
                     phone,
                     company,
                     role,
-                    location: selectedLocation,
+                    jobLocation,
+                    currentLocation,
                     resumeUrl,
                 }),
             });
@@ -160,15 +163,31 @@ export default function ApplyPage() {
                     />
 
                     {/* LOCATION */}
+                    <label className="font-medium">
+                        Job Location
+                    </label>
+
                     <select
+                        value={jobLocation}
+                        onChange={(e) => setJobLocation(e.target.value)}
                         className="border rounded-lg px-4 py-3"
-                        value={selectedLocation}
-                        onChange={(e) => setSelectedLocation(e.target.value)}
                     >
-                        <option value="">Select Location</option>
+                        <option value="">Select Job Location</option>
                         <option value="Chennai">Chennai</option>
                         <option value="Coimbatore">Coimbatore</option>
                     </select>
+
+                    <label className="font-medium">
+                        Current Location
+                    </label>
+
+                    <input
+                        type="text"
+                        placeholder="Enter Current Location"
+                        value={currentLocation}
+                        onChange={(e) => setCurrentLocation(e.target.value)}
+                        className="border rounded-lg px-4 py-3"
+                    />
 
                     {/* EXPERIENCE TYPE */}
                     <select
@@ -228,7 +247,7 @@ export default function ApplyPage() {
                     {/* SUBMIT BUTTON */}
                     <button
                         onClick={handleSubmit}
-                        disabled={loading || !selectedLocation}
+                        disabled={loading || !jobLocation}
                         className="w-full bg-[#123A8D] text-white py-3 rounded-lg font-semibold"
                     >
                         {loading ? "Submitting..." : "Submit Application"}

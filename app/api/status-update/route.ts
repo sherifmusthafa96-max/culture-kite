@@ -74,8 +74,10 @@ export async function POST(req: Request) {
                     "Congratulations! Your profile has been shortlisted.";
                 break;
         }
-
+        console.log("EMAIL TO:", application.email);
+        console.log("STATUS:", status);
         const mailResult =
+
             await transporter.sendMail({
                 from: "Culture Kite <musthafa@culturekite.in>",
                 to: application.email,
@@ -107,24 +109,22 @@ export async function POST(req: Request) {
                     </div>
                 `,
             });
-
+        console.log("MAIL SENT SUCCESSFULLY");
         console.log("STATUS MAIL:", mailResult);
 
         return NextResponse.json({
             success: true,
         });
 
-    } catch (err) {
-        console.error("STATUS UPDATE ERROR:", err);
+    } catch (err: any) {
+        console.error("FULL ERROR:", err);
 
         return NextResponse.json(
             {
                 success: false,
                 error: String(err),
             },
-            {
-                status: 500,
-            }
+            { status: 500 }
         );
     }
 }

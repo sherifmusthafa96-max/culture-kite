@@ -38,6 +38,8 @@ export default function AdminPage() {
             .update({ status })
             .eq("id", id);
 
+        console.log("STATUS UPDATE ERROR:", error);
+
         if (error) {
             console.error(error);
             alert("Status update failed");
@@ -45,7 +47,7 @@ export default function AdminPage() {
         }
 
         try {
-            await fetch("/api/status-update", {
+            const response = await fetch("/api/status-update", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -55,8 +57,16 @@ export default function AdminPage() {
                     status,
                 }),
             });
+
+            const result = await response.json();
+
+            console.log(
+                "MAIL API RESPONSE:",
+                JSON.stringify(result, null, 2)
+            );
+
         } catch (err) {
-            console.log(err);
+            console.error("STATUS UPDATE ERROR:", err);
         }
 
         fetchApplications();

@@ -65,7 +65,7 @@ export default function ApplyPage() {
                     role,
                 },
             ]);
-            await fetch("/api/apply", {
+            const response = await fetch("/api/apply", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -79,6 +79,9 @@ export default function ApplyPage() {
                     location: selectedLocation,
                 }),
             });
+
+            const result = await response.json();
+            console.log("MAIL RESPONSE:", result);
             if (error) throw error;
 
             router.push("/success");
@@ -116,7 +119,6 @@ export default function ApplyPage() {
                         onChange={(e) => setName(e.target.value)}
                     />
 
-                    <label className="font-medium">DOB (Date of Birth)</label>
                     <label className="font-medium text-gray-700">
                         Date of Birth
                     </label>
@@ -230,6 +232,7 @@ export default function ApplyPage() {
                     >
                         {loading ? "Submitting..." : "Submit Application"}
                     </button>
+
 
                 </div>
             </div>

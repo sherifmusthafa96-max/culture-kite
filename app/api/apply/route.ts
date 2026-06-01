@@ -24,43 +24,45 @@ export async function POST(req: Request) {
             },
         });
 
+        await transporter.verify();
+        console.log("SMTP VERIFIED");
+        console.log("API HIT");
+        console.log(process.env.EMAIL_USER);
         // 👇 Admin Email (Musthafa + Mathan)
-        await transporter.sendMail({
-            from: "Culture Kite <no-reply@culturekite.in>",
+        const adminResult = await transporter.sendMail({
+            from: "Culture Kite <musthafa@culturekite.in>",
             to: [
                 "admin@culturekite.in",
                 "musthafa@culturekite.in",
                 "mathan@culturekite.in"
             ],
             subject: "New Job Application Received",
-            html: `
-        <h2>New Candidate Application</h2>
-        <p><b>Name:</b> ${name}</p>
-        <p><b>Email:</b> ${email}</p>
-        <p><b>Phone:</b> ${phone}</p>
-        <p><b>Company:</b> ${company}</p>
-        <p><b>Role:</b> ${role}</p>
-        <p><b>Location:</b> ${location}</p>
-      `,
+            html: `...`
         });
 
+        console.log("ADMIN MAIL:", adminResult);
+
         // 👇 Candidate Email
-        await transporter.sendMail({
-            from: "Culture Kite <no-reply@culturekite.in>",
+        const candidateResult = await transporter.sendMail({
+            from: "Culture Kite <musthafa@culturekite.in>",
             to: email,
             subject: "Application Received - Culture Kite",
-            html: `
-        <h2>Thank You for Applying!</h2>
-        <p>Hi ${name},</p>
-        <p>Your application for <b>${role}</b> at <b>${company}</b> has been received.</p>
-        <p>We will contact you soon.</p>
-      `,
+            html: `...`
         });
+
+        console.log("CANDIDATE MAIL:", candidateResult);
 
         return NextResponse.json({ success: true });
 
     } catch (err) {
-        console.error(err);
-        return NextResponse.json({ success: false }, { status: 500 });
+        console.error("MAIL ERROR:", err);
+        return NextResponse.json(
+            {
+                success: false,
+                error: String(err),
+            },
+            { status: 500 }
+        );
+
     }
 }

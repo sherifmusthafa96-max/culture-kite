@@ -247,7 +247,7 @@ export default function ApplyPage() {
                     {/* SUBMIT BUTTON */}
                     <button
                         onClick={handleSubmit}
-                        disabled={loading || !jobLocation}
+                        disabled={loading || !jobLocation || !currentLocation}
                         className="w-full bg-[#123A8D] text-white py-3 rounded-lg font-semibold"
                     >
                         {loading ? "Submitting..." : "Submit Application"}

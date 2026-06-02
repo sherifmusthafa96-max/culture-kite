@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Link from "next/link";
 export default function CultureKiteWebsite() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -327,79 +328,50 @@ export default function CultureKiteWebsite() {
         </div>
 
         <div className="overflow-hidden relative py-6">
-          <div className="flex gap-16 items-center animate-marquee">
+          <div className="flex items-center gap-12 animate-marquee w-max">
 
-            <img
-              src="/client-logos/firstcry.png"
-              alt="FirstCry"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
+            {[
+              { name: "firstcry", link: "/company/firstcry" },
+              { name: "abt", link: "/company/abt" },
+              { name: "shree-maruti", link: "/company/shree-maruti" },
+              { name: "flipkart", link: "/company/flipkart" },
+              { name: "meesho", link: "/company/meesho" },
+              { name: "emerald", link: "/company/emerald-jewellers" },
+              { name: "indoshell", link: "/company/indoshell" },
+              { name: "purple", link: "/company/purple" },
+              { name: "unique-shell", link: "/company/unique-shell-mould" },
+              { name: "royal-enfield", link: "/company/royal-enfield" },
+            ].map((client) => (
+              <Link key={client.name} href={client.link}>
+                <img
+                  src={`/client-logos/${client.name}.png`}
+                  alt={client.name}
+                  className="h-16 w-auto bg-white rounded-2xl p-2 shadow-lg hover:scale-110 transition-all duration-300 cursor-pointer"
+                />
+              </Link>
+            ))}
 
-            <img
-              src="/client-logos/abt.png"
-              alt="ABT Parcel Services"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-            <img
-              src="/client-logos/shree-maruti.png"
-              alt="Shree Maruti"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-
-            <img
-              src="/client-logos/flipkart.png"
-              alt="Flipkart"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-
-            <img
-              src="/client-logos/meesho.png"
-              alt="Meesho"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-
-            <img
-              src="/client-logos/emerald.png"
-              alt="Emerald Jewellers"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-
-            <img
-              src="/client-logos/indoshell.png"
-              alt="Indoshell Cast"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-
-            <img
-              src="/client-logos/purple.png"
-              alt="Purple"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-
-            <img
-              src="/client-logos/unique-shell.png"
-              alt="Unique Shell Mould"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-
-            <img
-              src="/client-logos/royal-enfield.png"
-              alt="Royal Enfield"
-              className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
-            />
-
-            {/* Duplicate for smooth infinite loop */}
-
-            <img src="/client-logos/firstcry.png" alt="FirstCry" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/abt.png" alt="ABT Parcel Services" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/shree-maruti.png" alt="Shree Maruti" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/flipkart.png" alt="Flipkart" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/meesho.png" alt="Meesho" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/emerald.png" alt="Emerald Jewellers" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/indoshell.png" alt="Indoshell Cast" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/purple.png" alt="Purple" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/unique-shell.png" alt="Unique Shell Mould" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
-            <img src="/client-logos/royal-enfield.png" alt="Royal Enfield" className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300" />
+            {/* duplicate ONLY for smooth infinite loop */}
+            {[
+              "firstcry",
+              "abt",
+              "shree-maruti",
+              "flipkart",
+              "meesho",
+              "emerald",
+              "indoshell",
+              "purple",
+              "unique-shell",
+              "royal-enfield",
+            ].map((name) => (
+              <Link key={`dup-${name}`} href={`/company/${name}`}>
+                <img
+                  src={`/client-logos/${name}.png`}
+                  alt={name}
+                  className="h-16 w-auto bg-white rounded-2xl p-2 shadow-lg hover:scale-110 transition-all duration-300 cursor-pointer"
+                />
+              </Link>
+            ))}
 
           </div>
         </div>
@@ -515,6 +487,7 @@ export default function CultureKiteWebsite() {
           </div>
         </div>
       </section >
+
 
       <style jsx global>{`
 @keyframes topLeft {

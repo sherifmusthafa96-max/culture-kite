@@ -1,5 +1,4 @@
 import Link from "next/link";
-
 export default function Footer() {
     return (
         <footer className="relative z-50 border-t border-gray-200 bg-white py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">

@@ -4,7 +4,12 @@ import { createClient } from "@supabase/supabase-js";
 
 export async function POST(req: Request) {
     try {
-        const { id, status } = await req.json();
+        const {
+            id,
+            status,
+            interview_date,
+            interview_time,
+        } = await req.json();
 
         const supabaseUrl =
             process.env.NEXT_PUBLIC_SUPABASE_URL;
@@ -65,8 +70,21 @@ export async function POST(req: Request) {
         switch (status) {
 
             case "Interview Scheduled":
-                message =
-                    "Your interview has been scheduled. Our team will contact you shortly.";
+
+                message = `
+        Your interview has been scheduled.
+
+        <br/><br/>
+
+        <strong>Date:</strong>
+        ${interview_date}
+
+        <br/>
+
+        <strong>Time:</strong>
+        ${interview_time}
+    `;
+
                 break;
 
             case "Shortlisted":
@@ -79,7 +97,7 @@ export async function POST(req: Request) {
         const mailResult =
 
             await transporter.sendMail({
-                from: "Culture Kite <musthafa@culturekite.in>",
+                from: "Culture Kite <info@culturekite.in>",
                 to: application.email,
                 subject: `Application Status Updated - ${status}`,
                 html: `

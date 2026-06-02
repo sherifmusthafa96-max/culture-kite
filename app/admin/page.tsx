@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import * as XLSX from "xlsx";
 
 export default function AdminPage() {
     const [search, setSearch] = useState("");
@@ -11,6 +12,27 @@ export default function AdminPage() {
     const [password, setPassword] = useState("");
     const [applications, setApplications] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
+    const exportToExcel = () => {
+
+        const worksheet =
+            XLSX.utils.json_to_sheet(
+                applications
+            );
+
+        const workbook =
+            XLSX.utils.book_new();
+
+        XLSX.utils.book_append_sheet(
+            workbook,
+            worksheet,
+            "Applications"
+        );
+
+        XLSX.writeFile(
+            workbook,
+            "applications.xlsx"
+        );
+    };
 
     const fetchApplications = async () => {
         setLoading(true);
@@ -49,6 +71,7 @@ export default function AdminPage() {
         console.log("UPDATED DATA:", data);
         console.log("UPDATE ERROR:", error);
 
+
         if (error) {
             console.error(error);
             alert("Status update failed");
@@ -64,6 +87,15 @@ export default function AdminPage() {
                 body: JSON.stringify({
                     id,
                     status,
+                    interview_date:
+                        applications.find(
+                            (a) => a.id === id
+                        )?.interview_date,
+
+                    interview_time:
+                        applications.find(
+                            (a) => a.id === id
+                        )?.interview_time,
                 }),
             });
 
@@ -114,6 +146,11 @@ export default function AdminPage() {
 
     const total = applications.length;
 
+    const interviewScheduled =
+        applications.filter(
+            (a) => a.status === "Interview Scheduled"
+        ).length;
+
     const shortlisted =
         applications.filter(
             (a) => a.status === "Shortlisted"
@@ -123,6 +160,35 @@ export default function AdminPage() {
         applications.filter(
             (a) => a.status === "Rejected"
         ).length;
+    const updateInterviewDate = async (
+        id: number,
+        interview_date: string
+    ) => {
+
+        await supabase
+            .from("applications")
+            .update({
+                interview_date,
+            })
+            .eq("id", id);
+
+        fetchApplications();
+    };
+
+    const updateInterviewTime = async (
+        id: number,
+        interview_time: string
+    ) => {
+
+        await supabase
+            .from("applications")
+            .update({
+                interview_time,
+            })
+            .eq("id", id);
+
+        fetchApplications();
+    };
 
     if (!loggedIn) {
         return (
@@ -159,6 +225,12 @@ export default function AdminPage() {
             <h1 className="text-3xl font-bold mb-6">
                 Submitted Applications
             </h1>
+            <button
+                onClick={exportToExcel}
+                className="bg-green-600 text-white px-4 py-2 rounded mb-4"
+            >
+                Export Excel
+            </button>
 
             <div className="grid grid-cols-4 gap-4 mb-6">
 
@@ -168,7 +240,12 @@ export default function AdminPage() {
                         {total}
                     </h2>
                 </div>
-
+                <div className="bg-white shadow rounded-lg p-4 text-center">
+                    <p>Interview Scheduled</p>
+                    <h2 className="text-3xl font-bold">
+                        {interviewScheduled}
+                    </h2>
+                </div>
                 <div className="bg-white shadow rounded-lg p-4 text-center">
                     <p>Shortlisted</p>
                     <h2 className="text-3xl font-bold">
@@ -181,6 +258,7 @@ export default function AdminPage() {
                     <h2 className="text-3xl font-bold">
                         {rejected}
                     </h2>
+
                 </div>
 
             </div>
@@ -320,6 +398,30 @@ export default function AdminPage() {
                                             <option value="Interview Scheduled">Interview Scheduled</option>
                                             <option value="Rejected">Rejected</option>
                                         </select>
+                                        <input
+                                            type="date"
+                                            value={item.interview_date || ""}
+                                            onChange={(e) =>
+                                                updateInterviewDate(
+                                                    item.id,
+                                                    e.target.value
+                                                )
+                                            }
+                                            className="border p-1 mt-2 w-full"
+                                        />
+
+                                        <input
+                                            type="time"
+                                            value={item.interview_time || ""}
+                                            onChange={(e) =>
+                                                updateInterviewTime(
+                                                    item.id,
+                                                    e.target.value
+                                                )
+                                            }
+                                            className="border p-1 mt-2 w-full"
+                                        />
+
                                     </td>
 
                                 </tr>

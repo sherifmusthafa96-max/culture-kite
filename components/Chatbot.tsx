@@ -4,15 +4,20 @@ import { useState } from "react";
 
 export default function Chatbot() {
   const [open, setOpen] = useState(false);
+
   const [messages, setMessages] = useState([
     { role: "bot", text: "Hi 👋 I’m Culture Kite Assistant" }
   ]);
+
   const [input, setInput] = useState("");
 
   const sendMessage = () => {
     if (!input.trim()) return;
 
-    setMessages([...messages, { role: "user", text: input }]);
+    setMessages((prev) => [
+      ...prev,
+      { role: "user", text: input }
+    ]);
 
     setTimeout(() => {
       setMessages((prev) => [
@@ -26,6 +31,7 @@ export default function Chatbot() {
 
   return (
     <>
+      {/* floating button */}
       <button
         onClick={() => setOpen(!open)}
         className="fixed bottom-6 right-6 bg-blue-600 text-white w-14 h-14 rounded-full"
@@ -33,8 +39,10 @@ export default function Chatbot() {
         💬
       </button>
 
+      {/* chat box */}
       {open && (
         <div className="fixed bottom-24 right-6 w-80 bg-black/70 text-white p-4 rounded-xl">
+
           <div className="h-60 overflow-y-auto space-y-2">
             {messages.map((m, i) => (
               <div key={i} className="p-2 bg-white/10 rounded">
@@ -54,6 +62,7 @@ export default function Chatbot() {
               Send
             </button>
           </div>
+
         </div>
       )}
     </>

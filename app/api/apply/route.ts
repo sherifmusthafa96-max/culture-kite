@@ -35,7 +35,7 @@ export async function POST(req: Request) {
         console.log(process.env.EMAIL_USER);
         // 👇 Admin Email (Musthafa + Mathan)
         const adminResult = await transporter.sendMail({
-            from: "Culture Kite <musthafa@culturekite.in>",
+            from: "Culture Kite <info@culturekite.in>",
             to: [
                 "admin@culturekite.in",
                 "musthafa@culturekite.in",
@@ -59,22 +59,31 @@ export async function POST(req: Request) {
 <tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
 <tr><td><b>Job Location</b></td><td>${jobLocation}</td></tr>
     <tr>
+ ${resumeUrl
+                    ? `
+<tr>
   <td><b>Resume</b></td>
   <td>
     <a href="${resumeUrl}" target="_blank">
       Download Resume
     </a>
   </td>
-  <td>
-  <a
-    href={app.resume_url}
-    target="_blank"
-    className="text-blue-600"
-  >
-    View Resume
-  </a>
-</td>
 </tr>
+`
+                    : ""
+                }${resumeUrl
+                    ? `
+<tr>
+  <td><b>Resume</b></td>
+  <td>
+    <a href="${resumeUrl}" target="_blank">
+      Download Resume
+    </a>
+  </td>
+</tr>
+`
+                    : ""
+                }
 
 <tr><td><b>Current Location</b></td><td>${currentLocation}</td></tr>
 <tr><td><b>Job Location</b></td><td>${jobLocation}</td></tr>
@@ -99,7 +108,7 @@ export async function POST(req: Request) {
 
         // 👇 Candidate Email
         const candidateResult = await transporter.sendMail({
-            from: "Culture Kite <musthafa@culturekite.in>",
+            from: "Culture Kite <info@culturekite.in>",
             to: email,
             subject: "Application Received - Culture Kite",
             html: `
@@ -112,60 +121,28 @@ export async function POST(req: Request) {
   />
 
   <h2 style="color:#123A8D;">
-    New Job Application Received
+    Thank You for Applying!
   </h2>
 
-  <table
-    border="1"
-    cellpadding="10"
-    cellspacing="0"
-    style="border-collapse:collapse;"
-  >
-    <tr>
-      <td><b>Name</b></td>
-      <td>${name}</td>
-    </tr>
+  <p>
+    Hi <strong>${name}</strong>,
+  </p>
 
-    <tr>
-      <td><b>Email</b></td>
-      <td>${email}</td>
-    </tr>
+  <p>
+    Your application for
+    <strong>${role}</strong>
+    at
+    <strong>${company}</strong>
+    has been successfully received.
+  </p>
 
-    <tr>
-      <td><b>Phone</b></td>
-      <td>${phone}</td>
-    </tr>
+  <p>
+    Our recruitment team will review your profile and contact you shortly.
+  </p>
 
-    <tr>
-      <td><b>Company</b></td>
-      <td>${company}</td>
-    </tr>
-
-    <tr>
-      <td><b>Role</b></td>
-      <td>${role}</td>
-    </tr>
-
-    <tr>
-      <td><b>Current Location</b></td>
-      <td>${currentLocation}</td>
-    </tr>
-
-    <tr>
-      <td><b>Job Location</b></td>
-      <td>${jobLocation}</td>
-    </tr>
-
-    <tr>
-      <td><b>Resume</b></td>
-      <td>
-        <a href="${resumeUrl}" target="_blank">
-          Download Resume
-        </a>
-      </td>
-    </tr>
-
-  </table>
+  <p>
+    Thank you for choosing Culture Kite.
+  </p>
 
   <br>
 

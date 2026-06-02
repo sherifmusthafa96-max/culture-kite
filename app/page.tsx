@@ -1,6 +1,5 @@
 "use client";
 import { useEffect, useState } from "react";
-import Chatbot from "@/components/Chatbot";
 export default function CultureKiteWebsite() {
   const [loading, setLoading] = useState(true);
   useEffect(() => {
@@ -516,7 +515,6 @@ export default function CultureKiteWebsite() {
           </div>
         </div>
       </section >
-      <Chatbot />
 
       <style jsx global>{`
 @keyframes topLeft {

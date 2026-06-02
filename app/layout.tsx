@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import Footer from "@/components/Footer";
 import { Poppins } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import Script from "next/script";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -13,7 +14,9 @@ export const metadata: Metadata = {
   title: "Culture Kite",
   description: "Culture Kite Recruitment Services",
 };
-
+<Script
+  src={`https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX`}
+/>
 export default function RootLayout({
   children,
 }: {
@@ -27,5 +30,6 @@ export default function RootLayout({
         <Footer />
       </body>
     </html>
+
   );
 }

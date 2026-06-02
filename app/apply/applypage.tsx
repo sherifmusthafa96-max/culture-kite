@@ -48,7 +48,6 @@ export default function ApplyPage() {
 
                 resumeUrl = data.publicUrl;
             }
-
             // insert into DB
             const { error } = await supabase.from("applications").insert([
                 {
@@ -86,7 +85,17 @@ export default function ApplyPage() {
 
             const result = await response.json();
             console.log("MAIL RESPONSE:", result);
+
             if (error) throw error;
+
+            // Google Analytics Event
+            if (typeof window !== "undefined") {
+                (window as any).gtag?.("event", "job_application_submitted", {
+                    company,
+                    role,
+                    location: jobLocation,
+                });
+            }
 
             router.push("/success");
 

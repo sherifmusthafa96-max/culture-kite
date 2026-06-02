@@ -30,5 +30,45 @@ export default function sitemap() {
             url: "https://culturekite.in/Services/FM-Teams",
             lastModified: new Date(),
         },
+        {
+            url: "https://culturekite.in/company/firstcry",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/abt",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/shree-maruti",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/flipkart",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/meesho",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/emerald-jewellers",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/indoshell-cast",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/purple",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/unique-shell-mould",
+            lastModified: new Date(),
+        },
+        {
+            url: "https://culturekite.in/company/royal-enfield",
+            lastModified: new Date(),
+        },
     ];
 }

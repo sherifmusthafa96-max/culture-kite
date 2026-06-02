@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   description: "Culture Kite Recruitment Services",
 };
 <Script
-  src={`https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX`}
+  src={`https://www.googletagmanager.com/gtag/js?id=G-0ZLF30519D`}
 />
 export default function RootLayout({
   children,
@@ -26,7 +26,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={poppins.className}>
         {children}
-        <GoogleAnalytics gaId="G-ABC123XYZ" />
+        <GoogleAnalytics gaId="G-0ZLF30519D" />
         <Footer />
       </body>
     </html>

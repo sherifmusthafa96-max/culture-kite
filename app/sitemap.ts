@@ -15,10 +15,6 @@ export default function sitemap() {
             lastModified: new Date(),
         },
         {
-            url: "https://culturekite.in/applications",
-            lastModified: new Date(),
-        },
-        {
             url: "https://culturekite.in/Services/Logistics",
             lastModified: new Date(),
         },

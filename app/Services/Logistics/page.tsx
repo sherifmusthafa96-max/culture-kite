@@ -29,8 +29,8 @@ export default function LogisticsPage() {
         },
         {
             role: "Warehouse Associates",
-            company: "Purple",
-            logo: "/client-logos/purple.png",
+            company: "Purplle",
+            logo: "/client-logos/purplle.png",
             locations: ["Coimbatore"],
         },
         {

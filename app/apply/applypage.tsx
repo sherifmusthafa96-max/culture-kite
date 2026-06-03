@@ -27,12 +27,33 @@ export default function ApplyPage() {
     const [loading, setLoading] = useState(false);
 
     const handleSubmit = async () => {
+        if (
+            !name.trim() ||
+            !dob ||
+            !phone.trim() ||
+            !email.trim() ||
+            !address.trim() ||
+            !qualification.trim() ||
+            !jobLocation ||
+            !currentLocation.trim() ||
+            !experienceType ||
+            !hasResume
+        ) {
+            alert("Please fill all mandatory fields");
+            return;
+        }
+
+        if (hasResume === "yes" && !resume) {
+            alert("Please upload your resume");
+            return;
+        }
+
         try {
             setLoading(true);
 
             let resumeUrl = "";
 
-            // upload resume if exists
+            // Upload Resume
             if (hasResume === "yes" && resume) {
                 const fileName = `${Date.now()}-${resume.name}`;
 
@@ -48,25 +69,32 @@ export default function ApplyPage() {
 
                 resumeUrl = data.publicUrl;
             }
-            // insert into DB
+
+            // Save Application
             const { error } = await supabase.from("applications").insert([
                 {
-                    name: name || null,
-                    dob: dob || null,
-                    phone: phone || null,
-                    email: email || null,
-                    address: address || null,
-                    qualification: qualification || null,
-                    experience_type: experienceType || null,
-                    experience_years: experienceYears ? Number(experienceYears) : null,
-                    job_location: jobLocation || null,
-                    current_location: currentLocation || null,
+                    name,
+                    dob,
+                    phone,
+                    email,
+                    address,
+                    qualification,
+                    experience_type: experienceType,
+                    experience_years: experienceYears
+                        ? Number(experienceYears)
+                        : null,
+                    job_location: jobLocation,
+                    current_location: currentLocation,
                     resume_url: resumeUrl || null,
                     company,
                     role,
                 },
             ]);
-            const response = await fetch("/api/apply", {
+
+            if (error) throw error;
+
+            // Send Email
+            await fetch("/api/apply", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -83,12 +111,7 @@ export default function ApplyPage() {
                 }),
             });
 
-            const result = await response.json();
-            console.log("MAIL RESPONSE:", result);
-
-            if (error) throw error;
-
-            // Google Analytics Event
+            // Google Analytics
             if (typeof window !== "undefined") {
                 (window as any).gtag?.("event", "job_application_submitted", {
                     company,
@@ -98,9 +121,8 @@ export default function ApplyPage() {
             }
 
             router.push("/success");
-
         } catch (err) {
-            console.error("FULL ERROR:", err);
+            console.error(err);
             alert("Submission Failed ❌");
         } finally {
             setLoading(false);
@@ -126,7 +148,7 @@ export default function ApplyPage() {
                 <div className="flex flex-col gap-3">
 
                     <input
-                        placeholder="Name"
+                        placeholder="Name *"
                         className="border rounded-lg px-4 py-3"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
@@ -144,28 +166,28 @@ export default function ApplyPage() {
                     />
 
                     <input
-                        placeholder="Phone"
+                        placeholder="Phone *"
                         className="border rounded-lg px-4 py-3"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
                     />
 
                     <input
-                        placeholder="Email"
+                        placeholder="Email *"
                         className="border rounded-lg px-4 py-3"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                     />
 
                     <textarea
-                        placeholder="Address"
+                        placeholder="Address *"
                         className="border rounded-lg px-4 py-3"
                         value={address}
                         onChange={(e) => setAddress(e.target.value)}
                     />
 
                     <input
-                        placeholder="Qualification"
+                        placeholder="Qualification *"
                         className="border rounded-lg px-4 py-3"
                         value={qualification}
                         onChange={(e) => setQualification(e.target.value)}
@@ -192,7 +214,7 @@ export default function ApplyPage() {
 
                     <input
                         type="text"
-                        placeholder="Enter Current Location"
+                        placeholder="Enter Current Location *"
                         value={currentLocation}
                         onChange={(e) => setCurrentLocation(e.target.value)}
                         className="border rounded-lg px-4 py-3"
@@ -256,8 +278,21 @@ export default function ApplyPage() {
                     {/* SUBMIT BUTTON */}
                     <button
                         onClick={handleSubmit}
-                        disabled={loading || !jobLocation || !currentLocation}
-                        className="w-full bg-[#123A8D] text-white py-3 rounded-lg font-semibold"
+                        disabled={
+                            loading ||
+                            !name.trim() ||
+                            !dob ||
+                            !phone.trim() ||
+                            !email.trim() ||
+                            !address.trim() ||
+                            !qualification.trim() ||
+                            !jobLocation ||
+                            !currentLocation.trim() ||
+                            !experienceType ||
+                            !hasResume ||
+                            (hasResume === "yes" && !resume)
+                        }
+                        className="w-full bg-[#123A8D] text-white py-3 rounded-lg font-semibold disabled:opacity-50"
                     >
                         {loading ? "Submitting..." : "Submit Application"}
                     </button>
@@ -268,3 +303,4 @@ export default function ApplyPage() {
         </div>
     );
 }
+

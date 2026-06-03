@@ -1,13 +1,80 @@
 "use client";
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { supabase } from "@/lib/supabase";
 export default function CultureKiteWebsite() {
+  const [careerName, setCareerName] = useState("");
+  const [careerPhone, setCareerPhone] = useState("");
+  const [careerEmail, setCareerEmail] = useState("");
+  const [careerResume, setCareerResume] = useState<File | null>(null);
+  const [careerLoading, setCareerLoading] = useState(false);
   const [loading, setLoading] = useState(true);
+  const handleCareerSubmit = async () => {
+    if (!careerName || !careerPhone || !careerResume) {
+      alert("Please fill all fields");
+      return;
+    }
+
+    try {
+      setCareerLoading(true);
+
+      const fileName = `${Date.now()}-${careerResume.name}`;
+
+      const { error: uploadError } = await supabase.storage
+        .from("resumes")
+        .upload(fileName, careerResume);
+
+      if (uploadError) throw uploadError;
+
+      const { data } = supabase.storage
+        .from("resumes")
+        .getPublicUrl(fileName);
+
+      const resumeUrl = data.publicUrl;
+
+      const { error } = await supabase
+        .from("career_applications")
+        .insert([
+          {
+            name: careerName,
+            email: careerEmail,
+            phone: careerPhone,
+            resume_url: resumeUrl,
+          },
+        ]);
+
+      if (error) throw error;
+
+      alert("Application Submitted Successfully ✅");
+      await fetch("/api/career-application", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: careerName,
+          email: careerEmail,
+          phone: careerPhone,
+          resumeUrl,
+        }),
+      });
+      setCareerName("");
+      setCareerEmail("");
+      setCareerPhone("");
+      setCareerResume(null);
+    } catch (err) {
+      console.log("UPLOAD ERROR:", JSON.stringify(err, null, 2));
+      console.log("RAW ERROR:", err);
+      alert("Submission Failed ❌");
+    } finally {
+      setCareerLoading(false);
+    }
+  };
+
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
     }, 2500);
-
     return () => clearTimeout(timer);
   }, []);
 
@@ -392,22 +459,44 @@ export default function CultureKiteWebsite() {
             <input
               type="text"
               placeholder="Full Name"
+              value={careerName}
+              onChange={(e) => setCareerName(e.target.value)}
               className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
             />
 
             <input
               type="tel"
               placeholder="Phone Number"
+              value={careerPhone}
+              onChange={(e) => setCareerPhone(e.target.value)}
+              className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
+            />
+
+            <input
+              type="email"
+              placeholder="Email"
+              value={careerEmail}
+              onChange={(e) => setCareerEmail(e.target.value)}
               className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
             />
 
             <input
               type="file"
+              accept=".pdf,.doc,.docx"
+              onChange={(e) => {
+                if (e.target.files?.[0]) {
+                  setCareerResume(e.target.files[0]);
+                }
+              }}
               className="w-full px-5 py-4 rounded-xl bg-white border border-gray-300 outline-none"
             />
 
-            <button className="w-full bg-[#123A8D] text-white hover:bg-[#1F84D7] transition py-4 rounded-xl font-bold text-lg">
-              Upload Resume
+            <button
+              onClick={handleCareerSubmit}
+              disabled={careerLoading}
+              className="w-full bg-[#123A8D] text-white hover:bg-[#1F84D7] transition py-4 rounded-xl font-bold text-lg"
+            >
+              {careerLoading ? "Uploading..." : "Upload Resume"}
             </button>
 
           </div>
@@ -432,17 +521,6 @@ export default function CultureKiteWebsite() {
 
           <div className="bg-white border border-gray-200 shadow-lg p-8 rounded-3xl hover:shadow-xl hover:-translate-y-2 transition-all duration-300">
             <div className="space-y-5">
-              <input
-                type="text"
-                placeholder="Your Name"
-                className="w-full bg-white border border-gray-300 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
-              />
-
-              <input
-                type="email"
-                placeholder="Email Address"
-                className="w-full bg-white/5 border border-gray-300 rounded-xl px-5 py-4 outline-none focus:border-blue-400"
-              />
 
               <div className="space-y-5 text-gray-600 text-lg">
                 <p>

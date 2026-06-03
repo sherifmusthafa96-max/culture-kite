@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import * as XLSX from "xlsx";
 
 export default function AdminPage() {
+    const [activeFilter, setActiveFilter] = useState("");
     const [search, setSearch] = useState("");
     const [companyFilter, setCompanyFilter] = useState("");
     const [statusFilter, setStatusFilter] = useState("");
@@ -12,7 +13,41 @@ export default function AdminPage() {
     const [password, setPassword] = useState("");
     const [applications, setApplications] = useState<any[]>([]);
     const [loading, setLoading] = useState(false);
+    const totalApplications = applications.length;
+
+    const todayApplications = applications.filter((item) => {
+        const today = new Date().toDateString();
+        return new Date(item.created_at).toDateString() === today;
+    }).length;
+
+    const weekApplications = applications.filter((item) => {
+        const sevenDaysAgo = new Date();
+        sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+        return new Date(item.created_at) >= sevenDaysAgo;
+    }).length;
+
+    const resumeUploaded = applications.filter(
+        (item) => item.resume_url
+    ).length;
     const exportToExcel = () => {
+        const totalApplications = applications.length;
+
+        const todayApplications = applications.filter((item) => {
+            const today = new Date().toDateString();
+            return new Date(item.created_at).toDateString() === today;
+        }).length;
+
+        const weekApplications = applications.filter((item) => {
+            const sevenDaysAgo = new Date();
+            sevenDaysAgo.setDate(sevenDaysAgo.getDate() - 7);
+
+            return new Date(item.created_at) >= sevenDaysAgo;
+        }).length;
+
+        const resumeUploaded = applications.filter(
+            (item) => item.resume_url
+        ).length;
 
         const worksheet =
             XLSX.utils.json_to_sheet(
@@ -121,9 +156,38 @@ export default function AdminPage() {
             alert("Wrong Password");
         }
     };
-
     const filteredApplications =
         applications.filter((app) => {
+
+            if (activeFilter === "today") {
+                const today = new Date().toDateString();
+
+                if (
+                    new Date(app.created_at).toDateString() !== today
+                ) {
+                    return false;
+                }
+            }
+
+            if (activeFilter === "week") {
+                const sevenDaysAgo = new Date();
+                sevenDaysAgo.setDate(
+                    sevenDaysAgo.getDate() - 7
+                );
+
+                if (
+                    new Date(app.created_at) < sevenDaysAgo
+                ) {
+                    return false;
+                }
+            }
+
+            if (activeFilter === "resume") {
+                if (!app.resume_url) {
+                    return false;
+                }
+            }
+
             const searchMatch =
                 app.name?.toLowerCase().includes(search.toLowerCase()) ||
                 app.phone?.toLowerCase().includes(search.toLowerCase()) ||
@@ -209,10 +273,12 @@ export default function AdminPage() {
                     />
 
                     <button
+
                         onClick={login}
                         className="w-full bg-[#123A8D] text-white py-3 rounded-lg"
                     >
                         Login
+
                     </button>
                 </div>
             </div>
@@ -225,6 +291,49 @@ export default function AdminPage() {
             <h1 className="text-3xl font-bold mb-6">
                 Submitted Applications
             </h1>
+            <div className="grid md:grid-cols-4 gap-4 mb-6">
+
+                <div
+                    onClick={() => setActiveFilter("all")}
+                    className="bg-blue-500 text-white p-5 rounded-xl cursor-pointer shadow-lg hover:scale-105 transition"
+                >
+                    <h2>Total Applications</h2>
+                    <p className="text-3xl font-bold">
+                        {totalApplications}
+                    </p>
+                </div>
+
+                <div
+                    onClick={() => setActiveFilter("today")}
+                    className="bg-green-500 text-white p-5 rounded-xl cursor-pointer shadow-lg hover:scale-105 transition"
+                >
+                    <h2>Today's Applications</h2>
+                    <p className="text-3xl font-bold">
+                        {todayApplications}
+                    </p>
+                </div>
+
+                <div
+                    onClick={() => setActiveFilter("week")}
+                    className="bg-yellow-500 text-white p-5 rounded-xl cursor-pointer shadow-lg hover:scale-105 transition"
+                >
+                    <h2>This Week</h2>
+                    <p className="text-3xl font-bold">
+                        {weekApplications}
+                    </p>
+                </div>
+
+                <div
+                    onClick={() => setActiveFilter("month")}
+                    className="bg-purple-500 text-white p-5 rounded-xl cursor-pointer shadow-lg hover:scale-105 transition"
+                >
+                    <h2>This Month</h2>
+                    <p className="text-3xl font-bold">
+                        {resumeUploaded}
+                    </p>
+                </div>
+
+            </div>
             <button
                 onClick={exportToExcel}
                 className="bg-green-600 text-white px-4 py-2 rounded mb-4"
@@ -232,33 +341,45 @@ export default function AdminPage() {
                 Export Excel
             </button>
 
-            <div className="grid grid-cols-4 gap-4 mb-6">
+            <div className="grid md:grid-cols-4 gap-4 mb-6">
 
-                <div className="bg-white shadow rounded-lg p-4 text-center">
-                    <p>Total Applications</p>
-                    <h2 className="text-3xl font-bold">
-                        {total}
-                    </h2>
-                </div>
-                <div className="bg-white shadow rounded-lg p-4 text-center">
+                <div
+                    onClick={() => setStatusFilter("Interview Scheduled")}
+                    className="bg-orange-500 text-white shadow-lg rounded-xl p-5 text-center cursor-pointer hover:scale-105 transition"
+                >
                     <p>Interview Scheduled</p>
                     <h2 className="text-3xl font-bold">
                         {interviewScheduled}
                     </h2>
                 </div>
-                <div className="bg-white shadow rounded-lg p-4 text-center">
+
+                <div
+                    onClick={() => setStatusFilter("Shortlisted")}
+                    className="bg-green-600 text-white shadow-lg rounded-xl p-5 text-center cursor-pointer hover:scale-105 transition"
+                >
                     <p>Shortlisted</p>
                     <h2 className="text-3xl font-bold">
                         {shortlisted}
                     </h2>
                 </div>
+                <div
+                    onClick={() => setStatusFilter("Under Review")}
+                    className="bg-sky-500 text-white shadow-lg rounded-xl p-5 text-center cursor-pointer hover:scale-105 transition"
+                >
+                    <p>Under Review</p>
+                    <h2 className="text-3xl font-bold">
+                        {total}
+                    </h2>
+                </div>
 
-                <div className="bg-white shadow rounded-lg p-4 text-center">
+                <div
+                    onClick={() => setStatusFilter("Rejected")}
+                    className="bg-red-500 text-white shadow-lg rounded-xl p-5 text-center cursor-pointer hover:scale-105 transition"
+                >
                     <p>Rejected</p>
                     <h2 className="text-3xl font-bold">
                         {rejected}
                     </h2>
-
                 </div>
 
             </div>

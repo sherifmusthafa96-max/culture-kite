@@ -125,6 +125,7 @@ export default function CultureKiteWebsite() {
             <a href="#careers">Careers</a>
             <a href="#contact">Contact</a>
             <a href="/admin">Applications</a>
+
           </div>
 
           <a
@@ -405,7 +406,7 @@ export default function CultureKiteWebsite() {
               { name: "meesho", link: "/company/meesho" },
               { name: "emerald", link: "/company/emerald-jewellers" },
               { name: "indoshell", link: "/company/indoshell" },
-              { name: "purple", link: "/company/purple" },
+              { name: "purplle", link: "/company/purplle" },
               { name: "unique-shell", link: "/company/unique-shell-mould" },
               { name: "royal-enfield", link: "/company/royal-enfield" },
             ].map((client) => (
@@ -427,7 +428,7 @@ export default function CultureKiteWebsite() {
               "meesho",
               "emerald",
               "indoshell",
-              "purple",
+              "purplle",
               "unique-shell",
               "royal-enfield",
             ].map((name) => (

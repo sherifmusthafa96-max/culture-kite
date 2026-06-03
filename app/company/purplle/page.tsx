@@ -1,12 +1,12 @@
 import Link from "next/link";
 
 export const metadata = {
-    title: "Purple Careers | Culture Kite",
+    title: "Purplle Careers | Culture Kite",
     description:
-        "Apply for Purple warehouse jobs through Culture Kite.",
+        "Apply for Purplle warehouse jobs through Culture Kite.",
 };
 
-export default function PurplePage() {
+export default function PurpllePage() {
     return (
         <div className="min-h-screen bg-gray-50 px-6 py-16 relative">
 
@@ -38,8 +38,8 @@ export default function PurplePage() {
                     <div className="h-24 w-24 bg-white rounded-2xl shadow-lg flex items-center justify-center">
 
                         <img
-                            src="/client-logos/purple.png"
-                            alt="Purple"
+                            src="/client-logos/purplle.png"
+                            alt="Purplle"
                             className="h-16 w-16 object-contain"
                         />
 
@@ -49,12 +49,12 @@ export default function PurplePage() {
 
                 {/* TITLE */}
                 <h1 className="text-4xl font-bold text-[#123A8D] mt-8 text-center">
-                    Purple Careers
+                    Purplle Careers
                 </h1>
 
                 {/* DESCRIPTION */}
                 <p className="mt-4 text-gray-600 leading-relaxed text-center">
-                    Purple is one of India's growing beauty and cosmetics
+                    Purplle is one of India's growing beauty and cosmetics
                     retail platforms. We are hiring enthusiastic candidates
                     for warehouse and logistics operations in Tamil Nadu.
                 </p>
@@ -97,7 +97,7 @@ export default function PurplePage() {
 
                 {/* APPLY BUTTON */}
                 <Link
-                    href="/apply?company=Purple&role=Warehouse Associate"
+                    href="/apply?company=Purplle&role=Warehouse Associate"
                     className="bg-[#123A8D] text-white px-4 py-2 rounded-lg text-center block mt-3"
                 >
                     Apply - Warehouse Associate

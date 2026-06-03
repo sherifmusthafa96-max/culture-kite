@@ -246,7 +246,7 @@ export default function CareerAdminPage() {
 
                 <div
                     onClick={() => setActiveFilter("resume")}
-                    className="bg-purple-500 text-white p-5 rounded-xl cursor-pointer"
+                    className="bg-purplle-500 text-white p-5 rounded-xl cursor-pointer"
                 >
                     <h2>Resume Uploaded</h2>
                     <p className="text-3xl font-bold">

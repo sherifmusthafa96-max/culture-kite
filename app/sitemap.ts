@@ -59,7 +59,7 @@ export default function sitemap() {
             lastModified: new Date(),
         },
         {
-            url: "https://culturekite.in/company/purple",
+            url: "https://culturekite.in/company/purplle",
             lastModified: new Date(),
         },
         {

@@ -325,7 +325,7 @@ export default function AdminPage() {
 
                 <div
                     onClick={() => setActiveFilter("month")}
-                    className="bg-purple-500 text-white p-5 rounded-xl cursor-pointer shadow-lg hover:scale-105 transition"
+                    className="bg-purplle-500 text-white p-5 rounded-xl cursor-pointer shadow-lg hover:scale-105 transition"
                 >
                     <h2>This Month</h2>
                     <p className="text-3xl font-bold">

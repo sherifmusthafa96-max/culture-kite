@@ -1,4 +1,9 @@
 import Link from "next/link";
+export const metadata = {
+    title: "Shree Maruti Careers | Culture Kite",
+    description:
+        "Apply for Shree Maruti delivery jobs through Culture Kite.",
+};
 
 export default function ShreeMarutiPage() {
     return (

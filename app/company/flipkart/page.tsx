@@ -1,4 +1,9 @@
 import Link from "next/link";
+export const metadata = {
+    title: "Flipkart Careers | Culture Kite",
+    description:
+        "Apply for Flipkart warehouse jobs through Culture Kite.",
+};
 
 export default function FlipkartPage() {
     return (

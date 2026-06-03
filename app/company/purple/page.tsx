@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+    title: "Purple Careers | Culture Kite",
+    description:
+        "Apply for Purple warehouse jobs through Culture Kite.",
+};
+
 export default function PurplePage() {
     return (
         <div className="min-h-screen bg-gray-50 px-6 py-16 relative">

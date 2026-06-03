@@ -1,4 +1,9 @@
 import Link from "next/link";
+export const metadata = {
+    title: "FirstCry Careers | Culture Kite",
+    description:
+        "Apply for FirstCry warehouse and delivery jobs through Culture Kite.",
+};
 
 export default function FirstCryPage() {
     return (

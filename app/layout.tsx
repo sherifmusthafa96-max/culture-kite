@@ -5,19 +5,24 @@ import { Poppins } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import Script from "next/script";
 
+export const metadata: Metadata = {
+  title: "Culture Kite HR Solutions | Recruitment & Workforce Management",
 
+  description:
+    "Trusted manpower, staffing, recruitment and HR solutions across Tamil Nadu.",
+
+  openGraph: {
+    title: "Culture Kite HR Solutions",
+    description:
+      "Trusted manpower and recruitment solutions.",
+    images: ["/logo.png"],
+  },
+};
 const poppins = Poppins({
   subsets: ["latin"],
   weight: ["300", "400", "500", "600", "700", "800"],
 });
 
-export const metadata: Metadata = {
-  title: "Culture Kite",
-  description: "Culture Kite Recruitment Services",
-};
-<Script
-  src={`https://www.googletagmanager.com/gtag/js?id=G-0ZLF30519D`}
-/>
 export default function RootLayout({
   children,
 }: {

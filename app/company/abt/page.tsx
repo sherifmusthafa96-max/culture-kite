@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+export const metadata = {
+    title: "ABT Parcel Services Careers | Culture Kite",
+    description:
+        "Apply for ABT Parcel Services warehouse and logistics jobs through Culture Kite.",
+};
+
 export default function ABTPage() {
     return (
         <div className="min-h-screen bg-gray-50 px-6 py-16 relative">

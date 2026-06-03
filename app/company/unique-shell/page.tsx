@@ -1,4 +1,9 @@
 import Link from "next/link";
+export const metadata = {
+    title: "Unique Shell Mould Careers | Culture Kite",
+    description:
+        "Apply for Unique Shell Mould warehouse and manufacturing jobs through Culture Kite.",
+};
 
 export default function UniqueShellPage() {
     return (

@@ -1,4 +1,9 @@
 import Link from "next/link";
+export const metadata = {
+    title: "Royal Enfield Careers | Culture Kite",
+    description:
+        "Apply for Royal Enfield Security Guards jobs through Culture Kite.",
+};
 
 export default function RoyalEnfieldPage() {
     return (

@@ -1,4 +1,9 @@
 import Link from "next/link";
+export const metadata = {
+    title: "Meesho Careers | Culture Kite",
+    description:
+        "Apply for Meesho warehouse jobs through Culture Kite.",
+};
 
 export default function MeeshoPage() {
     return (

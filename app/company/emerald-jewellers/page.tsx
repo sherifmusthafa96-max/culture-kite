@@ -1,4 +1,9 @@
 import Link from "next/link";
+export const metadata = {
+    title: "Emerald Jewellers Careers | Culture Kite",
+    description:
+        "Apply for Emerald Jewellers housekeeping jobs through Culture Kite.",
+};
 
 export default function EmeraldJewellersPage() {
 

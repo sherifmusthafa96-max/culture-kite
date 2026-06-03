@@ -1,4 +1,9 @@
 import Link from "next/link";
+export const metadata = {
+    title: "Indoshell Cast Careers | Culture Kite",
+    description:
+        "Apply for Indoshell Cast warehouse and manufacturing jobs through Culture Kite.",
+};
 
 export default function IndoshellPage() {
     return (

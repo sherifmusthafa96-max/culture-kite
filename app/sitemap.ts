@@ -55,7 +55,7 @@ export default function sitemap() {
             lastModified: new Date(),
         },
         {
-            url: "https://culturekite.in/company/indoshell-cast",
+            url: "https://culturekite.in/company/indoshell",
             lastModified: new Date(),
         },
         {
@@ -63,7 +63,7 @@ export default function sitemap() {
             lastModified: new Date(),
         },
         {
-            url: "https://culturekite.in/company/unique-shell-mould",
+            url: "https://culturekite.in/company/unique-shell",
             lastModified: new Date(),
         },
         {

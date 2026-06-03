@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { assets } from "@/lib/assets";
 
 export default function LogisticsPage() {
     const router = useRouter();

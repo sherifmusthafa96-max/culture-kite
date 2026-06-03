@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
+import { assets } from "@/lib/assets";
 
 export default function EcommercePage() {
     const router = useRouter();

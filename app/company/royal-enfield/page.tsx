@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 export const metadata = {
     title: "Royal Enfield Careers | Culture Kite",
     description:
@@ -36,10 +37,11 @@ export default function RoyalEnfieldPage() {
 
                     <div className="h-24 w-24 bg-white rounded-2xl shadow-lg flex items-center justify-center">
 
-                        <img
+                        <Image
                             src="/client-logos/royal-enfield.png"
-                            alt="Royal Enfield"
-                            className="h-16 w-16 object-contain"
+                            alt="royal-enfield"
+                            width={120}
+                            height={60}
                         />
 
                     </div>

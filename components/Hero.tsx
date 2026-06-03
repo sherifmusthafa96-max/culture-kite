@@ -1,13 +1,17 @@
+import Image from "next/image";
 <section
   id="home"
   className="relative min-h-screen flex items-center justify-center overflow-hidden bg-white"
 >
 
   <div className="relative z-10 text-center px-6">
-    <img
+    <Image
       src="/logo.png"
       alt="Culture Kite"
-      className="mx-auto w-48 mb-8"
+      width={600}
+      height={600}
+      priority
+      className="mx-auto opacity-60"
     />
 
     <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.18] animate-watermark z-0">

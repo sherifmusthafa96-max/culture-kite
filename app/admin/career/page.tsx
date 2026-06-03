@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { assets } from "@/lib/assets";
 import * as XLSX from "xlsx";
 
 export default function CareerAdminPage() {

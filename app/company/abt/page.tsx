@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 export const metadata = {
     title: "ABT Parcel Services Careers | Culture Kite",
@@ -14,11 +15,11 @@ export default function ABTPage() {
             <div className="fixed bottom-6 left-6 z-10 opacity-20 pointer-events-none">
 
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-
-                    <img
-                        src="/logo.png"
-                        alt="Culture Kite Watermark"
-                        className="w-[600px] md:w-[800px] opacity-5"
+                    <Image
+                        src="/client-logos/abt.png"
+                        alt="abt"
+                        width={120}
+                        height={60}
                     />
 
                 </div>
@@ -39,10 +40,11 @@ export default function ABTPage() {
 
                     <div className="h-24 w-24 bg-white rounded-2xl shadow-lg flex items-center justify-center">
 
-                        <img
+                        <Image
                             src="/client-logos/abt.png"
-                            alt="ABT Parcel Services"
-                            className="h-16 w-16 object-contain"
+                            alt="flipkart"
+                            width={120}
+                            height={60}
                         />
 
                     </div>

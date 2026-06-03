@@ -7,7 +7,7 @@ export default function Footer() {
             <img
                 src="/logo.png"
                 alt="Culture Kite"
-                className="h-12 w-auto"
+                className="h-16 w-auto"
             />
 
             {/* Copyright */}

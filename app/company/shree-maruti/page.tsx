@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 export const metadata = {
     title: "Shree Maruti Careers | Culture Kite",
     description:
@@ -33,10 +34,11 @@ export default function ShreeMarutiPage() {
                 {/* CLIENT LOGO */}
                 <div className="flex justify-center items-center">
                     <div className="h-24 w-24 bg-white rounded-2xl shadow-lg flex items-center justify-center">
-                        <img
+                        <Image
                             src="/client-logos/shree-maruti.png"
-                            alt="Shree Maruti"
-                            className="h-16 w-16 object-contain"
+                            alt="shree-maruti"
+                            width={120}
+                            height={60}
                         />
                     </div>
                 </div>

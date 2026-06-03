@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 export const metadata = {
     title: "Indoshell Cast Careers | Culture Kite",
     description:
@@ -38,10 +39,11 @@ export default function IndoshellPage() {
 
                     <div className="h-24 w-24 bg-white rounded-2xl shadow-lg flex items-center justify-center">
 
-                        <img
+                        <Image
                             src="/client-logos/indoshell.png"
-                            alt="Indoshell Cast"
-                            className="h-16 w-16 object-contain"
+                            alt="indoshell"
+                            width={120}
+                            height={60}
                         />
 
                     </div>

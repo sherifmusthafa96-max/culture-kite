@@ -78,7 +78,7 @@ export default function CultureKiteWebsite() {
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 2500);
+        }, 1000);
         return () => clearTimeout(timer);
     }, []);
 
@@ -106,20 +106,19 @@ export default function CultureKiteWebsite() {
     return (
         <div className="min-h-screen bg-gradient-to-b from-white via-[#f8fbff] to-[#eef5ff] text-gray-900">
 
-            {/* Animated Background Glow */}
-
-            {/* Navbar */}
-
             <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b shadow-sm">
                 <div className="flex items-center justify-between px-6 py-4">
 
-                    <OptimizedImage
-                        src="/logo.png"
+                    <Image
+                        src="/logo.webp"
                         alt="Culture Kite"
-                        className="w-[240px] h-auto"
-                        priority
+                        width={250}
+                        height={250}
+                        style={{
+                            width: "auto",
+                            height: "auto",
+                        }}
                     />
-
                     <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
                         <a href="#home">Home</a>
                         <a href="#about">About</a>
@@ -141,10 +140,10 @@ export default function CultureKiteWebsite() {
             {/* Fixed Bottom Left Logo */}
             <div className="fixed bottom-6 left-6 z-10 opacity-20 pointer-events-none">
                 <OptimizedImage
-                    src="/logo.png"
+                    src="/logo.webp"
                     alt="Culture Kite"
-                    className="w-[120px] h-auto"
-                    priority
+                    width={300}
+                    height={100}
                 />
             </div>
             <div className="hidden md:flex gap-8 text-sm font-medium text-gray-600">
@@ -171,25 +170,54 @@ export default function CultureKiteWebsite() {
             >
 
                 {/* WATERMARK PASTE HERE */}
-
-                <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.05] animate-watermark">
-
-                    <OptimizedImage
-                        src="/logo.png"
-                        alt="Culture Kite"
-                        className="w-[120px] h-auto"
-                        priority
-                    />
-
+                <div>
+                    <div
+                        className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 opacity-[0.08]"
+                        style={{
+                            transform: "translateY(80px)"
+                        }}
+                    >
+                        <Image
+                            src="/logo.webp"
+                            alt="Culture Kite"
+                            width={700}
+                            height={233}
+                            loading="eager"
+                            style={{
+                                width: "auto",
+                                height: "auto",
+                            }}
+                        />
+                    </div>
                     {/* Split Logo Animation */}
-                    <div className="relative z-20"></div>
-                    <div className="fixed inset-0 pointer-events-none z-10">
+                    <div className="absolute -top-0 left-1/2 -translate-x-1/2 z-0">
+                        <div className="relative w-[350px] h-[350px]">
 
-                        <div className="logo-top-left animate-topLeft"></div>
-                        <div className="logo-top-right animate-topRight"></div>
-                        <div className="logo-bottom-left animate-bottomLeft"></div>
-                        <div className="logo-bottom-right animate-bottomRight"></div>
+                            <img
+                                src="/logo-top-left.webp"
+                                alt=""
+                                className="absolute top-0 left-0 w-44 h-44 opacity-25 animate-topLeft"
+                            />
 
+                            <img
+                                src="/logo-top-right.webp"
+                                alt=""
+                                className="absolute top-0 right-0 w-44 h-44 opacity-25 animate-topRight"
+                            />
+
+                            <img
+                                src="/logo-bottom-left.webp"
+                                alt=""
+                                className="absolute bottom-0 left-0 w-44 h-44 opacity-25 animate-bottomLeft"
+                            />
+
+                            <img
+                                src="/logo-bottom-right.webp"
+                                alt=""
+                                className="absolute bottom-0 right-0 w-44 h-44 opacity-25 animate-bottomRight"
+                            />
+
+                        </div>
                     </div>
 
                 </div>
@@ -200,10 +228,11 @@ export default function CultureKiteWebsite() {
                     </div>
 
                     <OptimizedImage
-                        src="/logo.png"
+                        src="/logo.webp"
                         alt="Culture Kite"
-                        className="w-[1000px] h-auto"
-                        priority
+                        width={1200}
+                        height={333}
+                        className="opacity-75"
                     />
                     <p className="mt-6 text-2xl text-[#5AD5D7] font-semibold">
                         HR Solutions • Workforce Management • Recruitment
@@ -237,28 +266,30 @@ export default function CultureKiteWebsite() {
 
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Stats */}
-            <section className="grid grid-cols-2 md:grid-cols-4 gap-6 px-8 md:px-20 py-12">
-                {[
-                    ["0 → 5000+", "Candidates Placed"],
-                    ["0 → 120+", "Business Clients"],
-                    ["24/7", "HR Support"],
-                    ["PAN India", "Operations"],
-                ].map(([num, label]) => (
-                    <div
-                        key={label}
-                        className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:scale-105 hover:border-blue-400/40 hover:bg-[#123A8D]/20 transition-all duration-300 shadow-lg shadow-black/20"
-                    >
-                        <h2 className="text-4xl font-bold text-[#5AD5D7]">{num}</h2>
-                        <p className="mt-3 text-gray-600">{label}</p>
-                    </div>
-                ))}
-            </section>
+            < section className="grid grid-cols-2 md:grid-cols-4 gap-6 px-8 md:px-20 py-12" >
+                {
+                    [
+                        ["0 → 5000+", "Candidates Placed"],
+                        ["0 → 120+", "Business Clients"],
+                        ["24/7", "HR Support"],
+                        ["PAN India", "Operations"],
+                    ].map(([num, label]) => (
+                        <div
+                            key={label}
+                            className="bg-white/5 border border-white/10 rounded-3xl p-8 hover:scale-105 hover:border-blue-400/40 hover:bg-[#123A8D]/20 transition-all duration-300 shadow-lg shadow-black/20"
+                        >
+                            <h2 className="text-4xl font-bold text-[#5AD5D7]">{num}</h2>
+                            <p className="mt-3 text-gray-600">{label}</p>
+                        </div>
+                    ))
+                }
+            </section >
 
             {/* About */}
-            <section id="about" className="px-8 md:px-20 py-24">
+            < section id="about" className="px-8 md:px-20 py-24" >
                 <div className="grid md:grid-cols-2 gap-16 items-center">
                     <div>
                         <h2 className="text-4xl md:text-5xl font-bold mb-6">
@@ -301,10 +332,10 @@ export default function CultureKiteWebsite() {
                         </div>
                     </div>
                 </div>
-            </section>
+            </section >
 
             {/* Services */}
-            <section id="services" className="px-8 md:px-20 py-24 bg-white/[0.03]">
+            < section id="services" className="px-8 md:px-20 py-24 bg-white/[0.03]" >
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold">
                         Our <span className="text-[#5AD5D7]">Services</span>
@@ -330,10 +361,10 @@ export default function CultureKiteWebsite() {
 
                             <div className="w-14 h-14 rounded-2xl bg-[#5AD5D7]/20 flex items-center justify-center text-[#5AD5D7] text-2xl mb-6">
                                 <OptimizedImage
-                                    src="/logo.png"
+                                    src="/logo.webp"
                                     alt="Culture Kite"
-                                    className="w-[120px] h-auto"
-                                    priority
+                                    width={120}
+                                    height={40}
                                 />
                             </div>
                             <h3 className="text-2xl font-bold text-[#123A8D]">
@@ -350,10 +381,10 @@ export default function CultureKiteWebsite() {
 
                 </div>
 
-            </section>
+            </section >
             {/* Clients Section */}
 
-            <section className="px-8 md:px-20 py-24 bg-white/[0.02]">
+            < section className="px-8 md:px-20 py-24 bg-white/[0.02]" >
                 <div className="text-center mb-16">
                     <h2 className="text-5xl font-bold">
                         Trusted <span className="text-[#5AD5D7]">Clients</span>
@@ -381,10 +412,18 @@ export default function CultureKiteWebsite() {
                             { name: "royal-enfield", link: "/company/royal-enfield" },
                         ].map((client) => (
                             <Link key={client.name} href={client.link}>
-                                <img
-                                    src={`/client-logos/${client.name}.png`}
+                                <Image
+                                    src={`/client-logos/${client.name}.webp`}
                                     alt={client.name}
-                                    className="h-16 w-auto bg-white rounded-2xl p-2 shadow-lg hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    width={150}
+                                    height={80}
+                                    loading="lazy"
+                                    className="bg-white rounded-2xl p-2 shadow-lg hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    style={{
+                                        width: "150px",
+                                        height: "80px",
+                                        objectFit: "contain",
+                                    }}
                                 />
                             </Link>
                         ))}
@@ -403,10 +442,18 @@ export default function CultureKiteWebsite() {
                             "royal-enfield",
                         ].map((name) => (
                             <Link key={`dup-${name}`} href={`/company/${name}`}>
-                                <img
-                                    src={`/client-logos/${name}.png`}
+                                <Image
+                                    src={`/client-logos/${name}.webp`}
                                     alt={name}
-                                    className="h-16 w-auto bg-white rounded-2xl p-2 shadow-lg hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    width={150}
+                                    height={80}
+                                    loading="lazy"
+                                    className="bg-white rounded-2xl p-2 shadow-lg hover:scale-110 transition-all duration-300 cursor-pointer"
+                                    style={{
+                                        width: "150px",
+                                        height: "80px",
+                                        objectFit: "contain",
+                                    }}
                                 />
                             </Link>
                         ))}
@@ -539,45 +586,54 @@ export default function CultureKiteWebsite() {
 
 
             <style jsx global>{`
-           .logo-top-left,
-.logo-top-right,
-.logo-bottom-left,
-.logo-bottom-right {
-  width: 220px;
-  height: 220px;
-  background-image: url('/logo.png');
-  background-size: contain;
-  background-repeat: no-repeat;
-  opacity: 0.15;
-  position: absolute;
-}
-.logo-top-left {
-  top: 50px;
-  left: 50px;
-}
-
-.logo-top-right {
-  top: 50px;
-  right: 50px;
-}
-
-.logo-bottom-left {
-  bottom: 50px;
-  left: 50px;
-}
-
-.logo-bottom-right {
-  bottom: 50px;
-  right: 50px;
-}
-@keyframes floatLogo {
-  0%, 100% {
-    transform: scale(0.8);
+          @keyframes topLeft {
+  0%,100% {
+    transform: translate(-300px,-300px);
+    opacity: 0.5;
   }
-  50% {
-    transform: scale(1);
+
+  45%,55% {
+    transform: translate(0,0);
+    opacity: 0.18;
   }
 }
+
+@keyframes topRight {
+  0%,100% {
+    transform: translate(300px,-300px);
+    opacity: 0.5;
+  }
+
+  40%,60% {
+    transform: translate(0,0);
+    opacity: 0.18;
+  }
+}
+
+@keyframes bottomLeft {
+  0%,100% {
+    transform: translate(-300px,300px);
+    opacity: 0.5;
+  }
+
+  40%,60% {
+    transform: translate(0,0);
+    opacity: 0.18;
+  }
+}
+
+@keyframes bottomRight {
+  0%,100% {
+    transform: translate(300px,300px);
+    opacity: 0.5;
+  }
+
+  40%,60% {
+    transform: translate(0,0);
+    opacity: 0.18;
+  }
+}
+
 .animate-topLeft {
   animation: topLeft 8s infinite ease-in-out;
 }

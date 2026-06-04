@@ -14,20 +14,29 @@ export default function RoyalEnfieldPage() {
             <div className="fixed bottom-6 left-6 z-10 opacity-20 pointer-events-none">
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 
-                    <img
-                        src="/logo.png"
-                        alt="Culture Kite Watermark"
-                        className="w-[600px] md:w-[800px] opacity-5"
+                    <Image
+                        src="/logo.webp"
+                        alt="Culture Kite Logo"
+                        width={288}
+                        height={288}
+                        style={{
+                            width: "auto",
+                            height: "auto",
+                        }}
                     />
-
                 </div>
-
-                <img
-                    src="/logo.png"
-                    alt="Culture Kite Logo"
-                    className="w-52 md:w-72 h-auto"
-                />
             </div>
+
+            <Image
+                src="/logo.webp"
+                alt="Culture Kite Logo"
+                width={288}
+                height={288}
+                style={{
+                    width: "auto",
+                    height: "auto",
+                }}
+            />
 
             {/* MAIN CARD */}
             <div className="max-w-5xl mx-auto bg-white shadow-lg rounded-2xl p-8 relative overflow-hidden">
@@ -36,12 +45,12 @@ export default function RoyalEnfieldPage() {
                 <div className="flex justify-center items-center">
 
                     <div className="h-24 w-24 bg-white rounded-2xl shadow-lg flex items-center justify-center">
-
                         <Image
-                            src="/client-logos/royal-enfield.png"
-                            alt="royal-enfield"
+                            src="/client-logos/royal-enfield.webp"
+                            alt="ABT"
                             width={120}
                             height={60}
+                            className="w-auto h-auto"
                         />
 
                     </div>

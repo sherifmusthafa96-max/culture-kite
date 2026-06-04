@@ -16,18 +16,27 @@ export default function ABTPage() {
 
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
                     <Image
-                        src="/client-logos/abt.png"
-                        alt="abt"
-                        width={120}
-                        height={60}
+                        src="/logo.webp"
+                        alt="Culture Kite Logo"
+                        width={288}
+                        height={288}
+                        style={{
+                            width: "auto",
+                            height: "auto",
+                        }}
                     />
 
                 </div>
 
-                <img
-                    src="/logo.png"
+                <Image
+                    src="/logo.webp"
                     alt="Culture Kite Logo"
-                    className="w-52 md:w-72 h-auto"
+                    width={288}
+                    height={288}
+                    style={{
+                        width: "auto",
+                        height: "auto",
+                    }}
                 />
 
             </div>
@@ -41,12 +50,12 @@ export default function ABTPage() {
                     <div className="h-24 w-24 bg-white rounded-2xl shadow-lg flex items-center justify-center">
 
                         <Image
-                            src="/client-logos/abt.png"
-                            alt="flipkart"
+                            src="/client-logos/abt.webp"
+                            alt="ABT"
                             width={120}
                             height={60}
+                            className="w-auto h-auto"
                         />
-
                     </div>
 
                 </div>

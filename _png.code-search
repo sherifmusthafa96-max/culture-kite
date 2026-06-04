@@ -1,0 +1,103 @@
+# Query: .png
+# ContextLines: 1
+
+31 results - 7 files
+
+convert.js:
+   8      for (const file of files) {
+   9:         if (file.endsWith(".png")) {
+  10              const input = path.join(folder, file);
+
+  12                  folder,
+  13:                 file.replace(".png", ".webp")
+  14              );
+
+app\Services\Logistics\page.tsx:
+  15              company: "FirstCry",
+  16:             logo: "/client-logos/firstcry.webp",
+  17              locations: ["Chennai", "Coimbatore"],
+
+  21              company: "ABT Parcel",
+  22:             logo: "/client-logos/abt.webp",
+  23              locations: ["Chennai", "Coimbatore", "All Over Tamil Nadu"],
+
+  27              company: "Meesho",
+  28:             logo: "/client-logos/meesho.webp",
+  29              locations: ["Chennai"],
+
+  33              company: "Purplle",
+  34:             logo: "/client-logos/purplle.webp",
+  35              locations: ["Coimbatore"],
+
+  39              company: "Flipkart",
+  40:             logo: "/client-logos/flipkart.webp",
+  41              locations: ["Coimbatore"],
+
+  48                  <img
+  49:                     src="/logo.webp"
+  50                      alt="Culture Kite"
+
+app\Services\Manufacturing\page.tsx:
+  15              company: "Indo Shell Cast",
+  16:             logo: "/client-logos/indoshell.webp",
+  17              locations: ["Coimbatore"],
+
+  21              company: "Indo Shell Cast",
+  22:             logo: "/client-logos/indoshell.webp",
+  23              locations: ["Coimbatore"],
+
+  27              company: "Indo Shell Cast",
+  28:             logo: "/client-logos/indoshell.webp",
+  29              locations: ["Coimbatore"],
+
+  33              company: "Unique Shell Mould",
+  34:             logo: "/client-logos/unique-shell.webp",
+  35              locations: ["Coimbatore"],
+
+  39              company: "Unique Shell Mould",
+  40:             logo: "/client-logos/unique-shell.webp",
+  41              locations: ["Coimbatore"],
+
+  45              company: "Unique Shell Mould",
+  46:             logo: "/client-logos/unique-shell.webp",
+  47              locations: ["Coimbatore"],
+
+  55                  <img
+  56:                     src="/logo.webp"
+  57                      alt="Culture Kite"
+
+components\Footer.tsx:
+  7              <img
+  8:                 src="/logo.webp"
+  9                  alt="Culture Kite"
+
+components\Hero.tsx:
+   8      <Image
+   9:       src="/logo.webp"
+  10        alt="Culture Kite"
+
+  19        <img
+  20:         src="/culture-kite-logo.webp"
+  21          alt="Culture Kite Logo"
+
+components\Navbar.tsx:
+  10          <Image
+  11:           src="/logo.webp"
+  12            alt="Company Logo"
+
+lib\assets.ts:
+   1: export const LOGO = "/logo.webp";
+   2  export const assets = {
+   3:     logo: "/logo.webp",
+   4      clients: {
+   5:         firstcry: "/client-logos/firstcry.webp",
+   6:         flipkart: "/client-logos/flipkart.webp",
+   7:         meesho: "/client-logos/meesho.webp",
+   8:         abt: "/client-logos/abt.webp",
+   9:         emerald: "/client-logo/emerald.webp",
+  10:         indoshell: "/client-logo/indoshell.webp",
+  11:         purplle: "/client-logo/purplle.webp",
+  12:         royalenfield: "/client-logo/royal-enfield.webp",
+  13:         shreemaruti: "/client-logo/shree-mauti.webp",
+  14:         uniqshell: "/client-logo/unique-shell.webp",
+  15      }

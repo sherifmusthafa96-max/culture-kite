@@ -46,7 +46,11 @@ export async function POST(req: Request) {
       html: `
 <div style="font-family: Arial, sans-serif; color:#333;">
 
-  <img src="https://culturekite.in/logo.png" alt="Culture Kite" style="height:80px; margin-bottom:20px;" />
+  <img
+  src="https://culturekite.in/logo.webp"
+  alt="Culture Kite"
+  style="height:80px; width:auto; margin-bottom:20px;"
+/>
 
   <h2 style="color:#123A8D;">New Job Application Received</h2>
 
@@ -125,11 +129,11 @@ export async function POST(req: Request) {
       html: `
 <div style="font-family: Arial, sans-serif; color:#333;">
 
-  <img
-    src="https://culturekite.in/logo.png"
-    alt="Culture Kite"
-    style="height:80px; margin-bottom:20px;"
-  />
+<img
+  src="https://culturekite.in/logo.webp"
+  alt="Culture Kite"
+  style="height:80px; width:auto; margin-bottom:20px;"
+/>
 
   <h2 style="color:#123A8D;">
     Thank You for Applying!

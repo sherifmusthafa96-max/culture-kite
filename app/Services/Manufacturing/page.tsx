@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { assets } from "@/lib/assets";
+import Image from "next/image";
 
 export default function ManufacturingPage() {
     const router = useRouter();
@@ -13,37 +14,37 @@ export default function ManufacturingPage() {
         {
             role: "CNC Operator",
             company: "Indo Shell Cast",
-            logo: "/client-logos/indoshell.png",
+            logo: "/client-logos/indoshell.webp",
             locations: ["Coimbatore"],
         },
         {
             role: "VMC Operator",
             company: "Indo Shell Cast",
-            logo: "/client-logos/indoshell.png",
+            logo: "/client-logos/indoshell.webp",
             locations: ["Coimbatore"],
         },
         {
             role: "HMC Operator",
             company: "Indo Shell Cast",
-            logo: "/client-logos/indoshell.png",
+            logo: "/client-logos/indoshell.webp",
             locations: ["Coimbatore"],
         },
         {
             role: "Shell Moulding",
             company: "Unique Shell Mould",
-            logo: "/client-logos/unique-shell.png",
+            logo: "/client-logos/unique-shell.webp",
             locations: ["Coimbatore"],
         },
         {
             role: "Core Shooter",
             company: "Unique Shell Mould",
-            logo: "/client-logos/unique-shell.png",
+            logo: "/client-logos/unique-shell.webp",
             locations: ["Coimbatore"],
         },
         {
             role: "Deburring / Fettling",
             company: "Unique Shell Mould",
-            logo: "/client-logos/unique-shell.png",
+            logo: "/client-logos/unique-shell.webp",
             locations: ["Coimbatore"],
         },
     ];
@@ -52,10 +53,15 @@ export default function ManufacturingPage() {
         <>
             {/* Watermark Logo */}
             <div className="fixed bottom-6 left-6 opacity-10 pointer-events-none">
-                <img
-                    src="/logo.png"
-                    alt="Culture Kite"
-                    className="w-40 h-auto"
+                <Image
+                    src="/logo.webp"
+                    alt="Culture Kite Logo"
+                    width={288}
+                    height={288}
+                    style={{
+                        width: "auto",
+                        height: "auto",
+                    }}
                 />
             </div>
 
@@ -78,9 +84,11 @@ export default function ManufacturingPage() {
                         >
 
                             {/* Company Logo */}
-                            <img
+                            <Image
                                 src={job.logo}
                                 alt={job.company}
+                                width={200}
+                                height={80}
                                 className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg mb-6"
                             />
 

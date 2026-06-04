@@ -6,22 +6,25 @@ import Image from "next/image";
 
   <div className="relative z-10 text-center px-6">
     <Image
-      src="/logo.png"
+      src="/logo.webp"
       alt="Culture Kite"
-      width={600}
-      height={600}
+      width={850}
+      height={250}
       priority
-      className="mx-auto opacity-60"
     />
-
     <div className="fixed inset-0 flex items-center justify-center pointer-events-none opacity-[0.18] animate-watermark z-0">
 
-      <img
-        src="/culture-kite-logo.png"
-        alt="Culture Kite Logo"
-        className="w-[550px] md:w-[850px] h-auto"
+      <Image
+        src="/logo.webp"
+        alt="Culture Kite"
+        width={850}
+        height={250}
+        style={{
+          width: "100%",
+          maxWidth: "850px",
+          height: "auto",
+        }}
       />
-
     </div>
     <p className="text-2xl mt-4 text-sky-500 font-semibold">
       HR Solutions Private Limited

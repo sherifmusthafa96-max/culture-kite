@@ -1,13 +1,19 @@
 import Link from "next/link";
+import Image from "next/image";
 export default function Footer() {
     return (
         <footer className="relative z-50 border-t border-gray-200 bg-white py-8 px-8 md:px-20 flex flex-col md:flex-row justify-between items-center text-gray-500 text-sm">
 
             {/* Logo */}
-            <img
-                src="/logo.png"
+            <Image
+                src="/logo.webp"
                 alt="Culture Kite"
-                className="h-16 w-auto"
+                width={200}
+                height={60}
+                style={{
+                    width: "auto",
+                    height: "auto",
+                }}
             />
 
             {/* Copyright */}

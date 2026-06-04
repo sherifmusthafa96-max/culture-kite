@@ -1,16 +1,16 @@
-export const LOGO = "/logo.png";
+export const LOGO = "/logo.webp";
 export const assets = {
-    logo: "/logo.png",
+    logo: "/logo.webp",
     clients: {
-        firstcry: "/client-logos/firstcry.png",
-        flipkart: "/client-logos/flipkart.png",
-        meesho: "/client-logos/meesho.png",
-        abt: "/client-logos/abt.png",
-        emerald: "/client-logo/emerald.png",
-        indoshell: "/client-logo/indoshell.png",
-        purplle: "/client-logo/purplle.png",
-        royalenfield: "/client-logo/royal-enfield.png",
-        shreemaruti: "/client-logo/shree-mauti.png",
-        uniqshell: "/client-logo/unique-shell.png",
+        firstcry: "/client-logos/firstcry.webp",
+        flipkart: "/client-logos/flipkart.webp",
+        meesho: "/client-logos/meesho.webp",
+        abt: "/client-logos/abt.webp",
+        emerald: "/client-logo/emerald.webp",
+        indoshell: "/client-logo/indoshell.webp",
+        purplle: "/client-logo/purplle.webp",
+        royalenfield: "/client-logo/royal-enfield.webp",
+        shreemaruti: "/client-logo/shree-mauti.webp",
+        uniqshell: "/client-logo/unique-shell.webp",
     }
 };

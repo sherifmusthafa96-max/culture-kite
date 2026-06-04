@@ -8,10 +8,15 @@ export default function Navbar() {
       {/* LOGO */}
       <Link href="/">
         <Image
-          src="/logo.png"
-          alt="Company Logo"
-          width={120}
-          height={50}
+          src="/logo.webp"
+          alt="Culture Kite"
+          width={850}
+          height={250}
+          style={{
+            width: "100%",
+            maxWidth: "850px",
+            height: "auto",
+          }}
         />
       </Link>
 

@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { assets } from "@/lib/assets";
+import Image from "next/image";
 
 export default function FMTeamsPage() {
     const router = useRouter();
@@ -12,13 +13,13 @@ export default function FMTeamsPage() {
         {
             role: "Housekeeping",
             company: "Emerald Groups",
-            logo: "/client-logos/emerald.png",
+            logo: "/client-logos/emerald.webp",
             locations: ["Coimbatore"],
         },
         {
             role: "Security Guard",
             company: "Royal Enfield Units",
-            logo: "/client-logos/royal-enfield.png",
+            logo: "/client-logos/royal-enfield.webp",
             locations: ["Coimbatore"],
         },
     ];
@@ -27,10 +28,11 @@ export default function FMTeamsPage() {
         <>
             {/* Watermark */}
             <div className="fixed bottom-6 left-6 opacity-10 pointer-events-none">
-                <img
-                    src="/logo.png"
-                    alt="Culture Kite"
-                    className="w-40 h-auto"
+                <Image
+                    src="/logo.webp"
+                    alt="Culture Kite Logo"
+                    width={288}
+                    height={288}
                 />
             </div>
 
@@ -53,9 +55,11 @@ export default function FMTeamsPage() {
                         >
 
                             {/* Company Logo */}
-                            <img
+                            <Image
                                 src={job.logo}
                                 alt={job.company}
+                                width={200}
+                                height={80}
                                 className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg mb-6"
                             />
 

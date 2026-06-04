@@ -3,6 +3,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { assets } from "@/lib/assets";
+import Image from "next/image";
 
 export default function LogisticsPage() {
     const router = useRouter();
@@ -13,31 +14,31 @@ export default function LogisticsPage() {
         {
             role: "Warehouse Associates",
             company: "FirstCry",
-            logo: "/client-logos/firstcry.png",
+            logo: "/client-logos/firstcry.webp",
             locations: ["Chennai", "Coimbatore"],
         },
         {
             role: "Loading & Unloading",
             company: "ABT Parcel",
-            logo: "/client-logos/abt.png",
+            logo: "/client-logos/abt.webp",
             locations: ["Chennai", "Coimbatore", "All Over Tamil Nadu"],
         },
         {
             role: "Warehouse Associates",
             company: "Meesho",
-            logo: "/client-logos/meesho.png",
+            logo: "/client-logos/meesho.webp",
             locations: ["Chennai"],
         },
         {
             role: "Warehouse Associates",
             company: "Purplle",
-            logo: "/client-logos/purplle.png",
+            logo: "/client-logos/purplle.webp",
             locations: ["Coimbatore"],
         },
         {
             role: "Warehouse Associates",
             company: "Flipkart",
-            logo: "/client-logos/flipkart.png",
+            logo: "/client-logos/flipkart.webp",
             locations: ["Coimbatore"],
         },
     ];
@@ -45,10 +46,11 @@ export default function LogisticsPage() {
     return (
         <>
             <div className="fixed bottom-6 left-6 opacity-10 pointer-events-none">
-                <img
-                    src="/logo.png"
-                    alt="Culture Kite"
-                    className="w-40 h-auto"
+                <Image
+                    src="/logo.webp"
+                    alt="Culture Kite Logo"
+                    width={288}
+                    height={288}
                 />
             </div>
 
@@ -72,10 +74,12 @@ export default function LogisticsPage() {
 
                             {/* Company Logo */}
                             <div className="flex justify-center mb-6">
-                                <img
+                                <Image
                                     src={job.logo}
                                     alt={job.company}
-                                    className="h-24 w-auto bg-white rounded-2xl p-3 shadow-lg hover:scale-110 transition-all duration-300"
+                                    width={200}
+                                    height={80}
+                                    className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg mb-6"
                                 />
                             </div>
 

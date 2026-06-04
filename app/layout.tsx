@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     siteName: "Culture Kite",
     images: [
       {
-        url: "/logo.png",
+        url: "/logo.webp",
         width: 1200,
         height: 630,
       },
@@ -40,9 +40,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <link rel="preload" as="image" href="/logo.png" />
       </head>
-
       <body className={poppins.className}>
         {children}
         <GoogleAnalytics gaId="G-0ZLF30519D" />

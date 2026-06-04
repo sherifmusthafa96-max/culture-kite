@@ -4,6 +4,8 @@ import { useSearchParams, useRouter } from "next/navigation";
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { assets } from "@/lib/assets";
+import Image from "next/image";
+
 
 export default function ApplyPage() {
     const searchParams = useSearchParams();
@@ -137,7 +139,16 @@ export default function ApplyPage() {
 
                 {/* LOGO SPACE */}
                 <div className="flex justify-center">
-                    <img src="/logo.png" className="h-14" />
+                    <Image
+                        src="/logo.webp"
+                        alt="Culture Kite"
+                        width={200}
+                        height={60}
+                        style={{
+                            width: "auto",
+                            height: "auto",
+                        }}
+                    />
                 </div>
 
                 <h1 className="text-2xl font-bold text-center">

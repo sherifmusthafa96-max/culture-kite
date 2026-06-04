@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { supabase } from "@/lib/supabase";
 import { assets } from "@/lib/assets";
+import Image from "next/image";
 
 export default function EcommercePage() {
     const router = useRouter();
@@ -13,14 +14,14 @@ export default function EcommercePage() {
         {
             role: "Delivery Executive",
             company: "FirstCry",
-            logo: "/client-logos/firstcry.png",
+            logo: "/client-logos/firstcry.webp",
             locations: ["Chennai", "Coimbatore"],
             whatsapp: "919500038959",
         },
         {
             role: "Delivery Executive",
             company: "Shree Maruti",
-            logo: "/client-logos/shree-maruti.png",
+            logo: "/client-logos/shree-maruti.webp",
             locations: ["Chennai", "Coimbatore"],
             whatsapp: "919500038959",
         },
@@ -30,10 +31,11 @@ export default function EcommercePage() {
         <>
             {/* Watermark Logo */}
             <div className="fixed bottom-6 left-6 opacity-10 pointer-events-none">
-                <img
-                    src="/logo.png"
-                    alt="Culture Kite"
-                    className="w-40 h-auto"
+                <Image
+                    src="/logo.webp"
+                    alt="Culture Kite Logo"
+                    width={288}
+                    height={288}
                 />
             </div>
 
@@ -56,9 +58,11 @@ export default function EcommercePage() {
                         >
 
                             {/* Company Logo */}
-                            <img
+                            <Image
                                 src={job.logo}
                                 alt={job.company}
+                                width={200}
+                                height={80}
                                 className="h-20 w-auto bg-white rounded-2xl p-3 shadow-lg mb-6"
                             />
 

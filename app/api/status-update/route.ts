@@ -104,11 +104,11 @@ export async function POST(req: Request) {
 <div style="font-family:Arial,sans-serif;max-width:600px;margin:auto">
 
     <div style="text-align:center;margin-bottom:20px;">
-        <img
-            src="https://culturekite.in/logo.png"
-            alt="Culture Kite"
-            width="120"
-        />
+       <img
+  src="https://culturekite.in/logo.webp"
+  alt="Culture Kite"
+  style="height:80px; width:auto; margin-bottom:20px;"
+/>
     </div>
 
     <h2>Hello ${application.name},</h2>

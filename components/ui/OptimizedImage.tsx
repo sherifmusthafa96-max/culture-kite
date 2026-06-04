@@ -25,7 +25,10 @@ export default function OptimizedImage({
             height={height}
             priority={priority}
             className={className}
-            loading={priority ? "eager" : "lazy"}
+            style={{
+                width: "auto",
+                height: "auto",
+            }}
         />
     );
 }

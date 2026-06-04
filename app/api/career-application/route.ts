@@ -2,45 +2,45 @@ import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
-    try {
-        const body = await req.json();
+  try {
+    const body = await req.json();
 
-        const {
-            name,
-            phone,
-            email,
-            resumeUrl,
-        } = body;
+    const {
+      name,
+      phone,
+      email,
+      resumeUrl,
+    } = body;
 
-        const transporter = nodemailer.createTransport({
-            host: process.env.EMAIL_HOST,
-            port: Number(process.env.EMAIL_PORT),
-            secure: true,
-            auth: {
-                user: process.env.EMAIL_USER,
-                pass: process.env.EMAIL_PASS,
-            },
-        });
+    const transporter = nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: Number(process.env.EMAIL_PORT),
+      secure: true,
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
-        await transporter.verify();
+    await transporter.verify();
 
-        const adminResult = await transporter.sendMail({
-            from: "Culture Kite <info@culturekite.in>",
-            to: [
-                "admin@culturekite.in",
-                "musthafa@culturekite.in",
-                "mathan@culturekite.in",
-                "info@culturekite.in",
-            ],
-            subject: "New Career Application Received",
-            html: `
+    const adminResult = await transporter.sendMail({
+      from: "Culture Kite <info@culturekite.in>",
+      to: [
+        "admin@culturekite.in",
+        "musthafa@culturekite.in",
+        "mathan@culturekite.in",
+        "info@culturekite.in",
+      ],
+      subject: "New Career Application Received",
+      html: `
       <div style="font-family: Arial, sans-serif; color:#333;">
 
-        <img
-          src="https://culturekite.in/logo.png"
-          alt="Culture Kite"
-          style="height:80px; margin-bottom:20px;"
-        />
+       <img
+  src="https://culturekite.in/logo.webp"
+  alt="Culture Kite"
+  style="height:80px; width:auto; margin-bottom:20px;"
+/>
 
         <h2 style="color:#123A8D;">
           New Career Application Received
@@ -78,20 +78,20 @@ export async function POST(req: Request) {
 
       </div>    
       `,
-        });
-        if (email && email.includes("@")) {
-            await transporter.sendMail({
-                from: "Culture Kite <info@culturekite.in>",
-                to: email,
-                subject: "Career Application Received - Culture Kite",
-                html: `
+    });
+    if (email && email.includes("@")) {
+      await transporter.sendMail({
+        from: "Culture Kite <info@culturekite.in>",
+        to: email,
+        subject: "Career Application Received - Culture Kite",
+        html: `
     <div style="font-family: Arial, sans-serif; color:#333;">
 
-      <img
-        src="https://culturekite.in/logo.png"
-        alt="Culture Kite"
-        style="height:80px; margin-bottom:20px;"
-      />
+     <img
+  src="https://culturekite.in/logo.webp"
+  alt="Culture Kite"
+  style="height:80px; width:auto; margin-bottom:20px;"
+/>
 
       <h2 style="color:#123A8D;">
         Thank You for Applying!
@@ -127,26 +127,26 @@ export async function POST(req: Request) {
 
     </div>
     `,
-            });
-        }
-
-        console.log("ADMIN MAIL:", adminResult);
-
-        return NextResponse.json({
-            success: true,
-        });
-
-    } catch (err) {
-        console.error("CAREER APPLICATION ERROR:", err);
-
-        return NextResponse.json(
-            {
-                success: false,
-                error: String(err),
-            },
-            {
-                status: 500,
-            }
-        );
+      });
     }
+
+    console.log("ADMIN MAIL:", adminResult);
+
+    return NextResponse.json({
+      success: true,
+    });
+
+  } catch (err) {
+    console.error("CAREER APPLICATION ERROR:", err);
+
+    return NextResponse.json(
+      {
+        success: false,
+        error: String(err),
+      },
+      {
+        status: 500,
+      }
+    );
+  }
 }

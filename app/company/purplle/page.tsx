@@ -14,18 +14,28 @@ export default function PurpllePage() {
             <div className="fixed bottom-6 left-6 z-10 opacity-20 pointer-events-none">
                 <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
 
-                    <img
-                        src="/logo.png"
-                        alt="Culture Kite Watermark"
-                        className="w-[600px] md:w-[800px] opacity-5"
+                    <Image
+                        src="/logo.webp"
+                        alt="Culture Kite Logo"
+                        width={288}
+                        height={288}
+                        style={{
+                            width: "auto",
+                            height: "auto",
+                        }}
                     />
 
                 </div>
 
-                <img
-                    src="/logo.png"
+                <Image
+                    src="/logo.webp"
                     alt="Culture Kite Logo"
-                    className="w-52 md:w-72 h-auto"
+                    width={288}
+                    height={288}
+                    style={{
+                        width: "auto",
+                        height: "auto",
+                    }}
                 />
             </div>
 
@@ -38,10 +48,11 @@ export default function PurpllePage() {
                     <div className="h-24 w-24 bg-white rounded-2xl shadow-lg flex items-center justify-center">
 
                         <Image
-                            src="/client-logos/purplle.png"
-                            alt="purplle"
+                            src="/client-logos/purplle.webp"
+                            alt="ABT"
                             width={120}
                             height={60}
+                            className="w-auto h-auto"
                         />
 
                     </div>

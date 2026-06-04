@@ -16,10 +16,13 @@ export default function AdminPage() {
     const [loading, setLoading] = useState(false);
     const totalApplications = applications.length;
 
+
     const todayApplications = applications.filter((item) => {
+
         const today = new Date().toDateString();
         return new Date(item.created_at).toDateString() === today;
     }).length;
+
 
     const weekApplications = applications.filter((item) => {
         const sevenDaysAgo = new Date();
@@ -263,24 +266,28 @@ export default function AdminPage() {
                         Admin Login
                     </h1>
 
-                    <input
-                        type="password"
-                        placeholder="Enter Password"
-                        value={password}
-                        onChange={(e) =>
-                            setPassword(e.target.value)
-                        }
-                        className="w-full border rounded-lg px-4 py-3 mb-4"
-                    />
-
-                    <button
-
-                        onClick={login}
-                        className="w-full bg-[#123A8D] text-white py-3 rounded-lg"
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            login();
+                        }}
                     >
-                        Login
+                        <input
+                            type="password"
+                            placeholder="Enter Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            className="w-full border rounded-lg px-4 py-3 mb-4"
+                        />
+                        <button
 
-                    </button>
+                            onClick={login}
+                            className="w-full bg-[#123A8D] text-white py-3 rounded-lg"
+                        >
+                            Login
+
+                        </button>
+                    </form>
                 </div>
             </div>
         );

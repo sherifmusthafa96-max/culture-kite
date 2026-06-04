@@ -182,22 +182,32 @@ export default function CareerAdminPage() {
                         Career Admin Login
                     </h1>
 
-                    <input
-                        type="password"
-                        placeholder="Enter Password"
-                        value={password}
-                        onChange={(e) =>
-                            setPassword(e.target.value)
-                        }
-                        className="w-full border rounded-lg px-4 py-3 mb-4"
-                    />
-
-                    <button
-                        onClick={login}
-                        className="w-full bg-[#123A8D] text-white py-3 rounded-lg"
+                    <form
+                        onSubmit={(e) => {
+                            e.preventDefault();
+                            login();
+                        }}
                     >
-                        Login
-                    </button>
+                        <input
+                            type="password"
+                            placeholder="Enter Password"
+                            value={password}
+                            onChange={(e) => setPassword(e.target.value)}
+                            onKeyDown={(e) => {
+                                if (e.key === "Enter") {
+                                    login(); // Petrol page la checkPassword()
+                                }
+                            }}
+                            className="w-full border rounded-lg px-4 py-3 mb-4"
+                        />
+                        <button
+                            onClick={login}
+                            className="w-full bg-[#123A8D] text-white py-3 rounded-lg"
+                        >
+                            Login
+                        </button>
+                    </form>
+
                 </div>
             </div>
         );
